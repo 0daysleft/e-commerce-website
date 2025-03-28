@@ -43,6 +43,18 @@ p{
     margin: 40px 0;
 }
 
+button.normal{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .2s;
+}
+
 body{
     width: 100%;
 }
@@ -196,14 +208,17 @@ body{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding-top: 20px;
 }
 
 #product1 .pro{
     width: 23%;
     min-width: 250px;
+    margin: 20px;
     padding: 10px 12px;
     border: 1px solid #cce7d0;
     cursor: pointer;
+    border-radius: 30px;
     position: relative;
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
     transition: all 0.2s ease;
@@ -259,7 +274,37 @@ body{
 }
 
 
+#banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-image: url("Images/banner/b2.jpg");
+    width: 100%;
+    height: 20vh;
+    background-size: cover;
+    background-position: center;
+}
 
+#banner h4{
+    color: #fff;
+}
+
+#banner h2{
+    color: #fff;
+    font-size: 30px;
+    padding: 10px 0;
+}
+
+#banner h2 span{
+    color: #ef3636;
+}
+
+#banner button:hover{
+    background-color: #088178;
+    color: #fff;
+}
 
 
 
