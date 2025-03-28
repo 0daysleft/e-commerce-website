@@ -122,6 +122,11 @@ body{
     left: 20px;
 }
 
+#mobile{
+    display: none;
+    align-items: center;
+}
+
 /* Home Page */
 
 #hero{
@@ -544,7 +549,7 @@ footer .copyright{
         align-items: center;
     }
 
-    #mobile i {
+    #mobile i{
         color: #1a1a1a;
         font-size: 24px;
         padding-left: 20px;
