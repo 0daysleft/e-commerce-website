@@ -330,7 +330,7 @@ body{
     justify-content: center;
     align-items: flex-start;
     background-image: url("Images/banner/b17.jpg");
-    width: 580px;
+    width: calc(100% / 2.1);
     height: 50vh;
     background-size: cover;
     background-position: center;
