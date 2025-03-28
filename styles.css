@@ -471,7 +471,26 @@ footer .col{
     margin-bottom: 20px;
 }
 
+footer .logo{
+    margin-bottom: 30px;
+}
 
+footer h4{
+    font-size: 13px;
+    padding-bottom: 20px;
+}
+
+footer p{
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+
+footer a{
+    font-size: 13px;
+    text-decoration: none;
+    color: #222;
+    margin: 10px;
+}
 
 
 
