@@ -1,6 +1,8 @@
 
 const bar = document.getElementById("bar");
 
+const footerDateUpdate = document.getElementById("footerDateUpdate");
+
 const close = document.getElementById("close");
 
 const nav = document.getElementById("navbar");
@@ -18,3 +20,52 @@ if(close){
     })
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footerDateUpdate.textContent = new Date().getFullYear();
