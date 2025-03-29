@@ -618,7 +618,7 @@ footer .copyright{
     }
 
     #banner3 .banner-box{
-        width: 28%;
+        width: 100%;
     }
 
     #newsletter .form{
@@ -662,11 +662,12 @@ footer .copyright{
     }
 
     #banner{
-        width: 40vh;
+        width: 40vw;
     }
 
     #sm-banner .banner-box{
         height: 40vh;
+        width: 100%;
     }
 
     #sm-banner .banner-box2{
@@ -675,6 +676,7 @@ footer .copyright{
 
     #banner3{
         padding: 0 20px;
+        flex-direction: column;
     }
 
     #banner .banner-box{
