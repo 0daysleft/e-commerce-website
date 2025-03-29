@@ -663,6 +663,7 @@ footer .copyright{
 
     #banner{
         width: 100%;
+        height: 25vh;
     }
 
     #sm-banner .banner-box{
