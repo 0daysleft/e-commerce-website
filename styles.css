@@ -128,6 +128,10 @@ body{
     align-items: center;
 }
 
+#close{
+    display: none;
+}
+
 /* Home Page */
 
 #hero{
@@ -526,6 +530,10 @@ footer .copyright{
 /* Media Queries */
 
 @media (max-width: 799px) {
+    .section-p1{
+        padding: 40px 40px;
+    }
+
     #navbar{
         display: flex;
         flex-direction: column;
@@ -562,12 +570,45 @@ footer .copyright{
     }
 
     #close{
+        display: initial;
         position: absolute;
         top: 30px;
         left: 30px;
         color: #222;
         font-size: 24px;
     }
+
+    #lg-bag{
+        display: none;
+    }
+
+    #hero{
+        height: 70vh;
+        padding: 0 80px;
+        background-position: top 30% right 30%;
+    }
+
+    #feature{
+        justify-content: center;
+    }
+
+    #feature .feature-box{
+        margin: 15px 15px;
+    }
+
+    #product1 .pro-container{
+        justify-content: center;
+    }
+
+    #product1 .pro{
+        margin: 15px;
+    }
+
+    #banner{
+        height: 20vh;
+    }
+
+
 }
 
 
