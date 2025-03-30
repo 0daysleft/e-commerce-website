@@ -3,9 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
+    <title>Shop Page </title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.72.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.css" />
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <section id="header" >
+        <a href="#"><img src="./Images/logo.png" class="logo" />
+        
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contant.html">Contact</a></li>
+                <li id="lg-bag" ><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <a href="#" id="close"> <i class="fa-solid fa-times active" ></i> </a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+            <i id="bar" class="fa-solid fa-outdent active" ></i>
+        </div>
+    </section>
+
+    <section id="hero">
+        <h4>Trade in Offer</h4>
+        <h1>Super Value Deals</h1>
+        <h1>On all products</h1>
+        <p>Save More with coupons and upto 70% of!!!!!</p>/
+        <button>Shop Now</button>
+    </section>
+
+    <section id="feature" class="section-p1">
+        <div class="feature-box">
+            <img src="Images/features/f1.png" alt="Free Shipping">
+            <h6>Free Shipping</h6>
+        </div>
+
+        <div class="feature-box">
+            <img src="Images/features/f2.png" alt="Online Order">
+            <h6>Online Order</h6>
+        </div>
+
+        <div class="feature-box">
+            <img src="Images/features/f3.png" alt="Save Money">
+            <h6>Save Money</h6>
+        </div>
+
+        <div class="feature-box">
+            <img src="Images/features/f4.png" alt="Promotions">
+            <h6>Promotions</h6>
+        </div>
+
+        <div class="feature-box">
+            <img src="Images/features/f5.png" alt="Happy Sell">
+            <h6>Happy Sell</h6>
+        </div>
+
+        <div class="feature-box">
+            <img src="Images/features/f6.png" alt="Support">
+            <h6>Support</h6>
+        </div>
+    </section>
+
+    <section id="newsletter" class="section-p1 section-m1" >
+        <div class="newstext">
+        <h4>Sign Up For A NewsLetter</h4>
+        <p>Get E-Mail Updates About Our Latest Shop And <span>Special Offers</span> </p>
+        </div>
+
+        <div class="form">
+            <input type="text" placeholder="Your Email Address">
+            <button class="normal" >Sign Up</button>
+        </div>
+    </section>
+
+    <footer class="section-p1" >
+        <div class="col">
+            <img class="logo" src="./Images/logo.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address: </strong> PO BOX 00100 NAIROBI, KENYA</p>
+            <P><strong>Phone: </strong> +254716577632 / +254710548788 </P>
+            <p> <strong>Hours: </strong> 0800Hrs - 1700Hrs, Mon - Sat (EastAfricaTime) </p>
+            <div class="follow">
+                <h4>Follow Us:</h4>
+                <div class="icon">
+                    <a href="https://www.example.com" target="_blank" > <i class="fa-brands fa-github"></i> </a>
+                    <a href="https://www.example.com" target="_blank" > <i class="fa-brands fa-facebook"></i> </a>
+                    <a href="https://www.example.com" target="_blank" > <i class="fa-brands fa-whatsapp"></i> </a>
+                    <a href="https://www.example.com" target="_blank" > <i class="fa-brands fa-x-twitter"></i> </a>
+                    <a href="https://www.example.com" target="_blank" > <i class="fa-brands fa-reddit"></i> </a>
+                    <a href="https://www.example.com" target="_blank" > <i class="fa-brands fa-google"></i> </a>
+                    <a href="https://www.example.com" target="_blank" > <i class="fa-brands fa-paypal"></i> </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About </h4>
+            <a href="https://www.example.com/" target="_blank" >About Us</a>
+            <a href="https://www.example.com/" target="_blank" >Delivery Information</a>
+            <a href="https://www.example.com/" target="_blank" >Privacy Policy</a>
+            <a href="https://www.example.com/" target="_blank" >Terms $ Condition</a>
+            <a href="https://www.example.com/" target="_blank" >Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>My Account </h4>
+            <a href="https://www.example.com/" target="_blank" >Sign In</a>
+            <a href="https://www.example.com/" target="_blank" >View Cart</a>
+            <a href="https://www.example.com/" target="_blank" >My Wish List</a>
+            <a href="https://www.example.com/" target="_blank" >Track My Order</a>
+            <a href="https://www.example.com/" target="_blank" >Help</a>
+        </div>
+
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From Apple Store Or Google PlayStore</p>
+            <div class="row">
+                <img src="./Images/pay/app.jpg" alt="apple store logo">
+                <img src="./Images/pay/play.jpg" alt="google play store logo">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="./Images/pay/pay.png" alt="alternative payment systems logos">
+        </div>
+
+        <div class="copyright">
+            <p>©<span id="footerDateUpdate"></span>, 0 Days Left E-Commerce Website - All Rights Reserved</p>
+        </div>
+    </footer>
     
+    <script src="script.js"></script>
 </body>
 </html>
