@@ -738,8 +738,24 @@ Shop Page
     font-weight: 600;
 }
 
+/* 
+SINGLE PRODUCT
+*/
 
+#product-details .single-product-image{
+    width: 40%;
+    margin-right: 50px;
+}
 
+.small-img-group{
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-img-col{
+    flex-basis: 24%;
+    cursor: pointer;
+}
 
 
 
