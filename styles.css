@@ -742,6 +742,11 @@ Shop Page
 SINGLE PRODUCT
 */
 
+#product-details{
+    display: flex;
+    margin-top: 20px;
+}
+
 #product-details .single-product-image{
     width: 40%;
     margin-right: 50px;
@@ -757,6 +762,9 @@ SINGLE PRODUCT
     cursor: pointer;
 }
 
+#product-details .single-product-description{
+    width: 50%;
+}
 
 
 
