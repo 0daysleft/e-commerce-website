@@ -386,7 +386,25 @@
             <p>©<span id="footerDateUpdate"></span>, 0 Days Left E-Commerce Website - All Rights Reserved</p>
         </div>
     </footer>
+
+    <script>
+        var productView = document.getElementsByClassName("pro");
+        
+        let productArray = [...productView]
+
+        productArray.forEach(
+            (element) => {
+                element.addEventListener('click', 
+                    ()=>{
+                        window.location.href = './single-shop-product.html';
+                    }
+                )
+            }
+        )
+
+    </script>
     
     <script src="../script.js"></script>
 </body>
 </html>
+
