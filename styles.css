@@ -696,6 +696,21 @@ footer .copyright{
     footer .copyright{
         text-align: start;
     }
+
+    /* Single Page Product */
+
+    #product-details{
+        flex-direction: column;
+    }
+
+    #product-details .single-product-image{
+        width: 100% !important ;
+        margin-right: 0;
+    }
+
+    #product-details .single-product-description{
+        width: 100% !important;
+    }
 }
 
 
