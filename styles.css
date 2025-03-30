@@ -699,9 +699,26 @@ footer .copyright{
 }
 
 
+/* 
+Shop Page
+*/
 
+#page-header{
+    background-image: url("./Images/banner/b1.jpg");
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 14px;
+}
 
-
+#page-header h2,
+#page-header p{
+    color: #fff;
+}
 
 
 
