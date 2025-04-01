@@ -723,7 +723,7 @@ footer .copyright{
     }
 
     #blog img{
-        width: 100%;
+        width: 100% !important;
     }
 
     #blog .blog-img{
