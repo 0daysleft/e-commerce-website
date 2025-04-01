@@ -715,16 +715,16 @@ footer .copyright{
     /* Blog Page */
 
     #blog{
-        padding: 100px 20px 0 20px;
+        padding: 100px 20px 0 20px !important;
     }
 
     #blog .blog-box{
-        flex-direction: column;
+        flex-direction: column !important;
     }
 
     #blog .blog-img{
-        width: 100%;
-        margin: 0;
+        width: 100% !important;
+        margin: 0 !important;
     }
 
 }
