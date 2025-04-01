@@ -725,6 +725,11 @@ footer .copyright{
     #blog .blog-img{
         width: 100% !important;
         margin: 0 !important;
+        margin-bottom: 30px !important;
+    }
+
+    #blog .blog-details{
+        width: 100% !important;
     }
 
 }
