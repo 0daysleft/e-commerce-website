@@ -722,6 +722,10 @@ footer .copyright{
         flex-direction: column !important;
     }
 
+    #blog img{
+
+    }
+
     #blog .blog-img{
         width: 100% !important;
         margin: 0 !important;
@@ -865,7 +869,7 @@ SINGLE PRODUCT
 
 #blog img{
     width: 100%;
-    height: 300px;
+    height: 100%;
     object-fit: contain;
 }
 
