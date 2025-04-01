@@ -914,6 +914,13 @@ SINGLE PRODUCT
     z-index: -1;
 }
 
+/* 
+About Page
+*/
+
+#page-header.about-header{
+    background-image: url("./Images/about/banner.png");
+}
 
 
 
