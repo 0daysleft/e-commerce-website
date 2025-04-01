@@ -736,6 +736,27 @@ footer .copyright{
         width: 100% !important;
     }
 
+    /* 
+    About Page]
+     */
+
+    #about-head{
+        flex-direction: column;
+    }
+
+    #about-head img{
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+
+    #about-head div{
+        padding-left: 0px !important;
+    }
+
+    #about-app .video{
+        width: 100% !important;
+    }
+
 }
 
 
@@ -936,7 +957,7 @@ About Page
     padding-left: 40px;
 }
 
-#about-page{
+#about-app h1{
     text-align: center;
 }
 
