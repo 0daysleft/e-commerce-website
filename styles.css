@@ -818,6 +818,10 @@ SINGLE PRODUCT
 }
 
 
+/* Blog Header */
 
+#page-header.blog-header{
+    background-image: url("./Images/banner/b19.jpg");
+}
 
 
