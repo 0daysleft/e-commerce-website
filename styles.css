@@ -1028,6 +1028,12 @@ Contact Page
     height: 100%;
 }
 
+#form-details form{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
 
 
