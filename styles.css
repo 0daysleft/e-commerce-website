@@ -777,6 +777,21 @@ footer .copyright{
         margin-bottom: 30px;
     }
 
+    #contact-details .details li:last-child{
+        flex-direction: column;
+        height: 200px;
+    }
+    
+    #contact-details .details div li:last-of-type p {
+        margin-left: 30px;
+    }
+
+    #contact-details .details div li:last-of-type p:not(:first-child) {
+        padding-top: 30px;
+    }
+    
+
+
     #contact-details .map{
         width: 100% !important;
     }
