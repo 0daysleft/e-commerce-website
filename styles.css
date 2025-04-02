@@ -781,9 +781,13 @@ footer .copyright{
         flex-direction: column;
         height: 200px;
     }
+
+    #contact-details .details div li:last-of-type{
+        position: relative;
+    }
     
-    #contact-details .details div li:last-of-type p {
-        margin-left: 30px;
+    #contact-details .details div li:last-of-type .p-elements {
+        position: absolute;
     }
 
     #contact-details .details div li:last-of-type p:not(:first-child) {
