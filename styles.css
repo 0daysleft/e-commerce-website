@@ -767,6 +767,31 @@ footer .copyright{
         width: 100% !important;
     }
 
+    /* Contact Page */
+    #contact-details{
+        flex-direction: column;
+    }
+
+    #contact-details .details{
+        width: 100% !important;
+        margin-bottom: 30px;
+    }
+
+    #contact-details .map{
+        width: 100% !important;
+    }
+
+    #form-details{
+        flex-wrap: wrap;
+        margin: 10px !important;
+        padding: 30px 10px !important;
+    }
+
+    #form-details form{
+        width: 100% !important;
+        margin-bottom: 30px;
+    }
+
 }
 
 
