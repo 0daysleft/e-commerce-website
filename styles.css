@@ -1030,6 +1030,14 @@ Contact Page
     height: 100%;
 }
 
+#form-details{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    padding: 80px;
+    border: 1px solid #818ea0;
+}
+
 #form-details form{
     width: 60%;
     display: flex;
@@ -1051,7 +1059,31 @@ Contact Page
     color: #fff;
 }
 
+#form-details .people div{
+    padding-bottom: 25px;
+    display: flex;
+    align-items: flex-start;
+}
 
+#form-details .people div img{
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    margin-left: 15px;
+}
+
+#form-details .people div p{
+    margin: 0;
+    font-size: 13px;
+    line-height: 25px;
+}
+
+#form-details .people div p span{
+    display:  block;
+    font-size: 16px;
+    font-weight: 600px;
+    color: #000;
+}
 
 
 
