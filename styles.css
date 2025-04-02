@@ -987,11 +987,13 @@ Contact Page
      width: 40%;
 }
 
-#contact-detals .details span{
+#contact-detals .details span,
+#form-details form span{
     font-size: 12px;
 }
 
-#contact-details .details h2{
+#contact-details .details h2,
+#form-details form h2{
     font-size: 26px;
     line-height: 35px;
     padding: 20px 0;
