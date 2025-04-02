@@ -624,6 +624,16 @@ footer .copyright{
     #newsletter .form{
         width: 70%;
     }
+
+    /* Contact Page */
+
+    #form-details{
+        padding: 40px;
+    }
+
+    #form-details form{
+        width: 50%;
+    }
 }
 
 @media(max-width: 477px){
