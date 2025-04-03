@@ -1141,6 +1141,10 @@ Contact Page
 
 /* Cart Section */
 
+#cart{
+    overflow: auto;
+}
+
 #cart table{
     width: 100%;
     border-collapse: collapse;
