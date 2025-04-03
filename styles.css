@@ -811,6 +811,26 @@ footer .copyright{
         margin-bottom: 30px;
     }
 
+    /* Cart Section */
+
+    #cart-add{
+        flex-direction: column;
+    }
+
+    #coupon{
+        width: 100% !important;
+    }
+
+    #subtotal{
+        width: 100% !important;
+    }
+
+    /* Footer Section On All Sections/Pages */
+
+    footer .logo{
+        width: 100%;
+        height: 50px;
+    }
 }
 
 
