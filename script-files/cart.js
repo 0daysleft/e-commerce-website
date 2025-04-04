@@ -7,6 +7,8 @@
 
 //Coupon Section Also
 
+const couponButton = document.getElementById();
+const checkOutButton = document.getElementById();
 
 let cart = {
 
