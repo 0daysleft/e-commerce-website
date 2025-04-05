@@ -905,6 +905,15 @@ SINGLE PRODUCT
     padding-top: 30px;
 }
 
+#product-details .single-product-description .material-h3{
+    margin-top: 20px;
+}
+
+#product-details .single-product-description .material-h3 h3{
+    display: inline;
+}
+
+
 #product-details .single-product-description h4{
     padding: 40px 0 20px 0;
 }
@@ -938,6 +947,18 @@ SINGLE PRODUCT
 
 #product-details .single-product-description span{
     line-height: 25px;
+}
+
+#product-details .single-product-description #additional{
+    padding-top: 20px;
+}
+
+#product-details .single-product-description div ul {
+    padding:  0 50px;
+}
+
+#product-details .single-product-description div ul li{
+    list-style-type: square;
 }
 
 
