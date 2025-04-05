@@ -222,32 +222,7 @@
         </div>
     </footer>
 
-    <script>
-        var MainImg = document.getElementById("MainImg");
-        var smallImg = document.querySelectorAll("img.small-img")
-
-        smallImg.forEach(
-            element => {
-                element.addEventListener(
-                    'click',
-                    () => {
-                        MainImg.src = element.src;
-                    }
-                )
-            }
-        )
-    
-    document.querySelectorAll(".pro").forEach(
-        e => {
-            e.onclick = () => {
-                        location.href="./single-shop-product.html"
-                    }       
-        }
-    )
-
-    </script>
-    
-    <script src="../script.js"></script>
+    <script type="module" src="../script-files/all-script-files.js"></script>
 </body>
 </html>
 

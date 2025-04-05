@@ -1,4 +1,7 @@
 
+
+const script = () => {
+
 const bar = document.getElementById("bar");
 
 const footerDateUpdate = document.getElementById("footerDateUpdate");
@@ -20,6 +23,9 @@ if(close){
     })
 }
 
+}
+
+export default script;
 
 
 
