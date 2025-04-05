@@ -87,8 +87,8 @@
             <div class="pro">
                 <img src="../Images/products/n1.jpg" alt="">
                 <div class="des">
-                    <span>Addidas</span>
-                    <h5>Cartoon Astrnout T-Shirts</h5>
+                    <span>UNIQLO</span>
+                    <h5>Light Blue Mandarin Collar Shirt</h5>
                     <div class="star">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -96,16 +96,16 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                     </div>
-                    <h4>$78</h4>
+                    <h4 id="price" >$40</h4>
                 </div>
-                <a href="#"> <i class="fa-solid fa-cart-shopping cart"></i> </a>
+                <a href="#" id="add-to-cart"> <i class="fa-solid fa-cart-shopping cart"></i> </a>
             </div>
 
             <div class="pro">
                 <img src="../Images/products/n2.jpg" alt="">
                 <div class="des">
-                    <span>Addidas</span>
-                    <h5>Cartoon Astrnout T-Shirts</h5>
+                    <span>H&M</span>
+                    <h5>Black & White Checkered Long-Sleeve Shirt</h5>
                     <div class="star">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -113,16 +113,16 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                     </div>
-                    <h4>$78</h4>
+                    <h4 id="price" >$45</h4>
                 </div>
-                <a href="#"> <i class="fa-solid fa-cart-shopping cart"></i> </a>
+                <a href="#" id="add-to-cart"> <i class="fa-solid fa-cart-shopping cart"></i> </a>
             </div>
 
             <div class="pro">
                 <img src="../Images/products/n3.jpg" alt="">
                 <div class="des">
-                    <span>Addidas</span>
-                    <h5>Cartoon Astrnout T-Shirts</h5>
+                    <span>Zara</span>
+                    <h5>Plain White Button-Up Shirt</h5>
                     <div class="star">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -130,16 +130,16 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                     </div>
-                    <h4>$78</h4>
+                    <h4 id="price" >$50</h4>
                 </div>
-                <a href="#"> <i class="fa-solid fa-cart-shopping cart"></i> </a>
+                <a href="#" id="add-to-cart"> <i class="fa-solid fa-cart-shopping cart"></i> </a>
             </div>
 
             <div class="pro">
                 <img src="../Images/products/n4.jpg" alt="">
                 <div class="des">
-                    <span>Addidas</span>
-                    <h5>Cartoon Astrnout T-Shirts</h5>
+                    <span>G-Star RAW</span>
+                    <h5>Short-Sleeve Camo Print Shirt</h5>
                     <div class="star">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -147,11 +147,11 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                     </div>
-                    <h4>$78</h4>
+                    <h4 id="price" >$78</h4>
                 </div>
-                <a href="#"> <i class="fa-solid fa-cart-shopping cart"></i> </a>
+                <a href="#" id="add-to-cart"> <i class="fa-solid fa-cart-shopping cart"></i> </a>
             </div>
-            
+
         </div>
     </section>
 
@@ -221,6 +221,20 @@
             <p>©<span id="footerDateUpdate"></span>, 0 Days Left E-Commerce Website - All Rights Reserved</p>
         </div>
     </footer>
+
+    <script>
+        document.querySelectorAll(".small-img-col").forEach(
+            (e) => {
+                e.addEventListener('click',
+                    () => {
+                        
+                        document.getElementById("MainImg").src = e.firstElementChild.currentSrc;
+                    }
+                )
+            }
+        )
+
+    </script>
 
     <script type="module" src="../script-files/all-script-files.js"></script>
 </body>

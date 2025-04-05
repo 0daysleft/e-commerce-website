@@ -3,7 +3,7 @@
 import script from "./script.js";
 import products from "./products.js";
 
-console.log(products[0])
+//console.log(products[0])
 //console.log(cart)
 
 
@@ -18,11 +18,29 @@ productArray.forEach(
         element.addEventListener('click', 
             ()=>{
                 window.location.href = './single-shop-product.html';
+                console.log(element);
             }
         )
     }
 )
 
-//FUNCTION FOR CLOSE NAVqIGATION BAR IN SMALL SCREENS
 
+//CHANGING THE IMAGE OF THE PRODUCT IN THE SINGLE PRODUCT PAGE.
+
+//THIS CODE SNIPPET WILL CHANGE THE IMAGE OF THE BIGGER PRODUCT IMAGE FROM THE CLICKED ONE
+
+document.querySelectorAll(".small-img-col").forEach(
+    (e) => {
+        e.addEventListener('click',
+            () => {
+                
+                document.getElementById("MainImg").src = e.firstElementChild.currentSrc;
+            }
+        )
+    }
+)
+
+//FUNCTION FOR CLOSE NAVIGATION BAR IN SMALL SCREENS
 script();
+
+
