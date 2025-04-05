@@ -9,8 +9,14 @@
 
 const couponButton = document.getElementById();
 const checkOutButton = document.getElementById();
+const itemPrice = 0;
+const itemQuantity = 0;
+
 
 let cart = {
 
 }
+
+
+
 
