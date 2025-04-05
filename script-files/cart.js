@@ -7,14 +7,14 @@
 
 //Coupon Section Also
 
-const couponButton = document.getElementById();
-const checkOutButton = document.getElementById();
+const couponButton = document.getElementById("copuon").ariaValueMax;
+const checkOutButton = document.getElementById("check").ariaValueMax;
 const itemPrice = 0;
 const itemQuantity = 0;
 
-
-let cart = {
-
+function cart() {
+   couponButton = "Hello Coupon"
+   checkOutButton = "iuhedu"
 }
 
 
