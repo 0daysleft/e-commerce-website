@@ -53,9 +53,9 @@
             <tbody>
 
                 <tr>
-                    <td><a href="#"><i class="fa-solid fa-times-circle" ></i></a></td>
-                    <td><img src="../Images/products/f1.jpg" alt=""></td>
-                    <td>Cartoon Astrnout T-Shirts</td>
+                    <td id="removeItemFromCart"><a href="#"><i class="fa-solid fa-times-circle" ></i></a></td>
+                    <td id="cartImageProduct"><img src="../Images/products/f1.jpg" alt=""></td>
+                    <td id="" >artoon Astrnout T-Shirts</td>
                     <td>$118.90</td>
                     <td><input type="number" name="" id="" value="3"></td>
                     <td>$356.7</td>
@@ -86,8 +86,8 @@
         <div id="coupon">
             <h3>Apply Your Coupon Here:</h3>
             <div>
-                <input type="text" name="" id="" placeholder="Enter Your Coupon">
-                <button class="normal" >Apply</button>
+                <input type="text" name="coupon" id="couponId" placeholder="Enter Your Coupon">
+                <button class="normal" id="couponButton" >Apply</button>
             </div>
         </div>
 
@@ -96,19 +96,19 @@
             <table>
                 <tr>
                     <td>Cart Subtotal</td>
-                    <td>$ 335</td>
+                    <td id="totalGoodsInCart">$335</td>
                 </tr>
 
                 <tr>
                     <td>Shipping</td>
-                    <td>Free</td>
+                    <td id="shippingFee">Free</td>
                 </tr>
                 <tr>
                     <td><strong>Total</strong></td>
-                    <td><strong>$335</strong></td>
+                    <td id="totalCost" ><strong>$335</strong></td>
                 </tr>
             </table>
-            <button class="normal" > Proceed To CheckOut</button>
+            <button class="normal" id="checkoutButton" > Proceed To CheckOut</button>
         </div>
     </section>
 
