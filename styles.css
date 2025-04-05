@@ -597,8 +597,7 @@ footer .copyright{
     }
 
     #product1 .pro-container{
-        display: grid;
-        grid-template-columns: repeat(2, auto);
+       justify-content: space-evenly;
     }
 
     #product1 .pro{
