@@ -14,7 +14,7 @@
 <body>
 
     <section id="header" >
-        <a href="#"><img src="../Images/logo.png" class="logo" />
+        <a href="./index.html"><img src="../Images/logo.png" class="logo" />
         
         <div>
             <ul id="navbar">
@@ -468,6 +468,17 @@
             <p>©<span id="footerDateUpdate"></span>, 0 Days Left E-Commerce Website - All Rights Reserved</p>
         </div>
     </footer>
+
+    <script>
+    
+        document.querySelectorAll(".pro").forEach(
+            e => {
+                e.onclick = () => {
+                            location.href="./single-shop-product.html"
+                        }       
+            }
+        )
+    </script>
     
     <script src="../script.js"></script>
 </body>
