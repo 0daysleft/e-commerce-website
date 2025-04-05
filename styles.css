@@ -589,7 +589,7 @@ footer .copyright{
     }
 
     #feature{
-        justify-content: center;
+        justify-content: space-around;
     }
 
     #feature .feature-box{
@@ -597,7 +597,8 @@ footer .copyright{
     }
 
     #product1 .pro-container{
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
     }
 
     #product1 .pro{
