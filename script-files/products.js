@@ -250,209 +250,159 @@ Soft, breathable fabric for all-day wear
 */
 
 
-//NEW ARRIVALS
-
-/*
-Here are the refined and fully customized product details with more nuanced descriptions and extra features:
-
-1. Light Blue Mandarin Collar Shirt
-
-Brand: UNIQLO
-
-Price: $40
-
-Description: This elegant, minimalist shirt features a mandarin collar, perfect for a modern yet classic look. The light blue color adds a refreshing touch, ideal for both office settings and weekend outings. Its crisp, breathable cotton fabric ensures comfort throughout the day, making it a versatile staple for your wardrobe.
-
-Material: 100% cotton
-
-Fit: Slim fit
-
-Additional Features:
-
-Single-button cuffs
-
-Soft finish for all-day wear
-
-Machine washable for easy maintenance
-
-
-
-
-2. Black & White Checkered Long-Sleeve Shirt
-
-Brand: H&M
-
-Price: $45
-
-Description: The black and white checkered pattern brings a timeless, edgy twist to this long-sleeve shirt. A perfect blend of casual and semi-formal, it’s designed to complement both laid-back and office-ready outfits. Ideal for layering under a jacket or worn on its own for a sleek, contemporary look.
-
-Material: 65% polyester, 35% cotton
-
-Fit: Regular fit
-
-Additional Features:
-
-Button-down collar
-
-Adjustable cuffs for a customized fit
-
-Durable fabric that resists wrinkles
-
-
-
-
-3. Plain White Button-Up Shirt
-
-Brand: Zara
-
-Price: $50
-
-Description: A pristine, plain white button-up shirt that’s essential for any wardrobe. Crafted with premium cotton, this shirt offers versatility from workwear to evenings out. The slim fit design enhances the contemporary style, offering a refined silhouette without being overly tight.
-
-Material: 100% cotton
-
-Fit: Slim fit
-
-Additional Features:
-
-Double-stitched seams for durability
-
-Soft, breathable fabric that holds its shape
-
-Ideal for formal, smart-casual, and business casual settings
-
-
-
-
-4. Short-Sleeve Camo Print Shirt
-
-Brand: G-Star RAW
-
-Price: $78
-
-Description: Showcasing an urban, streetwear-inspired style, this short-sleeve shirt combines comfort with bold, camo print aesthetics. Its relaxed fit makes it perfect for casual weekends or pairing with denim for a laid-back yet trendy look. Designed for those who want to stand out with a military-inspired vibe.
-
-Material: 100% cotton
-
-Fit: Regular fit
-
-Additional Features:
-
-Reinforced stitching for durability
-
-Soft brushed finish for a comfortable feel
-
-A chest pocket for added functionality
-
-
-
-
-5. Blue Denim Shirt
-
-Brand: Levi’s
-
-Price: $60
-
-Description: Levi’s classic blue denim shirt stands as a true testament to American heritage. Known for its durability and style, this piece offers a timeless design that pairs effortlessly with any outfit. Whether you wear it unbuttoned over a tee or as a standalone shirt, the sturdy denim construction ensures lasting wear.
-
-Material: 100% cotton
-
-Fit: Relaxed fit
-
-Additional Features:
-
-Iconic Levi’s branded buttons
-
-Button-flap chest pockets
-
-Pre-washed for a soft, worn-in feel
-
-
-
-
-6. Striped Shorts with Belt
-
-Brand: Tommy Hilfiger
-
-Price: $55
-
-Description: These stylish striped shorts by Tommy Hilfiger offer a perfect balance between comfort and design. Featuring a matching belt for added style and convenience, they make an excellent choice for beach days or casual outings. The lightweight cotton blend keeps you cool, and the belt ensures the right fit every time.
-
-Material: 98% cotton, 2% spandex
-
-Fit: Regular fit
-
-Additional Features:
-
-Adjustable waist with belt loops
-
-Soft, stretchy material for freedom of movement
-
-Machine washable for easy care
-
-
-
-
-7. Brown Military-Style Shirt
-
-Brand: Ralph Lauren
-
-Price: $85
-
-Description: This military-style shirt by Ralph Lauren brings a rugged, masculine charm to any casual wardrobe. The rich brown color, combined with premium cotton, gives a sophisticated, utilitarian look that’s ideal for outdoor adventures or casual outings.
-
-Material: 100% cotton
-
-Fit: Classic fit
-
-Additional Features:
-
-Large, button-flap chest pockets
-
-Epaulettes on shoulders for a military-inspired look
-
-Reinforced stitching for long-lasting wear
-
-
-
-
-8. Dark Gray Short-Sleeve Shirt
-
-Brand: COS
-
-Price: $48
-
-Description: This short-sleeve shirt from COS offers a sleek, minimalist design perfect for adding a sophisticated touch to any casual look. The dark gray hue pairs well with most colors, making it a versatile piece for various occasions, whether for relaxed or semi-formal events.
-
-Material: 100% cotton
-
-Fit: Regular fit
-
-Additional Features:
-
-Clean lines with no extra embellishments for a pure, modern aesthetic
-
-Soft, breathable cotton ideal for warmer weather
-
-Subtle button details for a touch of refinement
-
-
-
-
-
-These adjustments provide more detailed and realistic descriptions, highlighting the style, material, fit, and unique features of each item. Let me know if you need any further changes or additions!
-*/
-
-
 let products = [
-    {
-        productName: "Tropical Breeze Short-Sleeve Shirt",
-        productCompany: "Addidas",
-        productPrice: "$78",
-        productDetails: `
 
+
+
+
+    //NEW ARRIVALS PRODUCTS SECTION
+
+    
+    {
+        productId: "",
+        productName: "Light Blue Mandarin Collar Shirt",
+        productBrand: "UNIQLO",
+        productPrice: "40",
+        productMaterial: "100% Cotton",
+        additionalFeatures: `
+                                Single-button cuffs
+                                Soft finish for all-day wear
+                                Machine washable for easy maintenance
+                                        
+        `,
+        productDetails: `
+                        This elegant, minimalist shirt features a mandarin collar, perfect for a modern yet classic look. The light blue color adds a refreshing touch, ideal for both office settings and weekend outings. Its crisp, breat   hable cotton fabric ensures comfort throughout the day, making it a versatile staple for your wardrobe.
+       `
+    },
+
+
+    {
+        productId: "",
+        productName: "Black & White Checkered Long-Sleeve Shirt",
+        productBrand: "H&M",
+        productPrice: "45",
+        productMaterial: "65% polyester, 35% cotton",
+        additionalFeatures: `
+                            Button-down collar
+                            Adjustable cuffs for a customized fit
+                            Durable fabric that resists wrinkles
+        `,
+        productDetails: `
+                        The black and white checkered pattern brings a timeless, edgy twist to this long-sleeve shirt. A perfect blend of casual and semi-formal, it’s designed to complement both laid-back and office-ready outfits. Ideal for layering under a jacket or worn on its own for a sleek, contemporary look.
+        `
+    },
+
+
+    {
+        productId: "",
+        productName: "Plain White Button-Up Shirt",
+        productBrand: "Zara",
+        productPrice: "50",
+        productMaterial: "100% Cotton",
+        additionalFeatures: `
+                            Double-stitched seams for durability
+                            Soft, breathable fabric that holds its shape
+                            Ideal for formal, smart-casual, and business casual settings          
+        `,
+        productDetails: `
+                            A pristine, plain white button-up shirt that’s essential for any wardrobe. Crafted with premium cotton, this shirt offers versatility from workwear to evenings out. The slim fit design enhances the contemporary style, offering a refined silhouette without being overly tight.
+        `
+    },
+
+
+    {
+        productId: "",
+        productName: "Short-Sleeve Camo Print Shirt",
+        productBrand: "G-Star RAW",
+        productPrice: "78",
+        productMaterial: "100% Cotton",
+        additionalFeatures: `
+                            Reinforced stitching for durability
+                            Soft brushed finish for a comfortable feel
+                            A chest pocket for added functionality
+        `,
+        productDetails: `
+                        Showcasing an urban, streetwear-inspired style, this short-sleeve shirt combines comfort with bold, camo print aesthetics. Its relaxed fit makes it perfect for casual weekends or pairing with denim for a laid-back yet trendy look. Designed for those who want to stand out with a military-inspired vibe.
+        `
+    },
+
+
+
+    {
+        productId: "",
+        productName: "Blue Denim Shirt",
+        productBrand: "Levi's",
+        productPrice: "60",
+        productMaterial: "100% Cotton",
+        additionalFeatures: `
+
+                            Iconic Levi’s branded buttons
+                            Button-flap chest pockets
+                            Pre-washed for a soft, worn-in feel
+
+        `,
+        productDetails: `
+                        Levi’s classic blue denim shirt stands as a true testament to American heritage. Known for its durability and style, this piece offers a timeless design that pairs effortlessly with any outfit. Whether you wear it unbuttoned over a tee or as a standalone shirt, the sturdy denim construction ensures lasting wear.
 
         `
     },
+
+
+    {
+        productId: "",
+        productName: "Striped Shorts with Belt",
+        productBrand: "Tommy Hilfiger",
+        productPrice: "55",
+        productMaterial: "98% cotton, 2% spandex",
+        additionalFeatures: `
+                            Adjustable waist with belt loops
+                            Soft, stretchy material for freedom of movement
+                            Machine washable for easy care
+        `,
+        productDetails: `
+                        These stylish striped shorts by Tommy Hilfiger offer a perfect balance between comfort and design. Featuring a matching belt for added style and convenience, they make an excellent choice for beach days or casual outings. The lightweight cotton blend keeps you cool, and the belt ensures the right fit every time.
+        `
+    },
+
+
+    {
+        productId: "",
+        productName: "Brown Military-Style Shirt",
+        productBrand: "Ralph Lauren",
+        productPrice: "85",
+        productMaterial: "100% Cotton",
+        additionalFeatures: `
+        
+                            Large, button-flap chest pockets
+
+                            Epaulettes on shoulders for a military-inspired look
+
+                            Reinforced stitching for long-lasting wear
+        `,
+        productDetails: `
+                            This military-style shirt by Ralph Lauren brings a rugged, masculine charm to any casual wardrobe. The rich brown color, combined with premium cotton, gives a sophisticated, utilitarian look that’s ideal for outdoor adventures or casual outings.
+
+        `
+    },
+
+    {
+        productId: "",
+        productName: "Dark Gray Short-Sleeve Shirt",
+        productBrand: "COS",
+        productPrice: "78",
+        productMaterial: "100% Cotton",
+        additionalFeatures: `
+                    Clean lines with no extra embellishments for a pure, modern aesthetic
+
+                    Soft, breathable cotton ideal for warmer weather
+
+                    Subtle button details for a touch of refinement
+        `,
+        productDetails: `
+                     This short-sleeve shirt from COS offers a sleek, minimalist design perfect for adding a sophisticated touch to any casual look. The dark gray hue pairs well with most colors, making it a versatile piece for various occasions, whether for relaxed or semi-formal events.
+        `
+    }
+
+
 ]
 
