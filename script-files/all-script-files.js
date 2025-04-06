@@ -17,14 +17,12 @@ productArray.forEach(
     (element) => {
         element.addEventListener('click', 
             ()=>{
-                window.location.href = './single-shop-product.html';
-                console.log(element);
+                //window.location.href = './single-shop-product.html';
+                   
+                    console.log(element.id);
+                })
             }
         )
-    }
-)
-
-
 //CHANGING THE IMAGE OF THE PRODUCT IN THE SINGLE PRODUCT PAGE.
 
 //THIS CODE SNIPPET WILL CHANGE THE IMAGE OF THE BIGGER PRODUCT IMAGE FROM THE CLICKED ONE
