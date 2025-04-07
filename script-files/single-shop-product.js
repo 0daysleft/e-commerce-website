@@ -15,9 +15,9 @@ function call(){
             let singleItemDiv  = document.createElement("div");
             singleItemDiv.setAttribute("id", "single-product-page")
             singlePageSection.append(singleItemDiv)
+            console.log(product.productImage);
             singleItemDiv.innerHTML = `
-            
-            
+        
             <div class="single-product-image" >
             <h6>Home / T-Shirt</h6>
                         <img src="${product.productImage}" width="100%" id="MainImg">

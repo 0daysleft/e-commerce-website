@@ -6,15 +6,28 @@
 //There is also a cart total Section Three Rows: Cart Sub Totals, Shipping Cost, Total(subtotals + shipping cost)
 
 //Coupon Section Also
-
-const couponButton = document.getElementById("copuon").ariaValueMax;
-const checkOutButton = document.getElementById("check").ariaValueMax;
+const cartTableBody = document.getElementById("cartDetails")
+//const couponButton = document.getElementById("copuon").ariaValueMax;
+//const checkOutButton = document.getElementById("check").ariaValueMax;
 const itemPrice = 0;
 const itemQuantity = 0;
 
 function cart() {
-   couponButton = "Hello Coupon"
-   checkOutButton = "iuhedu"
+   console.log(cartTableBody);
+
+   cartTableBody.append = 
+                        `
+                                 <tr>
+                                    <td id="removeItemFromCart"><a href="#"><i class="fa-solid fa-times-circle" ></i></a></td>
+                                    <td id="cartImageProduct"><img src="../Images/products/f1.jpg" alt=""></td>
+                                    <td id="cartProductName" >artoon Astrnout T-Shirts</td>
+                                    <td id="cartProductPrice" >$118.90</td>
+                                    <td id="cartProductQuantity" ><input type="number" name="" id="" value="3"></td>
+                                    <td id="cartTotalProductPrice" >$356.7</td>
+                                 </tr>
+      
+                        `
+
 }
 
 
