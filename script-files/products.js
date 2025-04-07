@@ -185,7 +185,7 @@ let products = [
     
     {
         productId: "NewArrival-01",
-        productImage: "../Images/products",
+        productImage: "../Images/products/n1.jpg",
         productName: "Light Blue Mandarin Collar Shirt",
         productBrand: "UNIQLO",
         productPrice: "40",
@@ -205,7 +205,7 @@ let products = [
 
     {
         productId: "NewArrival-02",
-        productImage: "../Images/products",
+        productImage: "../Images/products/n2.jpg",
         productName: "Black & White Checkered Long-Sleeve Shirt",
         productBrand: "H&M",
         productPrice: "45",
@@ -224,7 +224,7 @@ let products = [
 
     {
         productId: "NewArrival-03",
-        productImage: "../Images/products",
+        productImage: "../Images/products/n3.jpg",
         productName: "Plain White Button-Up Shirt",
         productBrand: "Zara",
         productPrice: "50",
@@ -243,7 +243,7 @@ let products = [
 
     {
         productId: "NewArrival-04",
-        productImage: "../Images/products",
+        productImage: "../Images/products/n4.jpg",
         productName: "Short-Sleeve Camo Print Shirt",
         productBrand: "G-Star RAW",
         productPrice: "78",
@@ -262,7 +262,7 @@ let products = [
 
     {
         productId: "NewArrival-05",
-        productImage: "../Images/products",
+        productImage: "../Images/products/n5.jpg",
         productName: "Blue Denim Shirt",
         productBrand: "Levi's",
         productPrice: "60",
@@ -283,7 +283,7 @@ let products = [
 
     {
         productId: "NewArrival-06",
-        productImage: "../Images/products",
+        productImage: "../Images/products/n6.jpg",
         productName: "Striped Shorts with Belt",
         productBrand: "Tommy Hilfiger",
         productPrice: "55",
@@ -302,7 +302,7 @@ let products = [
 
     {
         productId: "NewArrival-07",
-        productImage: "../Images/products",
+        productImage: "../Images/products/n7.jpg",
         productName: "Brown Military-Style Shirt",
         productBrand: "Ralph Lauren",
         productPrice: "85",
@@ -321,7 +321,7 @@ let products = [
 
     {
         productId: "NewArrival-08",
-        productImage: "../Images/products",
+        productImage: "../Images/products/n8.jpg",
         productName: "Dark Gray Short-Sleeve Shirt",
         productBrand: "COS",
         productPrice: "78",
