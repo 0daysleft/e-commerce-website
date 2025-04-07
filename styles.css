@@ -885,6 +885,10 @@ SINGLE PRODUCT
     margin-top: 20px;
 }
 
+#product-details #single-product-page{
+    display: flex;
+}
+
 #product-details .single-product-image{
     width: 40%;
     margin-right: 50px;
