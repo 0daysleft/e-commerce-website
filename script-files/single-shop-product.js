@@ -9,15 +9,12 @@ function call(){
         let btn = document.getElementById("single-page-product-button");
         let selectedProductId = sessionStorage.getItem("elementId");
 
-
-        btn.addEventListener('click', () => {})
-
         const displaySingleProduct = () => {
             const product = products.find((prod) => prod.productId === selectedProductId);
             let singlePageSection = document.querySelector("#product-details");
             let singleItemDiv  = document.createElement("div");
-            d.setAttribute("class", "single-product-image3")
-
+            singleItemDiv.setAttribute("id", "single-product-page")
+            singlePageSection.append(singleItemDiv)
             singleItemDiv.innerHTML = `
             
             
@@ -86,13 +83,9 @@ function call(){
         
 
         if(p){
-            console.log(selectedProductId)
-
-            const product = products.find((prod) => prod.productId === selectedProductId);
-
-            console.log(product)
-
             displaySingleProduct();
+
+            //btn.addEventListener('click', () => {})
         }
 
         else{
