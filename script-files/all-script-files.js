@@ -2,9 +2,8 @@
 //import cart from "./cart.js";
 import script from "./script.js";
 import products from "./products.js";
+import call from "./single-shop-product.js";
 
-//console.log(products[0])
-//console.log(cart)
 
 
 //IF YOU CLICK ANY ITEM IT TAKES YOU TO THE SINGLE SHOPE PRODUCT PAGE
@@ -39,5 +38,5 @@ document.querySelectorAll(".small-img-col").forEach(
 
 //FUNCTION FOR CLOSE NAVIGATION BAR IN SMALL SCREENS
 script();
-
+call();
 
