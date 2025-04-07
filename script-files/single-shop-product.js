@@ -20,7 +20,7 @@ function call(){
             
             <div class="single-product-image" >
             <h6>Home / T-Shirt</h6>
-                        <img src="../Images/products/f1.jpg" width="100%" id="MainImg">
+                        <img src="${product.productImage}" width="100%" id="MainImg">
 
                         <div class="small-img-group">
                             <div class="small-img-col">
