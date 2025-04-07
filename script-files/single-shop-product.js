@@ -1,16 +1,11 @@
 import products from "./products.js";
-
-
+let selectedProductId = sessionStorage.getItem("elementId");
+export const product = products.find((prod) => prod.productId === selectedProductId);
+export let p = document.querySelector("#product-details");
 function call(){
 
-     
-
-        let p = document.querySelector("#product-details");
-        let btn = document.getElementById("single-page-product-button");
-        let selectedProductId = sessionStorage.getItem("elementId");
-
         const displaySingleProduct = () => {
-            const product = products.find((prod) => prod.productId === selectedProductId);
+
             let singlePageSection = document.querySelector("#product-details");
             let singleItemDiv  = document.createElement("div");
             singleItemDiv.setAttribute("id", "single-product-page")
@@ -53,7 +48,6 @@ function call(){
                             <option>XL</option>
                             <option>XXL</option>  
                         </select>
-                        <input type="number" value="3" id="single-page-product-price">
                         <button class="normal" id="single-page-product-button" >Add To Cart</button>
                         
                         <div class="material-h3" >
@@ -84,8 +78,7 @@ function call(){
 
         if(p){
             displaySingleProduct();
-
-            //btn.addEventListener('click', () => {})
+            let btn = document.getElementById("single-page-product-button");
         }
 
         else{
