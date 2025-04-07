@@ -19,6 +19,7 @@ function call(){
             
             
             <div class="single-product-image" >
+            <h6>Home / T-Shirt</h6>
                         <img src="../Images/products/f1.jpg" width="100%" id="MainImg">
 
                         <div class="small-img-group">
@@ -42,7 +43,6 @@ function call(){
                     </div>
 
                     <div class="single-product-description" id="single-product-description" >
-                        <h6>Home / T-Shirt</h6>
                         <h4 id="product-title" >${product.productName}</h4>
                         <h2 id="product-price">Price: $${product.productPrice}</h2>
                         <select>
