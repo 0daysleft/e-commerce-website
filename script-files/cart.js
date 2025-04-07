@@ -23,13 +23,13 @@ function cart() {
 
    cartTableBody.innerHTML = 
                         `
-                                 <tr style="font-weight: 100 !important" >
+                                 <tr style="font-weight: 100" >
                                     <td id="removeItemFromCart"><a href="#"><i class="fa-solid fa-times-circle" ></i></a></td>
                                     <td id="cartImageProduct"><img src="../Images/products/f1.jpg" alt=""></td>
-                                    <td id="cartProductName" >artoon Astrnout T-Shirts</td>
-                                    <td id="cartProductPrice" >$118.90</td>
+                                    <td id="cartProductName" style="font-weight: 700"  >artoon Astrnout T-Shirts</td>
+                                    <td id="cartProductPrice" style="font-weight: 700" >$118.90</td>
                                     <td id="cartProductQuantity" ><input type="number" name="" id="" value="3"></td>
-                                    <td id="cartTotalProductPrice" >$356.7</td>
+                                    <td id="cartTotalProductPrice" style="font-weight: 700" >$356.7</td>
                                  </tr>
       
                         `
