@@ -44,7 +44,7 @@ function call(){
                     <div class="single-product-description" id="single-product-description" >
                         <h6>Home / T-Shirt</h6>
                         <h4 id="product-title" >${product.productName}</h4>
-                        <h2 id="product-price">${product.productPrice}</h2>
+                        <h2 id="product-price">Price: $${product.productPrice}</h2>
                         <select>
                             <option>Select Size</option>
                             <option>S</option>

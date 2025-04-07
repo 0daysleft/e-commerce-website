@@ -715,6 +715,10 @@ footer .copyright{
         flex-direction: column;
     }
 
+    #product-details #single-product-page {
+        flex-direction: column;
+    }
+
     #product-details .single-product-image{
         width: 100% !important;
         margin-right: 0;
