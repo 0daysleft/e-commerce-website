@@ -727,6 +727,16 @@ footer .copyright{
     #product-details .single-product-description{
         width: 100% !important;
     }
+    
+    #product-details .single-product-description h4:last-of-type {
+        padding: 20px 0 20px 0;
+        width: 100%;
+    }
+
+    #product-details .single-product-description span,
+    #product-details .single-product-description #additional{
+        width:100%;
+    }
 
     /* Blog Page */
 
@@ -799,8 +809,6 @@ footer .copyright{
     #contact-details .details div li:last-of-type p:not(:first-child) {
         padding-top: 30px;
     }
-    
-
 
     #contact-details .map{
         width: 100% !important;
@@ -839,7 +847,6 @@ footer .copyright{
         object-fit: contain;
     }
 }
-
 
 /* 
 Shop Page
