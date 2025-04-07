@@ -28,7 +28,7 @@ let products = [
 
     {
         productId: "SeletedProduct-01",
-        productImage: "../Images/products",
+        productImage: "../Images/products/f1.jpg",
         productName: "Tropical Breeze Short-Sleeve Shirt",
         productBrand: "Hawailian Threads",
         productPrice: "78",
@@ -47,7 +47,7 @@ let products = [
 
     {
         productId: "SelectedProduct-02",
-        productImage: "../Images/products",
+        productImage: "../Images/products/f2.jpg",
         productName: "Island Lily Button-Up Shirt",
         productBrand: "Paradise Wear",
         productPrice: "72",
@@ -66,7 +66,7 @@ let products = [
 
     {
         productId: "SeletedProduct-03",
-        productImage: "../Images/products",
+        productImage: "../Images/products/f3.jpg",
         productName: "Vintage Floral Resort Shirt",
         productBrand: "Retro Styles",
         productPrice: "75",
@@ -84,7 +84,7 @@ let products = [
 
     {
         productId: "SelectedProduct-04",
-        productImage: "../Images/products",
+        productImage: "../Images/products/f4.jpg",
         productName: "Cherry Blossom Casual Shirt",
         productBrand: "Spring Essence",
         productPrice: "70",
@@ -104,7 +104,7 @@ let products = [
 
     {
         productId: "SelectedProduct-05",
-        productImage: "../Images/products",
+        productImage: "../Images/products/f5.jpg",
         productName: "Midnight Bloom Hawaiian Shirt",
         productBrand: "Aloha Trends",
         productPrice: "78",
@@ -123,7 +123,7 @@ let products = [
 
     {
         productId: "SelectedProduct-06",
-        productImage: "../Images/products",
+        productImage: "../Images/products/f6.jpg",
         productName: "Rust & Blue Patchwork Shirt",
         productBrand: "Urban Casuals",
         productPrice: "85",
@@ -142,7 +142,7 @@ let products = [
 
     {
         productId: "SelectedProduct-07",
-        productImage: "../Images/products",
+        productImage: "../Images/products/f7.jpg",
         productName: "Embroidered Linen Pants",
         productBrand: "Nature Wear",
         productPrice: "65",
@@ -161,7 +161,7 @@ let products = [
 
     {
         productId: "SelectedProduct-08",
-        productImage: "../Images/products",
+        productImage: "../Images/products/f8.jpg",
         productName: "Cozy Cat Print Loose Top",
         productBrand: "Comfy Chic",
         productPrice: "60",
