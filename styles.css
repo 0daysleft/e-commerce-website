@@ -921,9 +921,12 @@ SINGLE PRODUCT
     display: inline;
 }
 
+#product-details .single-product-description h4:first-of-type{
+    padding:0;
+}
 
-#product-details .single-product-description h4{
-    padding: 40px 0 20px 0;
+#product-details .single-product-description h4:last-of-type{
+    padding: 20px 0 20px 0;
 }
 
 #product-details .single-product-description h2{
@@ -960,15 +963,6 @@ SINGLE PRODUCT
 #product-details .single-product-description #additional{
     padding-top: 20px;
 }
-
-#product-details .single-product-description div ul {
-    padding:  0 50px;
-}
-
-#product-details .single-product-description div ul li{
-    list-style-type: square;
-}
-
 
 /* Blog Header */
 
