@@ -17,9 +17,8 @@ productArray.forEach(
     (element) => {
         element.addEventListener('click', 
             ()=>{
-                //window.location.href = './single-shop-product.html';
-                   
-                    console.log(element.id);
+                    window.location.href = './single-shop-product.html';
+                    sessionStorage.setItem("elementId", element.id);
                 })
             }
         )
