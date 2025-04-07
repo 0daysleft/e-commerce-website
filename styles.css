@@ -529,6 +529,23 @@ footer .copyright{
 
 /* Media Queries */
 
+@media (max-width: 1030px) {
+
+    #product-details .single-product-description h4:last-of-type {
+        display: block ;
+        padding: 20px 0 20px 0;
+        width: 100%;
+    }
+
+    #product-details .single-product-description span,
+    #product-details .single-product-description #additional{
+        display: block;
+        width:100%;
+    }
+
+
+}
+
 @media (max-width: 799px) {
     .section-p1{
         padding: 40px 40px;
