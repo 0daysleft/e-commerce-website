@@ -3,7 +3,7 @@ let selectedProductId = sessionStorage.getItem("elementId");
 export const product = products.find((prod) => prod.productId === selectedProductId);
 export let p = document.querySelector("#product-details");
 
-function call(){
+export function call(){
 
         const displaySingleProduct = () => {
 
@@ -100,9 +100,11 @@ function cart() {
 
    if(p){
    let btn = document.getElementById("single-page-product-button");
+   let cartArray = [];
    btn.addEventListener('click', (e) => {
       
-     sessionStorage.setItem("cart", JSON.stringify(product))
+    cartArray.push(product);
+     sessionStorage.setItem("cart", JSON.stringify(cartArray))
    
    })
    }
@@ -110,7 +112,11 @@ function cart() {
    if(cartTableBody){
 
       let item = JSON.parse(sessionStorage.getItem("cart"));
+      
       console.log(typeof document.querySelector("input").value)
+
+      console.log("Item: " + item);
+      console.log("Storage: " + JSON.parse(sessionStorage.getItem("cart")))
 
    cartTableBody.innerHTML = 
                         `

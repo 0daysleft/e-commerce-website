@@ -2,7 +2,7 @@
 //import cart from "./cart.js";
 import script from "./script.js";
 //import products from "./products.js";
-import call from "./single-shop-product.js";
+import shopFunctions from "./single-shop-product.js";
 
 
 
@@ -39,6 +39,6 @@ document.querySelectorAll(".small-img-col").forEach(
 //FUNCTION FOR CLOSE NAVIGATION BAR IN SMALL SCREENS
 script();
 
-call();
-
+shopFunctions.call();
+shopFunctions.cart();
 
