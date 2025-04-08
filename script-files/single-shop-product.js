@@ -92,7 +92,7 @@ const itemQuantity = 0;
 let cartProductImage;
 let cartProductName;
 let cartProductPrice;
-
+let cartArray = [];
 
 function cart() {
 
@@ -100,24 +100,27 @@ function cart() {
 
    if(p){
    let btn = document.getElementById("single-page-product-button");
-   let cartArray = [];
-   btn.addEventListener('click', (e) => {
+   
+   btn.addEventListener('click', () => {
       
     cartArray.push(product);
-     sessionStorage.setItem("cart", JSON.stringify(cartArray))
+    console.log("Pro: " + product)
+    sessionStorage.setItem("cart", JSON.stringify(cartArray))
    
    })
    }
 
    if(cartTableBody){
 
-      let item = JSON.parse(sessionStorage.getItem("cart"));
-      
-      console.log(typeof document.querySelector("input").value)
+    let item = JSON.parse(sessionStorage.getItem("cart"));
 
-      console.log("Item: " + item);
-      console.log("Storage: " + JSON.parse(sessionStorage.getItem("cart")))
+    item.find(
+        (elem) => {
+            console.log(elem.productId)
+        }
 
+
+)
    cartTableBody.innerHTML = 
                         `
                                  <tr style="font-weight: 100" >
