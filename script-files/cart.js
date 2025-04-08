@@ -1,7 +1,8 @@
+/*
 
 import call from "./single-shop-product.js";
 import { product, p } from "./single-shop-product.js";
-
+*/
 //The Cart Have 6 Colums for Delete Item, Product Image, Product Name, Price Of Product, Quantity Of Products, Total Price of The Products
 
 //There is also a cart total Section Three Rows: Cart Sub Totals, Shipping Cost, Total(subtotals + shipping cost)
@@ -10,6 +11,7 @@ import { product, p } from "./single-shop-product.js";
 
 //const couponButton = document.getElementById("copuon").ariaValueMax;
 //const checkOutButton = document.getElementById("check").ariaValueMax;
+/*
 const itemPrice = 0;
 const itemQuantity = 0;
 let cartProductImage;
@@ -51,7 +53,7 @@ function cart() {
 
 }
 
-
-export default cart;
+*/
+//export default cart;
 
 
