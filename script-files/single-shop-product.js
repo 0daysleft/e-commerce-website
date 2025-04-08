@@ -81,13 +81,6 @@ export function call(){
 
 }
 
-//const couponButton = document.getElementById("copuon").ariaValueMax;
-//const checkOutButton = document.getElementById("check").ariaValueMax;
-const itemPrice = 0;
-const itemQuantity = 0;
-let cartProductImage;
-let cartProductName;
-let cartProductPrice;
 let cartArray =  JSON.parse(sessionStorage.getItem("cart")) || [];
 
 function cart() {
