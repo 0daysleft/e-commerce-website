@@ -114,6 +114,7 @@ function cart() {
 
     let cartTotal = document.getElementById("totalGoodsInCart");
     let grandTotal = document.getElementById("totalCost")
+    let shippingCost = document.getElementById("shippingFee")
 
     let item = JSON.parse(sessionStorage.getItem("cart"));
 
@@ -133,8 +134,10 @@ function cart() {
                         `
         }
 
-
 )
+shippingCost.textContent = "$23";
+cartTotal.textContent = "CAN'T CALCULATE NOW" + (product.productPrice * product.productPrice);
+grandTotal.textContent = "UNABLE TO CALCULATE"
    
    }
 
