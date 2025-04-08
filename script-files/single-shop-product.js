@@ -150,7 +150,12 @@ function cart() {
     cartTableBody.innerHTML += 
     `
              <tr style="font-weight: 100" >
-                <div style=" text-align:center; padding: 100px; margin: 10px; width: 70vw;" >YOUR CART IS CURRENTLY EMPTY PLEASE SHOP</div>
+                <div style=" text-align:center;
+                            padding: 100px;
+                            margin: 10px;
+                            width: 70vw;
+                            font-size: 2rem;
+                            font-weight: 900" >YOUR CART IS CURRENTLY EMPTY PLEASE SHOP</div>
              </tr>
     `
    }
