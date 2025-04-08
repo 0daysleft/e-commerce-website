@@ -92,7 +92,7 @@ const itemQuantity = 0;
 let cartProductImage;
 let cartProductName;
 let cartProductPrice;
-let cartArray = [];
+let cartArray =  JSON.parse(sessionStorage.getItem("cart")) || [];
 
 function cart() {
 
