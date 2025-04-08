@@ -102,7 +102,7 @@ function cart() {
 
    if(p){
    let btn = document.getElementById("single-page-product-button");
-   
+
    btn.addEventListener('click', () => {
       
     cartArray.push(product);
