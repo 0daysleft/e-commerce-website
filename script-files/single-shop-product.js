@@ -112,27 +112,30 @@ function cart() {
 
    if(cartTableBody){
 
+    let cartTotal = document.getElementById("totalGoodsInCart");
+    let grandTotal = document.getElementById("totalCost")
+
     let item = JSON.parse(sessionStorage.getItem("cart"));
 
     item.find(
         (elem) => {
-            console.log(elem.productId)
+        
+            cartTableBody.innerHTML += 
+                        `
+                                 <tr style="font-weight: 100" >
+                                    <td id="removeItemFromCart" onclick="alert('clicked')" ><a href="#"><i class="fa-solid fa-times-circle" ></i></a></td>
+                                    <td id="cartImageProduct"><img src="${elem.productImage}" alt=""></td>
+                                    <td id="cartProductName" style="font-weight: 600"  >${elem.productName}</td>
+                                    <td id="cartProductPrice" style="font-weight: 700" >${elem.productPrice}</td>
+                                    <td id="cartProductQuantity" ><input type="number" disabled name="" id="" value="1"></td>
+                                    <td id="cartTotalProductPrice" style="font-weight: 700" >$${(elem.productPrice)* (Number(document.querySelector("input").value) || 1) }</td>
+                                 </tr>
+                        `
         }
 
 
 )
-   cartTableBody.innerHTML = 
-                        `
-                                 <tr style="font-weight: 100" >
-                                    <td id="removeItemFromCart"><a href="#"><i class="fa-solid fa-times-circle" ></i></a></td>
-                                    <td id="cartImageProduct"><img src="${item.productImage}" alt=""></td>
-                                    <td id="cartProductName" style="font-weight: 600"  >${item.productName}</td>
-                                    <td id="cartProductPrice" style="font-weight: 700" >${item.productPrice}</td>
-                                    <td id="cartProductQuantity" ><input type="number" disabled name="" id="" value="1"></td>
-                                    <td id="cartTotalProductPrice" style="font-weight: 700" >$${(item.productPrice)* (Number(document.querySelector("input").value) || 1) }</td>
-                                 </tr>
-      
-                        `
+   
    }
 
 }
