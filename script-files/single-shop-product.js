@@ -79,10 +79,6 @@ export function call(){
             let btn = document.getElementById("single-page-product-button");
         }
 
-        else{
-            console.log("Not the page ")
-        }
-
 }
 
 //const couponButton = document.getElementById("copuon").ariaValueMax;
@@ -104,7 +100,6 @@ function cart() {
    btn.addEventListener('click', () => {
       
     cartArray.push(product);
-    console.log("Pro: " + product)
     sessionStorage.setItem("cart", JSON.stringify(cartArray))
    
    })
