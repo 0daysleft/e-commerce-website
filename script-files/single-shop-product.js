@@ -107,12 +107,12 @@ function cart() {
       
     cartArray.push(product);
     sessionStorage.setItem("cart", JSON.stringify(cartArray))
+    alert("The product " + product.productName + " has been added to your cart!!")
    
    })
    }
 
    if(cartTableBody){
-
     let cartTotal = document.getElementById("totalGoodsInCart");
     let grandTotal = document.getElementById("totalCost")
     let shippingCost = document.getElementById("shippingFee")
