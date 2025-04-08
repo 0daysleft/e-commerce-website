@@ -42,7 +42,9 @@ export function call(){
                     <div class="single-product-description" id="single-product-description" >
                         <h4 id="product-title" >${product.productName}</h4>
                         <h2 id="product-price">Price: $${product.productPrice}</h2>
-                        <select>
+
+                        <form>
+                        <select required>
                             <option>Select Size</option>
                             <option>S</option>
                             <option>M</option>
@@ -51,7 +53,7 @@ export function call(){
                             <option>XXL</option>  
                         </select>
                         <button class="normal" id="single-page-product-button" >Add To Cart</button>
-                        
+                        </form>
                         <div class="material-h3" >
                         <h3 >Material: </h3> <span id="single-page-product-material" >${product.productMaterial}</span>
                         </div>
