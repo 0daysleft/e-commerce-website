@@ -121,6 +121,8 @@ function cart() {
 
     let item = JSON.parse(sessionStorage.getItem("cart"));
 
+    if(!item === null){
+
     item.find(
         (elem) => {
         
@@ -136,15 +138,23 @@ function cart() {
                                  </tr>
                         `
         }
+    )
 
-)
-shippingCost.textContent = "$23";
-cartTotal.textContent = "CAN'T CALCULATE NOW" + (product.productPrice * product.productPrice);
-grandTotal.textContent = "UNABLE TO CALCULATE"
+                                shippingCost.textContent = "$23";
+                                cartTotal.textContent = "CAN'T CALCULATE NOW" + (product.productPrice * product.productPrice);
+                                grandTotal.textContent = "UNABLE TO CALCULATE"
    
    }
+   else{
 
+    cartTableBody.innerHTML += 
+    `
+             <tr style="font-weight: 100" >
+                <div>YOUR CART IS CURRENTLY EMPTY PLEASE SHOP</div>
+             </tr>
+    `
+   }
+}
 }
 
-
-export default {cart, call};
+export default {cart, call}
