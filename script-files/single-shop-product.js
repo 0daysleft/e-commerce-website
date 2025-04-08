@@ -17,7 +17,7 @@ export function call(){
                     
             <h6> <span style=" text-decoration: 'none'; " > <a href="../html-files/index.html"  " > Home </a> </span> / T-Shirt</h6>
 
-                        <img src="${product.productImage}" width="100%" id="MainImg">
+                        <img src="${product.productImage || "../Images/products/f7.jpg"}" width="100%" id="MainImg">
 
                         <div class="small-img-group">
                             <div class="small-img-col">
