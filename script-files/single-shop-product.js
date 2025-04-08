@@ -75,7 +75,20 @@ export function call(){
         }
 
         if(p){
-            displaySingleProduct();
+            if (product && typeof product === "object") {
+                displaySingleProduct();
+            } else {
+                console.error("❌ Product not found. ID:", selectedProductId);
+                p.innerHTML = `
+                    <div style="padding: 40px;">
+                        <h2>⚠️ Product Not Found</h2>
+                        <p>This product does not exist or could not be loaded.</p>
+                        <a href="../html-files/index.html">Go back to home</a>
+                    </div>
+                `;
+                return;
+            }
+            
             let btn = document.getElementById("single-page-product-button");
         }
 
