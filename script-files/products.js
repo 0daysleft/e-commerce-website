@@ -27,7 +27,7 @@ let products = [
 
 
     {
-        productId: "SeletedProduct-01",
+        productId: "SelectedProduct-01",
         productImage: "../Images/products/f1.jpg",
         productName: "Tropical Breeze Short-Sleeve Shirt",
         productBrand: "Hawailian Threads",
@@ -65,7 +65,7 @@ let products = [
 
 
     {
-        productId: "SeletedProduct-03",
+        productId: "SelectedProduct-03",
         productImage: "../Images/products/f3.jpg",
         productName: "Vintage Floral Resort Shirt",
         productBrand: "Retro Styles",
