@@ -10,14 +10,14 @@ export function call(){
             let singlePageSection = document.querySelector("#product-details");
             let singleItemDiv  = document.createElement("div");
             singleItemDiv.setAttribute("id", "single-product-page")
-            singlePageSection.append(singleItemDiv)
+            
             singleItemDiv.innerHTML = `
         
             <div class="single-product-image" >
                     
             <h6> <span style=" text-decoration: 'none'; " > <a href="../html-files/index.html"  " > Home </a> </span> / T-Shirt</h6>
 
-                        <img src="${product.productImage || "../Images/products/f7.jpg"}" width="100%" id="MainImg">
+                        <img src="${product.productImage}" width="100%" id="MainImg">
 
                         <div class="small-img-group">
                             <div class="small-img-col">
@@ -73,13 +73,13 @@ export function call(){
                     </div>
     
             `
-            
+            singlePageSection.append(singleItemDiv)
         }
 
         if(p){
             if (product && typeof product === "object") {
                 displaySingleProduct();
-            } else {
+           } else {
                 console.error("❌ Product not found. ID:", selectedProductId);
                 p.innerHTML = `
                     <div style="padding: 40px;">
@@ -105,8 +105,8 @@ function cart() {
    if(p){
    let btn = document.getElementById("single-page-product-button");
 
-   btn.addEventListener('click', () => {
-      
+   btn.addEventListener('click', (e) => {
+      e.preventDefault()
     cartArray.push(product);
     sessionStorage.setItem("cart", JSON.stringify(cartArray))
     alert("The product " + product.productName + " has been added to your cart!!")
@@ -119,9 +119,9 @@ function cart() {
     let grandTotal = document.getElementById("totalCost")
     let shippingCost = document.getElementById("shippingFee")
 
-    let item = JSON.parse(sessionStorage.getItem("cart"));
+    let item = cartArray;
 
-    if(!item === null){
+    if(item !== null){
 
     item.find(
         (elem) => {
