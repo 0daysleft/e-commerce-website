@@ -141,6 +141,35 @@ body{
     /* display: none; */
 }
 
+#lg-bag {
+    position: relative;
+}
+
+#lg-bag[data-count]::after {
+    content: attr(data-count);
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 10;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+
+#lg-bag[data-count]:not([data-count="0"])::after {
+    transform: scale(1);
+}
+
+
 #mobile{
     display: none;
     align-items: center;
