@@ -98,6 +98,7 @@ export function call(){
 }
 
 let cartArray =  JSON.parse(sessionStorage.getItem("cart")) || [];
+cartIcon.setAttribute("data-count", cartArray.length);
 
 function cart() {
 
@@ -110,19 +111,18 @@ function cart() {
         e.preventDefault()
         cartArray.push(product);
         sessionStorage.setItem("cart", JSON.stringify(cartArray))
-        alert("The product " + product.productName + " has been added to your cart!!")
-
-        
         cartIcon.setAttribute("data-count", cartArray.length);
+       // alert("The product " + product.productName + " has been added to your cart!!")
 
-   })
-   }
+       
+    })
+}
 
-   if(cartTableBody){
+if(cartTableBody){
     let cartTotal = document.getElementById("totalGoodsInCart");
     let grandTotal = document.getElementById("totalCost")
     let shippingCost = document.getElementById("shippingFee")
-
+    
     let item = cartArray;
 
     if(item !== null){
