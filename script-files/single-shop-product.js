@@ -7,7 +7,7 @@ const cartIcon = document.getElementById("lg-bag");
 //let cartCountItems = document.querySelector("#lg-bag").textContent = 874;
 
 export function call(){
-    
+
         const displaySingleProduct = () => {
 
             let singlePageSection = document.querySelector("#product-details");
@@ -111,7 +111,11 @@ function cart() {
         cartArray.push(product);
         sessionStorage.setItem("cart", JSON.stringify(cartArray))
         alert("The product " + product.productName + " has been added to your cart!!")
-    
+
+        //if (cartIcon) {
+            cartIcon.setAttribute("data-count", cartArray.length);
+      //  }
+
    })
    }
 
