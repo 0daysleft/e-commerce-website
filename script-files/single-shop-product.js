@@ -106,12 +106,11 @@ function cart() {
    let btn = document.getElementById("single-page-product-button");
 
    btn.addEventListener('click', (e) => {
-      e.preventDefault()
-    cartArray.push(product);
+        e.preventDefault()
+        cartArray.push(product);
+        sessionStorage.setItem("cart", JSON.stringify(cartArray))
+        alert("The product " + product.productName + " has been added to your cart!!")
     
-    sessionStorage.setItem("cart", JSON.stringify(cartArray))
-    alert("The product " + product.productName + " has been added to your cart!!")
-   
    })
    }
 
