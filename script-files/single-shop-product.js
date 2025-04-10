@@ -3,7 +3,7 @@ let selectedProductId = sessionStorage.getItem("elementId");
 export const product = products.find((prod) => prod.productId === selectedProductId);
 export let p = document.querySelector("#product-details");
 
-let cartCountItems = document.querySelector("#lg-bag").textContent = 874;
+//let cartCountItems = document.querySelector("#lg-bag").textContent = 874;
 
 export function call(){
 
