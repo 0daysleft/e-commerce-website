@@ -110,6 +110,7 @@ function cart() {
    btn.addEventListener('click', (e) => {
         e.preventDefault()
         cartArray.push(product);
+        
         sessionStorage.setItem("cart", JSON.stringify(cartArray))
         cartIcon.setAttribute("data-count", cartArray.length);
        // alert("The product " + product.productName + " has been added to your cart!!")
@@ -127,17 +128,19 @@ if(cartTableBody){
 
     item.find(
         (elem) => {
+            let quantity = 1; // default value
+            let totalPrice = elem.productPrice * quantity;
         
             cartTableBody.innerHTML += 
                         `
-                                 <tr style="font-weight: 100" >
-                                    <td id="removeItemFromCart" onclick="alert('clicked')" ><a href="#"><i class="fa-solid fa-times-circle" ></i></a></td>
-                                    <td id="cartImageProduct"><img src="${elem.productImage}" alt=""></td>
-                                    <td id="cartProductName" style="font-weight: 600"  >${elem.productName}</td>
-                                    <td id="cartProductPrice" style="font-weight: 700" >${elem.productPrice}</td>
-                                    <td id="cartProductQuantity" ><input type="number" disabled name="" id="" value="1"></td>
-                                    <td id="cartTotalProductPrice" style="font-weight: 700" >$${(elem.productPrice)* (Number(document.querySelector("input").value) || 1) }</td>
-                                 </tr>
+                            <tr style="font-weight: 100" >
+                            <td id="removeItemFromCart" onclick="alert('clicked')" ><a href="#"><i class="fa-solid fa-times-circle" ></i></a></td>
+                            <td id="cartImageProduct"><img src="${elem.productImage}" alt=""></td>
+                            <td id="cartProductName" style="font-weight: 600"  >${elem.productName}</td>
+                            <td id="cartProductPrice" style="font-weight: 700" >${elem.productPrice}</td>
+                            <td id="cartProductQuantity" ><input type="number" name="" id="productQuantity" value="${quantity}"></td>
+                            <td id="cartTotalProductPrice" style="font-weight: 700" >$${totalPrice}</td>
+                            </tr>
                         `
         }
     )
@@ -145,6 +148,7 @@ if(cartTableBody){
                                 shippingCost.textContent = "$23";
                                 cartTotal.textContent = "CAN'T CALCULATE NOW" + (product.productPrice * product.productPrice);
                                 grandTotal.textContent = "UNABLE TO CALCULATE"
+                                
    
    }
    else{
