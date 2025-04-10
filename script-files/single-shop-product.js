@@ -3,25 +3,11 @@ let selectedProductId = sessionStorage.getItem("elementId");
 export const product = products.find((prod) => prod.productId === selectedProductId);
 export let p = document.querySelector("#product-details");
 
+const cartIcon = document.getElementById("lg-bag");
 //let cartCountItems = document.querySelector("#lg-bag").textContent = 874;
 
 export function call(){
-
-    function updateCartCount(count) {
-        const cartIcon = document.getElementById("lg-bag");
-        if (cartIcon) {
-            cartIcon.setAttribute("data-count", count);
-        }
-    }
     
-    // Examples of dynamic updates
-    updateCartCount(3); // Show 3 items
-    
-    // Simulate adding/removing items dynamically
-    setTimeout(() => updateCartCount(5), 2000); // after 2s, update to 5
-    setTimeout(() => updateCartCount(0), 5000); // after 5s, clear badge
-    
-
         const displaySingleProduct = () => {
 
             let singlePageSection = document.querySelector("#product-details");
