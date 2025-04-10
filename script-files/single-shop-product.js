@@ -90,8 +90,6 @@ export function call(){
                 `;
                 return;
             }
-            
-            let btn = document.getElementById("single-page-product-button");
         }
 
 }
