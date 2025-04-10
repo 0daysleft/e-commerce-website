@@ -112,9 +112,8 @@ function cart() {
         sessionStorage.setItem("cart", JSON.stringify(cartArray))
         alert("The product " + product.productName + " has been added to your cart!!")
 
-        //if (cartIcon) {
-            cartIcon.setAttribute("data-count", cartArray.length);
-      //  }
+        
+        cartIcon.setAttribute("data-count", cartArray.length);
 
    })
    }
