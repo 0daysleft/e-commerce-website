@@ -123,24 +123,6 @@ body{
     left: 20px;
 }
 
-#navbar li:last-of-type::after{
-    content: attr(data-count);
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    font-weight: bold;
-    font-size: 15px;
-    background-color: red;
-    top: -20px;
-    right: 0;
-    /* display: none; */
-}
-
 #lg-bag {
     position: relative;
 }
