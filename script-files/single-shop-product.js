@@ -108,6 +108,7 @@ function cart() {
    btn.addEventListener('click', (e) => {
       e.preventDefault()
     cartArray.push(product);
+    
     sessionStorage.setItem("cart", JSON.stringify(cartArray))
     alert("The product " + product.productName + " has been added to your cart!!")
    
