@@ -124,6 +124,16 @@ if(cartTableBody){
     
     let item = cartArray;
 
+    function updateCartTotal(inputElement) {
+        const row = inputElement.closest('tr');
+        const price = parseFloat(row.querySelector('#cartProductPrice').textContent);
+        const quantity = parseInt(inputElement.value);
+        const totalCell = row.querySelector('.cartTotalProductPrice');
+        
+        totalCell.textContent = `$${(price * quantity).toFixed(2)}`;
+    }
+    
+
     if(item !== null){
 
     item.find(
@@ -138,7 +148,7 @@ if(cartTableBody){
                             <td id="cartImageProduct"><img src="${elem.productImage}" alt=""></td>
                             <td id="cartProductName" style="font-weight: 600"  >${elem.productName}</td>
                             <td id="cartProductPrice" style="font-weight: 700" >${elem.productPrice}</td>
-                            <td id="cartProductQuantity" ><input type="number" name="" id="productQuantity" value="${quantity}"></td>
+                            <td id="cartProductQuantity" ><input type="number" name="" id="productQuantity" value="${quantity}" onchange=" updateCartTotal(this)"></td>
                             <td id="cartTotalProductPrice" style="font-weight: 700" >$${totalPrice}</td>
                             </tr>
                         `
@@ -148,7 +158,6 @@ if(cartTableBody){
                                 shippingCost.textContent = "$23";
                                 cartTotal.textContent = "CAN'T CALCULATE NOW" + (product.productPrice * product.productPrice);
                                 grandTotal.textContent = "UNABLE TO CALCULATE"
-                                
    
    }
    else{
