@@ -52,5 +52,5 @@ Since the project is still under development, contributions are welcome! If you'
 ### Contact
 If you have any questions or want to contribute, feel free to reach out:
 
-- [**Email:**] (mailto:whiteangel@duck.com)
-- [**GitHub:**] (https://github.com/0daysleft)
+- [**Email:**](mailto:whiteangel@duck.com)
+- [**GitHub:**](https://github.com/0daysleft)
