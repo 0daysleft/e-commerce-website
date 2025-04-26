@@ -1,28 +1,4 @@
 
-
-/*
-
-Tropical Breeze Short-Sleeve Shirt – Hawaiian Threads – $78 product[0]
-Island Lily Button-Up Shirt – Paradise Wear – $72  product[1]
-Vintage Floral Resort Shirt – Retro Styles – $75 product[2]
-Cherry Blossom Casual Shirt – Spring Essence – $70 product [3]
-Midnight Bloom Hawaiian Shirt – Aloha Trends – $78 product[4]
-Rust & Blue Patchwork Shirt – Urban Casuals – $85 product[5]
-Embroidered Linen Pants – Nature Wear – $65 product[6]
-Cozy Cat Print Loose Top – Comfy Chic – $60 product[7]
-*/
-//New Arrivals Products
-/*
-Light Blue Mandarin Collar Shirt – UNIQLO – $40 product[8]
-Black & White Checkered Long-Sleeve Shirt – H&M – $45 product[9]
-Plain White Button-Up Shirt – Zara – $50 product[10]
-Short-Sleeve Camo Print Shirt – G-Star RAW – $78 product[11]
-Blue Denim Shirt – Levi’s – $60 product[12]
-Striped Shorts with Belt – Tommy Hilfiger – $55 product[13]
-Brown Military-Style Shirt – Ralph Lauren – $85 product[14]
-Dark Gray Short-Sleeve Shirt – COS – $48 product[15]
-*/
-
 let products = [
 
 
