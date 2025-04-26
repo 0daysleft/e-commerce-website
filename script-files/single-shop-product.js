@@ -4,7 +4,6 @@ export const product = products.find((prod) => prod.productId === selectedProduc
 export let p = document.querySelector("#product-details");
 
 const cartIcon = document.getElementById("lg-bag");
-//let cartCountItems = document.querySelector("#lg-bag").textContent = 874;
 
 export function call(){
 
