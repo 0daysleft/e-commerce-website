@@ -1,7 +1,6 @@
 
-//import cart from "./cart.js";
 import script from "./script.js";
-//import products from "./products.js";
+
 import shopFunctions from "./single-shop-product.js";
 
 
