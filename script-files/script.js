@@ -49,29 +49,4 @@ export default script;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 footerDateUpdate.textContent = new Date().getFullYear();
