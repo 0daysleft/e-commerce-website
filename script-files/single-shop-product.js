@@ -2,7 +2,7 @@ import products from "./products.js";
 let selectedProductId = sessionStorage.getItem("elementId");
 export const product = products.find((prod) => prod.productId === selectedProductId);
 export let p = document.querySelector("#product-details");
-
+console.log(typeof product.productQuantity)
 const cartIcon = document.getElementById("lg-bag");
 
 export function call(){
@@ -114,8 +114,10 @@ function cart() {
             // console.log(product.productId)
             // console.log("E", existing.productId)
             if(existing){
-                existing.productQuantity ++;
-                console.log("Item Already Exists")
+                console.log(existing)
+                existing.productQuantity +=1;
+
+                console.log("Item Already Exists", existing.productQuantity)
             }
             else{
             cartArray.push(product);
