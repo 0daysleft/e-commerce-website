@@ -114,6 +114,7 @@ function cart() {
             // console.log(product.productId)
             // console.log("E", existing.productId)
             if(existing){
+                existing.productQuantity ++;
                 console.log("Item Already Exists")
             }
             else{
@@ -158,7 +159,7 @@ if(cartTableBody){
                             <td id="cartImageProduct"><img src="${elem.productImage}" alt=""></td>
                             <td id="cartProductName" style="font-weight: 600"  >${elem.productName}</td>
                             <td id="cartProductPrice" style="font-weight: 700" >${elem.productPrice}</td>
-                            <td id="cartProductQuantity" ><input type="number" name="" id="productQuantity" value="${quantity}" onchange=" updateCartTotal(this)"></td>
+                            <td id="cartProductQuantity" ><input type="number" name="" id="productQuantity" value="${elem.productQuantity}"></td>
                             <td id="cartTotalProductPrice" style="font-weight: 700" >$${totalPrice}</td>
                             </tr>
                         `
