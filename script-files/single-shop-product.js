@@ -104,27 +104,27 @@ function cart() {
    const cartTableBody = document.getElementById("cartDetails")
 
    if(p){
-   let btn = document.getElementById("single-page-product-button");
+    let btn = document.getElementById("single-page-product-button");
 
-   btn.addEventListener('click', (e) => {
-        e.preventDefault()
-    
-        let existing = cartArray.find( (item) => item.productId )
-
-        // console.log(product.productId)
-        // console.log("E", existing.productId)
-        if(existing){
-            console.log("Item Already Exists")
-        }
-        else{
-        cartArray.push(product);
+    btn.addEventListener('click', (e) => {
+            e.preventDefault()
         
-        sessionStorage.setItem("cart", JSON.stringify(cartArray))
-        cartIcon.setAttribute("data-count", cartArray.length);
-       // alert("The product " + product.productName + " has been added to your cart!!")
-        }
-    })
-}
+            let existing = cartArray.find( (item) => item.productId )
+        
+            // console.log(product.productId)
+            // console.log("E", existing.productId)
+            if(existing){
+                console.log("Item Already Exists")
+            }
+            else{
+            cartArray.push(product);
+            
+            sessionStorage.setItem("cart", JSON.stringify(cartArray))
+            cartIcon.setAttribute("data-count", cartArray.length);
+        // alert("The product " + product.productName + " has been added to your cart!!")
+            }
+        })
+    }
 
 
 function updateCartTotal(inputElement) {
