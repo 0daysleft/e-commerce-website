@@ -8,6 +8,7 @@ let products = [
         productName: "Tropical Breeze Short-Sleeve Shirt",
         productBrand: "Hawailian Threads",
         productPrice: "78",
+        productQuantity: 1,
         productMaterial: "100% Cotton",
         additionalFeatures: `
                             </br>
@@ -27,6 +28,7 @@ let products = [
         productName: "Island Lily Button-Up Shirt",
         productBrand: "Paradise Wear",
         productPrice: "72",
+        productQuantity: 1,
         productMaterial: "55% linen, 45% cotton",
         additionalFeatures: `
                             </br>
@@ -46,6 +48,7 @@ let products = [
         productName: "Vintage Floral Resort Shirt",
         productBrand: "Retro Styles",
         productPrice: "75",
+        productQuantity: 1,
         productMaterial: "100% Cotton",
         additionalFeatures: `
                             </br>
@@ -64,6 +67,7 @@ let products = [
         productName: "Cherry Blossom Casual Shirt",
         productBrand: "Spring Essence",
         productPrice: "70",
+        productQuantity: 1,
         productMaterial: "100% Cotton",
         additionalFeatures: `
                             </br>
@@ -84,6 +88,7 @@ let products = [
         productName: "Midnight Bloom Hawaiian Shirt",
         productBrand: "Aloha Trends",
         productPrice: "78",
+        productQuantity: 1,
         productMaterial: "100% Rayon",
         additionalFeatures: `
                                 </br>
@@ -103,6 +108,7 @@ let products = [
         productName: "Rust & Blue Patchwork Shirt",
         productBrand: "Urban Casuals",
         productPrice: "85",
+        productQuantity: 1,
         productMaterial: "80% cotton, 20% polyester",
         additionalFeatures: `
                             </br>
@@ -122,6 +128,7 @@ let products = [
         productName: "Embroidered Linen Pants",
         productBrand: "Nature Wear",
         productPrice: "65",
+        productQuantity: 1,
         productMaterial: "100% Linen",
         additionalFeatures: `
                             </br>
@@ -141,6 +148,7 @@ let products = [
         productName: "Cozy Cat Print Loose Top",
         productBrand: "Comfy Chic",
         productPrice: "60",
+        productQuantity: 1,
         productMaterial: "100% Cotton",
         additionalFeatures: `
                             </br>
@@ -165,6 +173,7 @@ let products = [
         productName: "Light Blue Mandarin Collar Shirt",
         productBrand: "UNIQLO",
         productPrice: "40",
+        productQuantity: 1,
         productMaterial: "100% Cotton",
         additionalFeatures: `
                                 </br>
@@ -185,6 +194,7 @@ let products = [
         productName: "Black & White Checkered Long-Sleeve Shirt",
         productBrand: "H&M",
         productPrice: "45",
+        productQuantity: 1,
         productMaterial: "65% polyester, 35% cotton",
         additionalFeatures: `
                             </br>
@@ -204,6 +214,7 @@ let products = [
         productName: "Plain White Button-Up Shirt",
         productBrand: "Zara",
         productPrice: "50",
+        productQuantity: 1,
         productMaterial: "100% Cotton",
         additionalFeatures: `
                             </br>
@@ -223,6 +234,7 @@ let products = [
         productName: "Short-Sleeve Camo Print Shirt",
         productBrand: "G-Star RAW",
         productPrice: "78",
+        productQuantity: 1,
         productMaterial: "100% Cotton",
         additionalFeatures: `
                             </br> Reinforced stitching for durability </br> </br>
@@ -242,6 +254,7 @@ let products = [
         productName: "Blue Denim Shirt",
         productBrand: "Levi's",
         productPrice: "60",
+        productQuantity: 1,
         productMaterial: "100% Cotton",
         additionalFeatures: `
                             </br>
@@ -263,6 +276,7 @@ let products = [
         productName: "Striped Shorts with Belt",
         productBrand: "Tommy Hilfiger",
         productPrice: "55",
+        productQuantity: 1,
         productMaterial: "98% cotton, 2% spandex",
         additionalFeatures: `
                             </br>
@@ -282,6 +296,7 @@ let products = [
         productName: "Brown Military-Style Shirt",
         productBrand: "Ralph Lauren",
         productPrice: "85",
+        productQuantity: 1,
         productMaterial: "100% Cotton",
         additionalFeatures: `
                             </br>
@@ -301,6 +316,7 @@ let products = [
         productName: "Dark Gray Short-Sleeve Shirt",
         productBrand: "COS",
         productPrice: "78",
+        productQuantity: 1,
         productMaterial: "100% Cotton",
         additionalFeatures: `
                     </br>  
