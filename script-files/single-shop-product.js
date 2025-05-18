@@ -113,7 +113,7 @@ function cart() {
 
         console.log(product.productId)
         console.log("E", existing.productId)
-        if(product.productId == existing.productId){
+        if(existing){
             console.log("Item Already Exists")
         }
         else{
