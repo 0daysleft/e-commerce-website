@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="refresh" content="0; url=html-files/index.html">
+    <meta http-equiv="refresh" content="5; url=html-files/index.html">
     <link rel="icon" type="image/png" href="./Images/favicon-96x96.png" sizes="96x96" />
     <title>Redirecting...</title>
 </head>
 <body  style=" display: flex; justify-content: center; align-items: center; height:100vh">
-    <p>If you are not redirected, <a href="html-files/index.html">click here</a>.</p>
+    <p>If you are not redirected in <span id="countSecs"> </span>, <a href="html-files/index.html">click here</a>.</p>
+
+    <script>
+        let count = 5;
+        //let countSecs  = () => {
+            setInterval(
+                ()=> {
+                    count--
+                    document.getElementById('countSecs').textContent = count
+                    console.log(count)
+                }, 1000
+            )
+        //}
+
+        //countSecs()
+    </script>
+
 </body>
 </html>
