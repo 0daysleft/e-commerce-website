@@ -111,8 +111,8 @@ function cart() {
     
         let existing = cartArray.find( (item) => item.productId )
 
-        console.log(product.productId)
-        console.log("E", existing.productId)
+        // console.log(product.productId)
+        // console.log("E", existing.productId)
         if(existing){
             console.log("Item Already Exists")
         }
