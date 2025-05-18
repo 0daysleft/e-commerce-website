@@ -11,13 +11,15 @@
     <script>
         let count = 5;
         //let countSecs  = () => {
-            setInterval(
+        let setIntervalId = setInterval(
                 ()=> {
                     count--
                     document.getElementById('countSecs').textContent = count
                     console.log(count)
                 }, 1000
             )
+
+        if(count <= 0) clearInterval(setIntervalId)
         //}
 
         //countSecs()
