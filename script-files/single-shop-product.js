@@ -114,11 +114,11 @@ function cart() {
             // console.log(product.productId)
             // console.log("E", existing.productId)
             if(existing){
-                console.log(existing)
                 let c = existing.productQuantity +=1;
                 console.log(typeof existing.productQuantity)
 
                 console.log("Item Already Exists", c)
+                cartIcon.setAttribute("data-count", cartArray.length);
             }
             else{
             cartArray.push(product);
@@ -154,7 +154,7 @@ if(cartTableBody){
         (elem) => {
             // let quantity = 1; // default value
             // let totalPrice = elem.productPrice * quantity;
-        
+            console.log(elem.productQuantity)
             cartTableBody.innerHTML += 
                         `
                             <tr style="font-weight: 100" >
@@ -163,7 +163,7 @@ if(cartTableBody){
                             <td id="cartProductName" style="font-weight: 600"  >${elem.productName}</td>
                             <td id="cartProductPrice" style="font-weight: 700" >${elem.productPrice}</td>
                             <td id="cartProductQuantity" ><input type="number" name="" id="productQuantity" value="${elem.productQuantity}"></td>
-                            <td id="cartTotalProductPrice" style="font-weight: 700" >$${totalPrice}</td>
+                            <td id="cartTotalProductPrice" style="font-weight: 700" >$${elem.productPrice}</td>
                             </tr>
                         `
         }
