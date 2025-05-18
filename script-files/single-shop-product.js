@@ -152,8 +152,8 @@ if(cartTableBody){
 
     item.find(
         (elem) => {
-            let quantity = 1; // default value
-            let totalPrice = elem.productPrice * quantity;
+            // let quantity = 1; // default value
+            // let totalPrice = elem.productPrice * quantity;
         
             cartTableBody.innerHTML += 
                         `
