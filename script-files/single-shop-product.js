@@ -108,16 +108,16 @@ function cart() {
 
     btn.addEventListener('click', (e) => {
             e.preventDefault()
-            let existing = cartArray.find( (item) => item.productId == product.productId)
+            let existing = cartArray.find( (item) => item.productId)
 
-            //console.log(existing)
+            console.log(existing)
         
             //console.log(e)
             // console.log(product.productId)
             // console.log("E", existing.productId)
             if(cartArray.length > 0){
             if(existing){
-                console.log(existing)
+                //console.log(existing)
                 existing.productQuantity +=1;
                 //console.log(typeof existing.productQuantity)
 
