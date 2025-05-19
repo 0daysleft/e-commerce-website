@@ -116,7 +116,6 @@ function cart() {
             if(cartArray.length > 0){
             if(existing){
                 existing.productQuantity +=1;
-                cartIcon.setAttribute("data-count", cartArray.length);
             }
             else{
             
