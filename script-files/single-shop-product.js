@@ -154,7 +154,7 @@ if(cartTableBody){
                             <td id="cartProductName" style="font-weight: 600"  >${elem.productName}</td>
                             <td id="cartProductPrice" style="font-weight: 700" >${elem.productPrice}</td>
                             <td id="cartProductQuantity" ><input type="number" name="" id="productQuantity" value="${elem.productQuantity}"></td>
-                            <td id="cartTotalProductPrice" style="font-weight: 700" >$${elem.productPrice}</td>
+                            <td id="cartTotalProductPrice" style="font-weight: 700" >$${(elem.productPrice * elem.productQuantity)}</td>
                             </tr>
                         `
         }
