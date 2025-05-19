@@ -131,17 +131,6 @@ function cart() {
         
     }
 
-
-function updateCartTotal(inputElement) {
-    const row = inputElement.closest('tr');
-    const price = parseFloat(row.querySelector('#cartProductPrice').textContent);
-    const quantity = parseInt(inputElement.value);
-    const totalCell = row.querySelector('.cartTotalProductPrice');
-    
-    totalCell.textContent = `$${(price * quantity).toFixed(2)}`;
-}
-
-
 if(cartTableBody){
     let cartTotal = document.getElementById("totalGoodsInCart");
     let grandTotal = document.getElementById("totalCost")
