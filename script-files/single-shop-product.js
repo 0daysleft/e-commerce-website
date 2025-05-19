@@ -113,7 +113,6 @@ function cart() {
 
             console.log(existing)
     
-            if(cartArray.length > 0){
             if(existing){
                 existing.productQuantity +=1;
             }
@@ -124,7 +123,7 @@ function cart() {
             
         // alert("The product " + product.productName + " has been added to your cart!!")
             }
-        }
+        
         sessionStorage.setItem("cart", JSON.stringify(cartArray))
             cartIcon.setAttribute("data-count", cartArray.length);
         }
