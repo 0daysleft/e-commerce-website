@@ -111,7 +111,8 @@ function cart() {
             let existing = cartArray.find((item) => item.productId === product.productId);
 
 
-            console.log(existing)
+            console.log("ex:",existing)
+           // console.log("pro:",product)
     
             if(existing){
                 existing.productQuantity +=1;
