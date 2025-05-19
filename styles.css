@@ -17,7 +17,7 @@ h2{
     font-size: 46px;
     line-height: 54px;
     color: #222;
-    
+    line-break: auto;
 }
 
 h4{
@@ -1301,6 +1301,15 @@ Contact Page
 #cart table tbody td{
     font-size: 13px;
 }
+/* 
+#cart .cart-product-name {
+    font-weight: 600;
+    max-width: max-content;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+   */
 
 #cart-add{
     display: flex;
