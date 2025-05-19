@@ -111,22 +111,14 @@ function cart() {
             let existing = cartArray.find( (item) => item.productId)
 
             console.log(existing)
-        
-            //console.log(e)
-            // console.log(product.productId)
-            // console.log("E", existing.productId)
+    
             if(cartArray.length > 0){
             if(existing){
-                //console.log(existing)
                 existing.productQuantity +=1;
-                //console.log(typeof existing.productQuantity)
-
-                //console.log("Item Already Exists", c)
                 cartIcon.setAttribute("data-count", cartArray.length);
             }
             else{
             
-           //console.log(product)
             cartArray.push(product);
             
             sessionStorage.setItem("cart", JSON.stringify(cartArray))
