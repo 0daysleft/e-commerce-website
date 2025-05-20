@@ -173,9 +173,9 @@ function cart() {
             //console.log(typeof totalSingleItemPrice)
             cartTotal.textContent = quantity.reduce((item, total) => item + total).toLocaleString();
             shippingCost.textContent = 23;
-            let grandTotal = Number(shippingCost.textContent) //+ totalSingleItemPrice
+
             //console.log(typeof shippingCost.textContent)
-            grandTotalElement.innerHTML = grandTotal
+            grandTotalElement.innerHTML = (Number(shippingCost.textContent) + totalSingleItemPrice)
             //Number(.toLocaleString()
 
         }
