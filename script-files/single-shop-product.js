@@ -2,7 +2,6 @@ import products from "./products.js";
 let selectedProductId = sessionStorage.getItem("elementId");
 export const product = products.find((prod) => prod.productId === selectedProductId);
 export let p = document.querySelector("#product-details");
-//console.log(typeof product.productQuantity)
 const cartIcon = document.getElementById("lg-bag");
 let quantity = [];
 
@@ -151,7 +150,7 @@ function cart() {
                     cartTableBody.innerHTML +=
                         `
                             <tr style="font-weight: 100" >
-                            <td id="removeItemFromCart" onclick="alert('clicked')" ><a href="#"><i class="fa-solid fa-times-circle" ></i></a></td>
+                            <td id="removeItemFromCart" ><a href="#"><i class="fa-solid fa-times-circle" ></i></a></td>
                             <td id="cartImageProduct"><img src="${elem.productImage}" alt=""></td>
                             <td id="cartProductName"
                             style="
@@ -169,8 +168,6 @@ function cart() {
                 }
             )
 
-
-            //console.log(typeof totalSingleItemPrice)
             cartTotal.textContent = quantity.reduce((item, total) => item + total).toLocaleString('en-KE', {
                 style: 'currency',
                 currency: "KES"
@@ -181,14 +178,10 @@ function cart() {
                 currency: "KES"
             });
 
-            //console.log(typeof shippingCost.textContent)
             grandTotalElement.innerHTML = (Number(shipping) + quantity.reduce((item, total) => item + total)).toLocaleString('en-KE', {
                 style: 'currency',
                 currency: "KES"
             });
-            console.log(totalSingleItemPrice)
-            console.log(quantity)
-            //Number(.toLocaleString()
 
         }
         else {
