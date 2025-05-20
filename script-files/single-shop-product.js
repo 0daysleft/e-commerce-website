@@ -113,7 +113,7 @@ updateCartQuatity()
 function cart() {
 
    const cartTableBody = document.getElementById("cartDetails")
-
+    console.log(document.querySelectorAll("#cartItemsCount"))
    //document.querySelector('input').addEventListener('input', () => console.log("Item Count:",this.value))
 
    if(p){
@@ -169,7 +169,7 @@ if(cartTableBody){
                             "  >${elem.productName}</td>
                             <td id="cartProductPrice" style="font-weight: 700" >${elem.productPrice}</td>
                             <td id="cartProductQuantity" ><input type="number" name="" id="productQuantity" value="${elem.productQuantity}"></td>
-                            <td id="cartTotalProductPrice" style="font-weight: 700" >$${(elem.productPrice * elem.productQuantity)}</td>
+                            <td id="cartTotalProductPrice" style="font-weight: 700" >$<span id="cartItemsCount">${(elem.productPrice * elem.productQuantity)}</span></td>
                             </tr>
                         `
         }
