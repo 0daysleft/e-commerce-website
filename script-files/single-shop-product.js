@@ -97,17 +97,18 @@ export function call(){
 }
 
 let cartArray =  JSON.parse(sessionStorage.getItem("cart")) || [];
-cartIcon.setAttribute("data-count", cartArray.length);
-let v  = cartArray.map((item) => item.productQuantity)
-console.log("Items:",v)
-let y = v.reduce((item, total) => item + total)
-console.log("Total:",y)
-//console.log("Total Items:",cartArray.map((item) => item.productQuantity).filter( (item) => item + item ))
-
-let cartQuantity = cartArray.map((item) => item.productQuantity).reduce( (item, total = 0) => item + total)
-console.log("all:",cartQuantity)
 function updateCartQuatity(){
+    let v  = cartArray.map((item) => item.productQuantity)
+    console.log("Items:",v)
+    let y = v.reduce((item, total) => item + total)
+    console.log("Total:",y)
+    //console.log("Total Items:",cartArray.map((item) => item.productQuantity).filter( (item) => item + item ))
+    
+    let cartQuantity = cartArray.map((item) => item.productQuantity).reduce( (item, total = 0) => item + total)
+    console.log("all:",cartQuantity)
+    cartIcon.setAttribute("data-count", cartQuantity);
 }
+updateCartQuatity()
 
 function cart() {
 
@@ -134,7 +135,8 @@ function cart() {
             }
         
         sessionStorage.setItem("cart", JSON.stringify(cartArray))
-            cartIcon.setAttribute("data-count", cartArray.length);
+            //cartIcon.setAttribute("data-count", cartArray.length);
+            updateCartQuatity()
         }
     )
     
