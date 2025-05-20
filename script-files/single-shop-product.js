@@ -104,8 +104,9 @@ let y = v.reduce((item, total) => item + total)
 console.log("Total:",y)
 //console.log("Total Items:",cartArray.map((item) => item.productQuantity).filter( (item) => item + item ))
 
+let cartQuantity = cartArray.map((item) => item.productQuantity).reduce( (item, total = 0) => item + total)
+console.log("all:",cartQuantity)
 function updateCartQuatity(){
-    let cartQuantity = cartArray.map((item) => item.productQuantity).filter( (item, total = 0) => item + total)
 }
 
 function cart() {
