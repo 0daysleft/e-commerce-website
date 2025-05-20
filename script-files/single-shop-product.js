@@ -168,8 +168,8 @@ function cart() {
             )
 
             cartTotal.textContent = quantity.reduce((item, total) => item + total);
-            shippingCost.textContent = "$23";
-            grandTotal.textContent = (shippingCost.textContent + cartTotal.textContent)
+            shippingCost.textContent = 23;
+            grandTotal.textContent = "$" + (Number(shippingCost.textContent) + Number(cartTotal.textContent))
 
         }
         else {
