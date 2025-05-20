@@ -5,15 +5,15 @@ export let p = document.querySelector("#product-details");
 //console.log(typeof product.productQuantity)
 const cartIcon = document.getElementById("lg-bag");
 
-export function call(){
+export function call() {
 
-        const displaySingleProduct = () => {
+    const displaySingleProduct = () => {
 
-            let singlePageSection = document.querySelector("#product-details");
-            let singleItemDiv  = document.createElement("div");
-            singleItemDiv.setAttribute("id", "single-product-page")
-            
-            singleItemDiv.innerHTML = `
+        let singlePageSection = document.querySelector("#product-details");
+        let singleItemDiv = document.createElement("div");
+        singleItemDiv.setAttribute("id", "single-product-page")
+
+        singleItemDiv.innerHTML = `
         
             <div class="single-product-image" >
                     
@@ -75,74 +75,74 @@ export function call(){
                     </div>
     
             `
-            singlePageSection.append(singleItemDiv)
-        }
+        singlePageSection.append(singleItemDiv)
+    }
 
-        if(p){
-            if (product && typeof product === "object") {
-                displaySingleProduct();
-           } else {
-                console.error("❌ Product not found. ID:", selectedProductId);
-                p.innerHTML = `
+    if (p) {
+        if (product && typeof product === "object") {
+            displaySingleProduct();
+        } else {
+            console.error("❌ Product not found. ID:", selectedProductId);
+            p.innerHTML = `
                     <div style="padding: 40px;">
                         <h2>⚠️ Product Not Found</h2>
                         <p>This product does not exist or could not be loaded.</p>
                         <a href="../html-files/index.html">Go back to home</a>
                     </div>
                 `;
-                return;
-            }
+            return;
         }
+    }
 
 }
 
-let cartArray =  JSON.parse(sessionStorage.getItem("cart")) || [];
-function updateCartQuatity(){
-    let cartQuantity = cartArray.map((item) => item.productQuantity).reduce( (item, total = 0) => item + total)
+let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
+function updateCartQuatity() {
+    let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total)
     cartIcon.setAttribute("data-count", cartQuantity);
 }
 updateCartQuatity()
 
 function cart() {
 
-   const cartTableBody = document.getElementById("cartDetails")
+    const cartTableBody = document.getElementById("cartDetails")
 
-   if(p){
-    let btn = document.getElementById("single-page-product-button");
+    if (p) {
+        let btn = document.getElementById("single-page-product-button");
 
-    btn.addEventListener('click', (e) => {
+        btn.addEventListener('click', (e) => {
             e.preventDefault()
             let existing = cartArray.find((item) => item.productId === product.productId);
 
-            if(existing){
-                existing.productQuantity +=1;
+            if (existing) {
+                existing.productQuantity += 1;
             }
-            else{
-            
-            cartArray.push(product);
+            else {
+
+                cartArray.push(product);
 
             }
-        
+
             sessionStorage.setItem("cart", JSON.stringify(cartArray))
             updateCartQuatity()
         }
-    )
-    
-}
+        )
+
+    }
 
 
-if(cartTableBody){
-    let cartTotal = document.getElementById("totalGoodsInCart");
-    let grandTotal = document.getElementById("totalCost")
-    let shippingCost = document.getElementById("shippingFee")
-    
-    let item = cartArray;
+    if (cartTableBody) {
+        let cartTotal = document.getElementById("totalGoodsInCart");
+        let grandTotal = document.getElementById("totalCost")
+        let shippingCost = document.getElementById("shippingFee")
 
-    if(item !== null){
+        let item = cartArray;
 
-    item.find(
-        (elem) => {
-            cartTableBody.innerHTML += 
+        if (item !== null) {
+
+            item.find(
+                (elem) => {
+                    cartTableBody.innerHTML +=
                         `
                             <tr style="font-weight: 100" >
                             <td id="removeItemFromCart" onclick="alert('clicked')" ><a href="#"><i class="fa-solid fa-times-circle" ></i></a></td>
@@ -160,18 +160,18 @@ if(cartTableBody){
                             <td id="cartTotalProductPrice" style="font-weight: 700" >$<span id="cartItemsCount">${(elem.productPrice * elem.productQuantity)}</span></td>
                             </tr>
                         `
+                }
+            )
+
+            shippingCost.textContent = "$23";
+            cartTotal.textContent = "CAN'T CALCULATE NOW" + (product.productPrice * product.productPrice);
+            grandTotal.textContent = "UNABLE TO CALCULATE"
+
         }
-    )
+        else {
 
-                                shippingCost.textContent = "$23";
-                                cartTotal.textContent = "CAN'T CALCULATE NOW" + (product.productPrice * product.productPrice);
-                                grandTotal.textContent = "UNABLE TO CALCULATE"
-   
-   }
-   else{
-
-    cartTableBody.innerHTML += 
-    `
+            cartTableBody.innerHTML +=
+                `
              <tr style="font-weight: 100" >
                 <div style=" text-align:center;
                             padding: 100px;
@@ -181,8 +181,8 @@ if(cartTableBody){
                             font-weight: 900" >YOUR CART IS CURRENTLY EMPTY PLEASE SHOP</div>
              </tr>
     `
-   }
-}
+        }
+    }
 }
 
-export default {cart, call}
+export default { cart, call }
