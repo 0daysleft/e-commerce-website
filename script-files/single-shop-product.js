@@ -123,8 +123,7 @@ function cart() {
 
             }
         
-        sessionStorage.setItem("cart", JSON.stringify(cartArray))
-            //cartIcon.setAttribute("data-count", cartArray.length);
+            sessionStorage.setItem("cart", JSON.stringify(cartArray))
             updateCartQuatity()
         }
     )
