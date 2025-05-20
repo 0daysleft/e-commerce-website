@@ -99,13 +99,13 @@ export function call(){
 let cartArray =  JSON.parse(sessionStorage.getItem("cart")) || [];
 function updateCartQuatity(){
     let v  = cartArray.map((item) => item.productQuantity)
-    console.log("Items:",v)
+    //console.log("Items:",v)
     let y = v.reduce((item, total) => item + total)
-    console.log("Total:",y)
+    //console.log("Total:",y)
     //console.log("Total Items:",cartArray.map((item) => item.productQuantity).filter( (item) => item + item ))
     
     let cartQuantity = cartArray.map((item) => item.productQuantity).reduce( (item, total = 0) => item + total)
-    console.log("all:",cartQuantity)
+    //console.log("all:",cartQuantity)
     cartIcon.setAttribute("data-count", cartQuantity);
 }
 updateCartQuatity()
