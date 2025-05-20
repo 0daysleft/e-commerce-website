@@ -113,6 +113,8 @@ function cart() {
 
    const cartTableBody = document.getElementById("cartDetails")
 
+   //document.querySelector('input').addEventListener('input', () => console.log("Item Count:",this.value))
+
    if(p){
     let btn = document.getElementById("single-page-product-button");
 
@@ -120,10 +122,6 @@ function cart() {
             e.preventDefault()
             let existing = cartArray.find((item) => item.productId === product.productId);
 
-
-            console.log("ex:",existing)
-           // console.log("pro:",product)
-    
             if(existing){
                 existing.productQuantity +=1;
             }
@@ -154,9 +152,6 @@ if(cartTableBody){
 
     item.find(
         (elem) => {
-            // let quantity = 1; // default value
-            // let totalPrice = elem.productPrice * quantity;
-            console.log(elem.productQuantity)
             cartTableBody.innerHTML += 
                         `
                             <tr style="font-weight: 100" >
