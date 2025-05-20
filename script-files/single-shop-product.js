@@ -103,7 +103,7 @@ function updateCartQuatity() {
     let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total)
     cartIcon.setAttribute("data-count", cartQuantity);
 }
-updateCartQuatity()
+//updateCartQuatity()
 
 function cart() {
 
@@ -126,7 +126,7 @@ function cart() {
             }
 
             sessionStorage.setItem("cart", JSON.stringify(cartArray))
-            updateCartQuatity()
+            //updateCartQuatity()
         }
         )
 
@@ -139,6 +139,8 @@ function cart() {
         let shippingCost = document.getElementById("shippingFee")
 
         let item = cartArray;
+        //console.log(item)
+        //console.log(cartArray)
 
         if (item != null || item != " " || item != [] || item != "") {
 
