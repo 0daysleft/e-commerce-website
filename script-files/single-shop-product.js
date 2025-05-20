@@ -142,7 +142,7 @@ function cart() {
         //console.log(item)
         //console.log(cartArray)
 
-        if (item != null || item != " " || item != [] || item != "") {
+        if (item.length > 0) {
 
             item.find(
                 (elem) => {
