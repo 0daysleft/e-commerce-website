@@ -100,6 +100,7 @@ export function call() {
 
 let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
 function updateCartQuatity() {
+    if (cartArray.length < 1) return
     let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total)
     cartIcon.setAttribute("data-count", cartQuantity);
 }
