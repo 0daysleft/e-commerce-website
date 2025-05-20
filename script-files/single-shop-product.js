@@ -106,8 +106,6 @@ updateCartQuatity()
 function cart() {
 
    const cartTableBody = document.getElementById("cartDetails")
-    //console.log(document.querySelectorAll("#cartItemsCount"))
-   //document.querySelector('input').addEventListener('input', () => console.log("Item Count:",this.value))
 
    if(p){
     let btn = document.getElementById("single-page-product-button");
@@ -122,9 +120,7 @@ function cart() {
             else{
             
             cartArray.push(product);
-            
-            
-        // alert("The product " + product.productName + " has been added to your cart!!")
+
             }
         
         sessionStorage.setItem("cart", JSON.stringify(cartArray))
