@@ -189,6 +189,4 @@ function cart() {
     }
 }
 
-console.log(quantity)
-
 export default { cart, call }
