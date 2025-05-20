@@ -98,7 +98,16 @@ export function call(){
 
 let cartArray =  JSON.parse(sessionStorage.getItem("cart")) || [];
 cartIcon.setAttribute("data-count", cartArray.length);
-console.log(cartArray.map((item) => item.productQuantity))
+let v  = cartArray.map((item) => item.productQuantity)
+console.log("Items:",v)
+let y = v.reduce((item, total) => item + total)
+console.log("Total:",y)
+//console.log("Total Items:",cartArray.map((item) => item.productQuantity).filter( (item) => item + item ))
+
+function updateCartQuatity(){
+    let cartQuantity = cartArray.map((item) => item.productQuantity).filter( (item, total = 0) => item + total)
+}
+
 function cart() {
 
    const cartTableBody = document.getElementById("cartDetails")
