@@ -171,11 +171,17 @@ function cart() {
 
 
             //console.log(typeof totalSingleItemPrice)
-            cartTotal.textContent = quantity.reduce((item, total) => item + total).toLocaleString();
+            cartTotal.textContent = quantity.reduce((item, total) => item + total).toLocaleString('en-KE', {
+                style: 'currency',
+                currency: "KES"
+            });
             shippingCost.textContent = 23;
 
             //console.log(typeof shippingCost.textContent)
-            grandTotalElement.innerHTML = "$" + s(Number(shippingCost.innerText) + totalSingleItemPrice).toLocaleString()
+            grandTotalElement.innerHTML = "$" + (Number(shippingCost.innerText) + totalSingleItemPrice).toLocaleString('en-KE', {
+                style: 'currency',
+                currency: "KES"
+            });
             //Number(.toLocaleString()
 
         }
