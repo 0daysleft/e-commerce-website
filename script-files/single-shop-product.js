@@ -201,7 +201,7 @@ function cart() {
                             margin: 10px;
                             width: 70vw;
                             font-size: 2rem;
-                            font-weight: 900" >YOUR CART IS CURRENTLY EMPTY PLEASE SHOP</div>
+                            font-weight: 900" >YOUR CART IS CURRENTLY EMPTY <br> <br><br> <hr> <br> <span style="text-align: center" >PLEASE SHOP</span></div>
              </tr>
     `
         }
