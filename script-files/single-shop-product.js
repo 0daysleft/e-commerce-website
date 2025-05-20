@@ -198,6 +198,23 @@ function cart() {
                             font-weight: 900" >YOUR CART IS CURRENTLY EMPTY <br> <br><br> <hr> <br> <span style="text-align: center" > <a href='./shop.html' style='color: green; text-decoration: none'> PLEASE SHOP </a></span></div>
              </tr>
     `
+            cartTotal.textContent = (quantity.length > 0) ? (quantity.reduce((item, total) => item + total).toLocaleString('en-KE', {
+                style: 'currency',
+                currency: "KES"
+            })) : (0).toLocaleString('en-KE', {
+                style: 'currency',
+                currency: "KES"
+            });
+            let shipping = quantity.length > 0 ? (quantity.reduce((item, total) => item + total) * 0.05) : 0
+            shippingCost.textContent = (shipping).toLocaleString('en-KE', {
+                style: 'currency',
+                currency: "KES"
+            });
+
+            grandTotalElement.innerHTML = (Number(shipping) + quantity.length > 0 ? quantity.reduce((item, total) => item + total) : 0).toLocaleString('en-KE', {
+                style: 'currency',
+                currency: "KES"
+            });
         }
     }
 }
