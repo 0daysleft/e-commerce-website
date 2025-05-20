@@ -140,7 +140,7 @@ function cart() {
 
         let item = cartArray;
 
-        if (item !== null) {
+        if (item != null || item != " " || item != [] || item != "") {
 
             item.find(
                 (elem) => {
@@ -160,7 +160,7 @@ function cart() {
                                     text-overflow: ellipsis;
                             "  >${elem.productName}</td>
                             <td id="cartProductPrice" style="font-weight: 700" >${elem.productPrice}</td>
-                            <td id="cartProductQuantity" ><input type="number" name="" id="productQuantity" value="${elem.productQuantity}"></td>
+                            <td id="cartProductQuantity" ><input type="number" name="" id="productQuantity" disabled value="${elem.productQuantity}" style='cursor: not-allowed'></td>
                             <td id="cartTotalProductPrice" style="font-weight: 700" >$<span id="cartItemsCount">${item1}</span></td>
                             </tr>
                         `
