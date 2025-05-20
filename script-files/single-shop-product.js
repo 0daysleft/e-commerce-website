@@ -196,10 +196,10 @@ function cart() {
                             width: 90vw;
                             font-size: 1.2rem;
                             font-weight: 900" >
-                            <br> Oopsi!! 🥲🥲🥲 <br> <hr> <br>
+                            <br> Oopsi!! 🥲🥲🥲 <br> <br><hr> <br><br><br>
                             IT SEEMS THAT YOUR CART🛒 IS CURRENTLY EMPTY <br> <br><br> <hr> <br> 
                             <span style="text-align: center" > <a href='./shop.html' style='color: green; text-decoration: none'>
-                            PLEASE SHOP 🛍️</a></span></div>
+                            PLEASE SHOP 🛍️</a></span><br><br></div>
              </tr>
     `
             cartTotal.textContent = (quantity.length > 0) ? (quantity.reduce((item, total) => item + total).toLocaleString('en-KE', {
