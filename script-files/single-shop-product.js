@@ -175,13 +175,19 @@ function cart() {
                 style: 'currency',
                 currency: "KES"
             });
-            shippingCost.textContent = 23;
+            let shipping = (quantity.reduce((item, total) => item + total) * 0.05)
+            shippingCost.textContent = (shipping).toLocaleString('en-KE', {
+                style: 'currency',
+                currency: "KES"
+            });;
 
             //console.log(typeof shippingCost.textContent)
-            grandTotalElement.innerHTML = "$" + (Number(shippingCost.innerText) + totalSingleItemPrice).toLocaleString('en-KE', {
+            grandTotalElement.innerHTML = (Number(shipping) + quantity.reduce((item, total) => item + total)).toLocaleString('en-KE', {
                 style: 'currency',
                 currency: "KES"
             });
+            console.log(totalSingleItemPrice)
+            console.log(quantity)
             //Number(.toLocaleString()
 
         }
