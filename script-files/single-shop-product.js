@@ -99,7 +99,8 @@ export function call() {
 
 let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
 function updateCartQuatity() {
-    if (cartArray.length < 1) return
+    if (cartArray.length < 1) { cartIcon.style.display = 'none'; return }
+    cartIcon.style.display = 'block'
     let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total)
     cartIcon.setAttribute("data-count", cartQuantity);
 }
