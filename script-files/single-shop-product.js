@@ -195,7 +195,11 @@ function cart() {
                             margin: 0 auto;
                             width: 90vw;
                             font-size: 1.2rem;
-                            font-weight: 900" >YOUR CART IS CURRENTLY EMPTY <br> <br><br> <hr> <br> <span style="text-align: center" > <a href='./shop.html' style='color: green; text-decoration: none'> PLEASE SHOP </a></span></div>
+                            font-weight: 900" >
+                            <br> Oopsi!! 🥲🥲🥲 <br> <hr> <br>
+                            IT SEEMS THAT YOUR CART🛒 IS CURRENTLY EMPTY <br> <br><br> <hr> <br> 
+                            <span style="text-align: center" > <a href='./shop.html' style='color: green; text-decoration: none'>
+                            PLEASE SHOP 🛍️</a></span></div>
              </tr>
     `
             cartTotal.textContent = (quantity.length > 0) ? (quantity.reduce((item, total) => item + total).toLocaleString('en-KE', {
