@@ -179,7 +179,7 @@ function cart() {
             shippingCost.textContent = (shipping).toLocaleString('en-KE', {
                 style: 'currency',
                 currency: "KES"
-            });;
+            });
 
             //console.log(typeof shippingCost.textContent)
             grandTotalElement.innerHTML = (Number(shipping) + quantity.reduce((item, total) => item + total)).toLocaleString('en-KE', {
