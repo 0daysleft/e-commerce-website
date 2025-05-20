@@ -175,7 +175,7 @@ function cart() {
             shippingCost.textContent = 23;
 
             //console.log(typeof shippingCost.textContent)
-            grandTotalElement.innerHTML = (Number(shippingCost.textContent) + totalSingleItemPrice)
+            grandTotalElement.innerHTML = "$" + s(Number(shippingCost.innerText) + totalSingleItemPrice).toLocaleString()
             //Number(.toLocaleString()
 
         }
