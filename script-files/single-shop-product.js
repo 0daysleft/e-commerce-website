@@ -98,7 +98,7 @@ export function call(){
 
 let cartArray =  JSON.parse(sessionStorage.getItem("cart")) || [];
 cartIcon.setAttribute("data-count", cartArray.length);
-
+console.log(cartArray.map((item) => item.productQuantity))
 function cart() {
 
    const cartTableBody = document.getElementById("cartDetails")
@@ -129,8 +129,9 @@ function cart() {
             cartIcon.setAttribute("data-count", cartArray.length);
         }
     )
-        
-    }
+    
+}
+
 
 if(cartTableBody){
     let cartTotal = document.getElementById("totalGoodsInCart");
