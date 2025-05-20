@@ -135,8 +135,9 @@ function cart() {
 
 
     if (cartTableBody) {
+        let totalSingleItemPrice;
         let cartTotal = document.getElementById("totalGoodsInCart");
-        let grandTotal = document.getElementById("totalCost")
+        let grandTotalElement = document.getElementById("totalCost")
         let shippingCost = document.getElementById("shippingFee")
 
         let item = cartArray;
@@ -145,8 +146,8 @@ function cart() {
 
             item.find(
                 (elem) => {
-                    let item1 = (elem.productPrice * elem.productQuantity)
-                    quantity.push(item1)
+                    totalSingleItemPrice = (elem.productPrice * elem.productQuantity)
+                    quantity.push(totalSingleItemPrice)
                     cartTableBody.innerHTML +=
                         `
                             <tr style="font-weight: 100" >
@@ -162,15 +163,20 @@ function cart() {
                             "  >${elem.productName}</td>
                             <td id="cartProductPrice" style="font-weight: 700" >${elem.productPrice}</td>
                             <td id="cartProductQuantity" ><input type="number" name="" id="productQuantity" disabled value="${elem.productQuantity}" style='cursor: not-allowed'></td>
-                            <td id="cartTotalProductPrice" style="font-weight: 700" >$<span id="cartItemsCount">${item1}</span></td>
+                            <td id="cartTotalProductPrice" style="font-weight: 700" >$<span id="cartItemsCount">${totalSingleItemPrice.toLocaleString()}</span></td>
                             </tr>
                         `
                 }
             )
 
-            cartTotal.textContent = quantity.reduce((item, total) => item + total);
+
+            //console.log(typeof totalSingleItemPrice)
+            cartTotal.textContent = quantity.reduce((item, total) => item + total).toLocaleString();
             shippingCost.textContent = 23;
-            grandTotal.textContent = "$" + (Number(shippingCost.textContent) + Number(cartTotal.textContent))
+            let grandTotal = Number(shippingCost.textContent) //+ totalSingleItemPrice
+            //console.log(typeof shippingCost.textContent)
+            grandTotalElement.innerHTML = grandTotal
+            //Number(.toLocaleString()
 
         }
         else {
