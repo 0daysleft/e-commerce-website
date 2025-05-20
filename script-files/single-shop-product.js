@@ -4,6 +4,7 @@ export const product = products.find((prod) => prod.productId === selectedProduc
 export let p = document.querySelector("#product-details");
 //console.log(typeof product.productQuantity)
 const cartIcon = document.getElementById("lg-bag");
+let quantity = [];
 
 export function call() {
 
@@ -12,6 +13,7 @@ export function call() {
         let singlePageSection = document.querySelector("#product-details");
         let singleItemDiv = document.createElement("div");
         singleItemDiv.setAttribute("id", "single-product-page")
+
 
         singleItemDiv.innerHTML = `
         
@@ -142,6 +144,8 @@ function cart() {
 
             item.find(
                 (elem) => {
+                    let item1 = (elem.productPrice * elem.productQuantity)
+                    quantity.push(item1)
                     cartTableBody.innerHTML +=
                         `
                             <tr style="font-weight: 100" >
@@ -157,15 +161,15 @@ function cart() {
                             "  >${elem.productName}</td>
                             <td id="cartProductPrice" style="font-weight: 700" >${elem.productPrice}</td>
                             <td id="cartProductQuantity" ><input type="number" name="" id="productQuantity" value="${elem.productQuantity}"></td>
-                            <td id="cartTotalProductPrice" style="font-weight: 700" >$<span id="cartItemsCount">${(elem.productPrice * elem.productQuantity)}</span></td>
+                            <td id="cartTotalProductPrice" style="font-weight: 700" >$<span id="cartItemsCount">${item1}</span></td>
                             </tr>
                         `
                 }
             )
 
+            cartTotal.textContent = quantity.reduce((item, total) => item + total);
             shippingCost.textContent = "$23";
-            cartTotal.textContent = "CAN'T CALCULATE NOW" + (product.productPrice * product.productPrice);
-            grandTotal.textContent = "UNABLE TO CALCULATE"
+            grandTotal.textContent = (shippingCost.textContent + cartTotal.textContent)
 
         }
         else {
@@ -184,5 +188,7 @@ function cart() {
         }
     }
 }
+
+console.log(quantity)
 
 export default { cart, call }
