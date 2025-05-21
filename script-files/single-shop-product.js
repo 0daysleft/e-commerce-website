@@ -155,7 +155,7 @@ function cart() {
 
         if (cartArray.length > 0) {
 
-            cartArray.find(
+            cartArray.forEach(
                 (elem) => {
                     totalSingleItemPrice = (elem.productPrice * elem.productQuantity)
                     quantity.push(totalSingleItemPrice)
