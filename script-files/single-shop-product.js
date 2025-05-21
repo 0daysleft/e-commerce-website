@@ -234,14 +234,11 @@ function cart() {
                 const removeCell = document.createElement("td");
                 removeCell.innerHTML = `<a href="#"><i class="fa-solid fa-times-circle"></i></a>`;
                 row.appendChild(removeCell);
-                removeCell.addEventListener('click',
-                    () => {
-                        console.log(cartArray.pop())
-                        updateCartQuatity()
-                        updatePrices()
-                        addProductToCart(e)
-                    }
-                )
+                // removeCell.addEventListener('click',
+                //     () => {
+                //         console.log(cartArray.pop())
+                //     }
+                // )
 
                 const imgCell = document.createElement("td");
                 const img = document.createElement("img");
