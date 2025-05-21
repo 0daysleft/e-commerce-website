@@ -113,14 +113,7 @@ function addProductToCart(e) {
     e.preventDefault()
     let existing = cartArray.find((item) => item.productId === product.productId);
 
-    if (existing) {
-        existing.productQuantity += 1;
-    }
-    else {
-
-        cartArray.push(product);
-
-    }
+    (existing) ? existing.productQuantity += 1 : cartArray.push(product)
     sessionStorage.setItem("cart", JSON.stringify(cartArray))
     updateCartQuatity()
 
