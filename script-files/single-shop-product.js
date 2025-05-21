@@ -153,11 +153,9 @@ function cart() {
     if (cartTableBody) {
         let totalSingleItemPrice;
 
-        let item = cartArray;
+        if (cartArray.length > 0) {
 
-        if (item.length > 0) {
-
-            item.find(
+            cartArray.find(
                 (elem) => {
                     totalSingleItemPrice = (elem.productPrice * elem.productQuantity)
                     quantity.push(totalSingleItemPrice)
