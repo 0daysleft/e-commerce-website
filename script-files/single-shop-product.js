@@ -100,14 +100,14 @@ export function call() {
 }
 
 let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
-function updateCartQuatity() {
+function updateCartQuantity() {
     if (cartArray.length < 1) { cartIcon.style.display = 'none'; return }
     cartIcon.style.display = 'block'
     let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total)
     cartIcon.setAttribute("data-count", cartQuantity);
 }
 
-updateCartQuatity()
+updateCartQuantity()
 
 function convertToLocaleCurrencyString(price) {
     return price.toLocaleString('en-KE', { style: 'currency', currency: "KES" })
@@ -120,7 +120,7 @@ function addProductToCart(e) {
 
     (existing) ? existing.productQuantity += 1 : cartArray.push(product)
     sessionStorage.setItem("cart", JSON.stringify(cartArray))
-    updateCartQuatity()
+    updateCartQuantity()
 
 }
 
@@ -287,7 +287,7 @@ function cart() {
                     elem.productQuantity = newQuantity;
                     sessionStorage.setItem("cart", JSON.stringify(cartArray))
                     // Recalculate totals and update UI
-                    updateCartQuatity()
+                    updateCartQuantity()
                     //addProductToCart()
                     updatePrices(newQuantity);
                     updatePricesInLocaleString(); // Your function to recalculate totals
