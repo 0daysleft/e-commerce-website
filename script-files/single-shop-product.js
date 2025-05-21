@@ -13,9 +13,8 @@ export function call() {
         let singleItemDiv = document.createElement("div");
         singleItemDiv.setAttribute("id", "single-product-page")
 
-
         singleItemDiv.innerHTML = `
-        
+
             <div class="single-product-image" >
                     
             <h6> <span style=" text-decoration: 'none'; " > <a href="../html-files/index.html"  " > Home </a> </span> / T-Shirt</h6>
