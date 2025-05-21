@@ -150,7 +150,6 @@ function updatePricesInLocaleString() {
 
 function cart() {
 
-
     const cartTableBody = document.getElementById("cartDetails")
 
     if (productDetailsDivElement) {
@@ -281,15 +280,23 @@ function cart() {
                 quantityInput.value = Number(elem.productQuantity);
 
                 quantityInput.addEventListener('input', (e) => {
+                    quantity = [];
                     let newQuantity = Number(e.target.value);
-                    if (newQuantity > 99) { newQuantity = 99; alert('max value is 99'); return }
-                    // Update the cart array
                     elem.productQuantity = newQuantity;
+                    if (newQuantity > 99) {
+                        newQuantity = 99
+                        elem.productQuantity = 99
+                        alert('max value is 99')
+                        return
+                    }
+                    // Update the cart array
                     sessionStorage.setItem("cart", JSON.stringify(cartArray))
                     // Recalculate totals and update UI
                     updateCartQuantity()
                     //addProductToCart()
                     updatePrices(newQuantity);
+                    //addProductToCart()
+                    cart()
                     updatePricesInLocaleString(); // Your function to recalculate totals
                     //updateCartRowPrice(elem, row); // Optional: update just this row’s total
                 });
