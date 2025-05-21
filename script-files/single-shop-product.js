@@ -152,65 +152,108 @@ function cart() {
 
     if (cartTableBody) {
         let totalSingleItemPrice;
-
-        if (cartArray.length > 0) {
-
-            cartArray.forEach(
-                (elem) => {
-                    totalSingleItemPrice = (elem.productPrice * elem.productQuantity)
-                    quantity.push(totalSingleItemPrice)
+        /*
+                if (cartArray.length > 0) {
+        
+                    cartArray.forEach(
+                        (elem) => {
+                            totalSingleItemPrice = (elem.productPrice * elem.productQuantity)
+                            quantity.push(totalSingleItemPrice)
+                            cartTableBody.innerHTML +=
+                                `
+                                    <tr style="font-weight: 100" >
+                                    <td id="removeItemFromCart" ><a href="#"><i class="fa-solid fa-times-circle" ></i></a></td>
+                                    <td id="cartImageProduct"><img src="${elem.productImage}" alt=""></td>
+                                    <td id="cartProductName"
+                                    style="
+                                            font-weight: 600;
+                                            max-width: max-content;
+                                            white-space: nowrap;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                    "  >${elem.productName}</td>
+                                    <td id="cartProductPrice" style="font-weight: 700" >${(elem.productPrice).toLocaleString('en-KE', {
+                                    style: 'currency',
+                                    currency: "KES"
+                                })
+                                }</td>
+                                    <td id="cartProductQuantity" ><input type="number" name="" id="productQuantity" disabled value="${elem.productQuantity}" style='cursor: not-allowed'></td>
+                                    <td id="cartTotalProductPrice" style="font-weight: 700" ><span id="cartItemsCount">${(totalSingleItemPrice).toLocaleString('en-KE', {
+                                    style: 'currency',
+                                    currency: "KES"
+                                })
+                                }</span></td>
+                                    </tr>
+                                `
+                        }
+                    )
+        
+                    updatePrices()
+        
+                }
+                else {
+        
                     cartTableBody.innerHTML +=
                         `
-                            <tr style="font-weight: 100" >
-                            <td id="removeItemFromCart" ><a href="#"><i class="fa-solid fa-times-circle" ></i></a></td>
-                            <td id="cartImageProduct"><img src="${elem.productImage}" alt=""></td>
-                            <td id="cartProductName"
-                            style="
-                                    font-weight: 600;
-                                    max-width: max-content;
-                                    white-space: nowrap;
-                                    overflow: hidden;
-                                    text-overflow: ellipsis;
-                            "  >${elem.productName}</td>
-                            <td id="cartProductPrice" style="font-weight: 700" >${(elem.productPrice).toLocaleString('en-KE', {
-                            style: 'currency',
-                            currency: "KES"
-                        })
-                        }</td>
-                            <td id="cartProductQuantity" ><input type="number" name="" id="productQuantity" disabled value="${elem.productQuantity}" style='cursor: not-allowed'></td>
-                            <td id="cartTotalProductPrice" style="font-weight: 700" ><span id="cartItemsCount">${(totalSingleItemPrice).toLocaleString('en-KE', {
-                            style: 'currency',
-                            currency: "KES"
-                        })
-                        }</span></td>
-                            </tr>
-                        `
+                     <tr style="text-align: center; font-weight: 100" >
+                        <div style=" text-align:center;
+                                    padding: 10px;
+                                    color: red;
+                                    margin: 0 auto;
+                                    width: 90vw;
+                                    font-size: 1.2rem;
+                                    font-weight: 900" >
+                                    <br> Oopsi!! 🥲🥲🥲 <br> <br><hr> <br><br><br>
+                                    IT SEEMS THAT YOUR CART🛒 IS CURRENTLY EMPTY <br> <br><br> <hr> <br> 
+                                    <span style="text-align: center" > <a href='./shop.html' style='color: green; text-decoration: none'>
+                                    PLEASE SHOP 🛍️</a></span><br><br></div>
+                     </tr>
+            `
+                    updatePrices()
                 }
-            )
+                    */
+        if (cartArray.length > 0) {
+            cartTableBody.innerHTML = ""; // Reset the table body
+            const fragment = document.createDocumentFragment();
 
-            updatePrices()
+            cartArray.forEach(elem => {
+                const row = document.createElement("tr");
 
+                const removeCell = document.createElement("td");
+                removeCell.innerHTML = `<a href="#"><i class="fa-solid fa-times-circle"></i></a>`;
+                row.appendChild(removeCell);
+
+                const imgCell = document.createElement("td");
+                const img = document.createElement("img");
+                img.src = elem.productImage;
+                img.alt = elem.productName;
+                imgCell.appendChild(img);
+                row.appendChild(imgCell);
+
+                // Repeat for product name, price, quantity, total, using createElement/textContent
+
+                fragment.appendChild(row);
+            });
+
+            cartTableBody.appendChild(fragment);
+            updatePrices();
+        } else {
+            cartTableBody.innerHTML = ""; // Clear old rows
+
+            const emptyRow = document.createElement("tr");
+            const emptyCell = document.createElement("td");
+            emptyCell.colSpan = 6;
+            emptyCell.innerHTML = `
+                <div style="padding: 20px; text-align: center; color: red;">
+                    🥲 Your cart is empty! <br><br>
+                    <a href="./shop.html" style="color: green;">Please Shop 🛍️</a>
+                </div>
+            `;
+            emptyRow.appendChild(emptyCell);
+            cartTableBody.appendChild(emptyRow);
+            updatePrices();
         }
-        else {
 
-            cartTableBody.innerHTML +=
-                `
-             <tr style="text-align: center; font-weight: 100" >
-                <div style=" text-align:center;
-                            padding: 10px;
-                            color: red;
-                            margin: 0 auto;
-                            width: 90vw;
-                            font-size: 1.2rem;
-                            font-weight: 900" >
-                            <br> Oopsi!! 🥲🥲🥲 <br> <br><hr> <br><br><br>
-                            IT SEEMS THAT YOUR CART🛒 IS CURRENTLY EMPTY <br> <br><br> <hr> <br> 
-                            <span style="text-align: center" > <a href='./shop.html' style='color: green; text-decoration: none'>
-                            PLEASE SHOP 🛍️</a></span><br><br></div>
-             </tr>
-    `
-            updatePrices()
-        }
     }
 }
 
