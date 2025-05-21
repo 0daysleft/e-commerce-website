@@ -1301,15 +1301,25 @@ Contact Page
 #cart table tbody td{
     font-size: 13px;
 }
-/* 
-#cart .cart-product-name {
+
+#cartDetails tr td{
+    font-weight: 600 !important;
+}
+
+#cart td.product-name-cell {
     font-weight: 600;
     max-width: max-content;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-   */
+}
+
+#cart td.product-name-cell:hover{
+    text-overflow: clip;
+    color: green;
+    z-index: 999;
+    min-width: max-content;
+}
 
 #cart-add{
     display: flex;
