@@ -109,6 +109,11 @@ function updateCartQuatity() {
 
 updateCartQuatity()
 
+function convertToLocaleCurrencyString(price) {
+    return price.toLocaleString('en-KE', { style: 'currency', currency: "KES" })
+}
+
+
 function addProductToCart(e) {
     e.preventDefault()
     let existing = cartArray.find((item) => item.productId === product.productId);
@@ -238,7 +243,9 @@ function cart() {
                 row.appendChild(productNameCell);
 
                 const productPriceCell = document.createElement("td");
-                const productPrice = document.createTextNode(elem.productPrice)
+                const productPrice = document.createTextNode(convertToLocaleCurrencyString(elem.productPrice))
+                console.log("We", typeof elem.productPrice)
+                console.log(convertToLocaleCurrencyString(elem.productPrice))
                 productPriceCell.appendChild(productPrice);
                 row.appendChild(productPriceCell);
 
