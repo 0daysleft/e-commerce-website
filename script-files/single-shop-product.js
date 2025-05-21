@@ -254,7 +254,7 @@ function cart() {
                 row.appendChild(productQuantityCell);
 
                 const productSubtotalCell = document.createElement("td");
-                const productSubtotal = document.createTextNode(totalSingleItemPrice)
+                const productSubtotal = document.createTextNode(convertToLocaleCurrencyString(totalSingleItemPrice))
                 productSubtotalCell.appendChild(productSubtotal);
                 row.appendChild(productSubtotalCell);
 
