@@ -225,7 +225,7 @@ function cart() {
         if (cartArray.length > 0) {
             cartTableBody.innerHTML = ""; // Reset the table body
             const fragment = document.createDocumentFragment();
-            console.log(document.querySelectorAll('td input.updated-item-quantity'))
+            //console.log(document.querySelectorAll('td input.updated-item-quantity'))
             cartArray.forEach(elem => {
                 const row = document.createElement("tr");
                 totalSingleItemPrice = (elem.productPrice * elem.productQuantity)
@@ -253,13 +253,37 @@ function cart() {
                 productPriceCell.appendChild(productPrice);
                 row.appendChild(productPriceCell);
 
+                // const productQuantityCell = document.createElement("td");
+                // let v = document.createElement("input")
+                // v.setAttribute('type', 'number')
+                // v.setAttribute('class', 'updated-item-quantity')
+                // productQuantityCell.appendChild(v)
+                // v.value = Number(elem.productQuantity)
+                //row.appendChild(productQuantityCell);
                 const productQuantityCell = document.createElement("td");
-                let v = document.createElement("input")
-                v.setAttribute('type', 'number')
-                v.setAttribute('class', 'updated-item-quantity')
-                productQuantityCell.appendChild(v)
-                v.value = Number(elem.productQuantity)
+
+                const quantityInput = document.createElement("input");
+                quantityInput.setAttribute('type', 'number');
+                quantityInput.setAttribute('class', 'updated-item-quantity');
+                quantityInput.setAttribute('min', '1'); // Optional: prevent invalid quantities
+                quantityInput.value = Number(elem.productQuantity);
+
+                quantityInput.addEventListener('input', (e) => {
+                    const newQuantity = Number(e.target.value);
+
+                    // Update the cart array
+                    elem.productQuantity = newQuantity;
+
+                    // Recalculate totals and update UI
+                    updateCartQuatity()
+                    //addProductToCart()
+                    updatePrices(); // Your function to recalculate totals
+                    //updateCartRowPrice(elem, row); // Optional: update just this row’s total
+                });
+
+                productQuantityCell.appendChild(quantityInput);
                 row.appendChild(productQuantityCell);
+
 
                 const productSubtotalCell = document.createElement("td");
                 const productSubtotal = document.createTextNode(convertToLocaleCurrencyString(totalSingleItemPrice))
