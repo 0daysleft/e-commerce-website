@@ -109,8 +109,8 @@ function updateCartQuatity() {
 
 updateCartQuatity()
 
-function addProductToCart() {
-    //e.preventDefault()
+function addProductToCart(e) {
+    e.preventDefault()
     let existing = cartArray.find((item) => item.productId === product.productId);
 
     if (existing) {
