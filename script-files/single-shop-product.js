@@ -218,6 +218,8 @@ function cart() {
 
             cartArray.forEach(elem => {
                 const row = document.createElement("tr");
+                totalSingleItemPrice = (elem.productPrice * elem.productQuantity)
+                quantity.push(totalSingleItemPrice)
 
                 const removeCell = document.createElement("td");
                 removeCell.innerHTML = `<a href="#"><i class="fa-solid fa-times-circle"></i></a>`;
@@ -243,9 +245,13 @@ function cart() {
                 const productQuantityCell = document.createElement("td");
                 const productQuantity = document.createTextNode(elem.productQuantity)
                 productQuantityCell.appendChild(productQuantity);
+                //productQuantityCell.set
                 row.appendChild(productQuantityCell);
 
-
+                const productSubtotalCell = document.createElement("td");
+                const productSubtotal = document.createTextNode(totalSingleItemPrice)
+                productSubtotalCell.appendChild(productSubtotal);
+                row.appendChild(productSubtotalCell);
 
 
                 //  price, quantity, total, using createElement/textContent
