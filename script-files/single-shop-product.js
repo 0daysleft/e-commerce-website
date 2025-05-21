@@ -243,7 +243,7 @@ function cart() {
                 row.appendChild(productNameCell);
 
                 const productPriceCell = document.createElement("td");
-                const productPrice = document.createTextNode(convertToLocaleCurrencyString(elem.productPrice))
+                const productPrice = document.createTextNode(convertToLocaleCurrencyString(Number(elem.productPrice)))
                 productPriceCell.appendChild(productPrice);
                 row.appendChild(productPriceCell);
 
