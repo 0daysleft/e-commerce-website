@@ -234,6 +234,14 @@ function cart() {
                 const removeCell = document.createElement("td");
                 removeCell.innerHTML = `<a href="#"><i class="fa-solid fa-times-circle"></i></a>`;
                 row.appendChild(removeCell);
+                removeCell.addEventListener('click',
+                    () => {
+                        console.log(cartArray.pop())
+                        updateCartQuatity()
+                        updatePrices()
+                        addProductToCart(e)
+                    }
+                )
 
                 const imgCell = document.createElement("td");
                 const img = document.createElement("img");
@@ -266,6 +274,7 @@ function cart() {
                 quantityInput.setAttribute('type', 'number');
                 quantityInput.setAttribute('class', 'updated-item-quantity');
                 quantityInput.setAttribute('min', '1'); // Optional: prevent invalid quantities
+                quantityInput.setAttribute('max', '99'); // Optional: prevent invalid quantities
                 quantityInput.value = Number(elem.productQuantity);
 
                 quantityInput.addEventListener('input', (e) => {
