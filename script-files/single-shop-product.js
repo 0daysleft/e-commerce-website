@@ -144,7 +144,12 @@ function updatePrices() {
     });
 }
 
+
+//document.querySelector('input.updated-item-quantity').addEventListener('change', console.log(document.querySelector('.updated-item-quantity').value))
+
+
 function cart() {
+
 
     const cartTableBody = document.getElementById("cartDetails")
 
@@ -220,7 +225,7 @@ function cart() {
         if (cartArray.length > 0) {
             cartTableBody.innerHTML = ""; // Reset the table body
             const fragment = document.createDocumentFragment();
-
+            console.log(document.querySelectorAll('td input.updated-item-quantity'))
             cartArray.forEach(elem => {
                 const row = document.createElement("tr");
                 totalSingleItemPrice = (elem.productPrice * elem.productQuantity)
@@ -251,12 +256,10 @@ function cart() {
                 const productQuantityCell = document.createElement("td");
                 let v = document.createElement("input")
                 v.setAttribute('type', 'number')
+                v.setAttribute('class', 'updated-item-quantity')
                 productQuantityCell.appendChild(v)
-                const productQuantity = document.createTextNode(elem.productQuantity)
-                productQuantityCell.appendChild(productQuantity);
-                //productQuantityCell.set
-                row.appendChild(productQuantityCell);
                 v.value = Number(elem.productQuantity)
+                row.appendChild(productQuantityCell);
 
                 const productSubtotalCell = document.createElement("td");
                 const productSubtotal = document.createTextNode(convertToLocaleCurrencyString(totalSingleItemPrice))
@@ -271,6 +274,7 @@ function cart() {
 
             cartTableBody.appendChild(fragment);
             updatePrices();
+
         } else {
             cartTableBody.innerHTML = ""; // Clear old rows
 
@@ -287,6 +291,7 @@ function cart() {
             cartTableBody.appendChild(emptyRow);
             updatePrices();
         }
+
 
     }
 }
