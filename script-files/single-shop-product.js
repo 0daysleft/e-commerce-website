@@ -124,7 +124,7 @@ function addProductToCart(e) {
 
 }
 
-function updatePrices() {
+function updatePricesInLocaleString() {
     cartTotal.textContent = (quantity.length > 0) ? (quantity.reduce((item, total) => item + total).toLocaleString('en-KE', {
         style: 'currency',
         currency: "KES"
@@ -138,7 +138,7 @@ function updatePrices() {
         currency: "KES"
     });
 
-    grandTotalElement.innerHTML = (Number(shipping) + quantity.length > 0 ? quantity.reduce((item, total) => item + total) : 0).toLocaleString('en-KE', {
+    grandTotalElement.innerHTML = (Number(shipping) + (quantity.length > 0 ? quantity.reduce((item, total) => item + total) : 0)).toLocaleString('en-KE', {
         style: 'currency',
         currency: "KES"
     });
@@ -228,9 +228,13 @@ function cart() {
             //console.log(document.querySelectorAll('td input.updated-item-quantity'))
             cartArray.forEach(elem => {
                 const row = document.createElement("tr");
-                totalSingleItemPrice = (elem.productPrice * elem.productQuantity)
-                quantity.push(totalSingleItemPrice)
 
+                function updatePrices(totalQuantity) {
+                    totalSingleItemPrice = (elem.productPrice * totalQuantity)
+                    quantity.push(totalSingleItemPrice)
+                }
+
+                updatePrices(elem.productQuantity);
                 const removeCell = document.createElement("td");
                 removeCell.innerHTML = `<a href="#"><i class="fa-solid fa-times-circle"></i></a>`;
                 row.appendChild(removeCell);
@@ -272,6 +276,8 @@ function cart() {
                 quantityInput.setAttribute('class', 'updated-item-quantity');
                 quantityInput.setAttribute('min', '1'); // Optional: prevent invalid quantities
                 quantityInput.setAttribute('max', '99'); // Optional: prevent invalid quantities
+                quantityInput.setAttribute('disabled', "true")
+                quantityInput.style.cursor = 'not-allowed'
                 quantityInput.value = Number(elem.productQuantity);
 
                 quantityInput.addEventListener('input', (e) => {
@@ -279,11 +285,12 @@ function cart() {
 
                     // Update the cart array
                     elem.productQuantity = newQuantity;
-
+                    sessionStorage.setItem("cart", JSON.stringify(cartArray))
                     // Recalculate totals and update UI
                     updateCartQuatity()
                     //addProductToCart()
-                    updatePrices(); // Your function to recalculate totals
+                    updatePrices(newQuantity);
+                    updatePricesInLocaleString(); // Your function to recalculate totals
                     //updateCartRowPrice(elem, row); // Optional: update just this row’s total
                 });
 
@@ -303,7 +310,7 @@ function cart() {
             });
 
             cartTableBody.appendChild(fragment);
-            updatePrices();
+            updatePricesInLocaleString();
 
         } else {
             cartTableBody.innerHTML = ""; // Clear old rows
@@ -319,7 +326,7 @@ function cart() {
             `;
             emptyRow.appendChild(emptyCell);
             cartTableBody.appendChild(emptyRow);
-            updatePrices();
+            updatePricesInLocaleString();
         }
 
 
