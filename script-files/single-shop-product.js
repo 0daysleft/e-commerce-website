@@ -103,7 +103,25 @@ function updateCartQuatity() {
     let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total)
     cartIcon.setAttribute("data-count", cartQuantity);
 }
+
 updateCartQuatity()
+
+function addProductToCart(e) {
+    e.preventDefault()
+    let existing = cartArray.find((item) => item.productId === product.productId);
+
+    if (existing) {
+        existing.productQuantity += 1;
+    }
+    else {
+
+        cartArray.push(product);
+
+    }
+    sessionStorage.setItem("cart", JSON.stringify(cartArray))
+    updateCartQuatity()
+
+}
 
 function cart() {
 
@@ -111,24 +129,7 @@ function cart() {
 
     if (p) {
         let btn = document.getElementById("single-page-product-button");
-
-        btn.addEventListener('click', (e) => {
-            e.preventDefault()
-            let existing = cartArray.find((item) => item.productId === product.productId);
-
-            if (existing) {
-                existing.productQuantity += 1;
-            }
-            else {
-
-                cartArray.push(product);
-
-            }
-
-            sessionStorage.setItem("cart", JSON.stringify(cartArray))
-            updateCartQuatity()
-        }
-        )
+        btn.addEventListener('click', () => addProductToCart)
 
     }
 
