@@ -1,8 +1,11 @@
 import products from "./products.js";
 let selectedProductId = sessionStorage.getItem("elementId");
 export const product = products.find((prod) => prod.productId === selectedProductId);
-export let p = document.querySelector("#product-details");
+export let productDetailsEl = document.querySelector("#product-details");
 const cartIcon = document.getElementById("lg-bag");
+let cartTotal = document.getElementById("totalGoodsInCart");
+let grandTotalElement = document.getElementById("totalCost")
+let shippingCost = document.getElementById("shippingFee")
 let quantity = [];
 
 export function call() {
@@ -78,15 +81,15 @@ export function call() {
         singlePageSection.append(singleItemDiv)
     }
 
-    if (p) {
+    if (productDetailsEl) {
         if (product && typeof product === "object") {
             displaySingleProduct();
         } else {
             console.error("❌ Product not found. ID:", selectedProductId);
-            p.innerHTML = `
+            productDetailsEl.innerHTML = `
                     <div style="padding: 40px;">
                         <h2>⚠️ Product Not Found</h2>
-                        <p>This product does not exist or could not be loaded.</p>
+                        <productDetailsEl>This product does not exist or could not be loaded.</productDetailsEl>
                         <a href="../html-files/index.html">Go back to home</a>
                     </div>
                 `;
@@ -106,8 +109,8 @@ function updateCartQuatity() {
 
 updateCartQuatity()
 
-function addProductToCart(e) {
-    e.preventDefault()
+function addProductToCart() {
+    //e.preventDefault()
     let existing = cartArray.find((item) => item.productId === product.productId);
 
     if (existing) {
@@ -123,22 +126,39 @@ function addProductToCart(e) {
 
 }
 
+function updatePrices() {
+    cartTotal.textContent = (quantity.length > 0) ? (quantity.reduce((item, total) => item + total).toLocaleString('en-KE', {
+        style: 'currency',
+        currency: "KES"
+    })) : (0).toLocaleString('en-KE', {
+        style: 'currency',
+        currency: "KES"
+    });
+    let shipping = quantity.length > 0 ? (quantity.reduce((item, total) => item + total) * 0.05) : 0
+    shippingCost.textContent = (shipping).toLocaleString('en-KE', {
+        style: 'currency',
+        currency: "KES"
+    });
+
+    grandTotalElement.innerHTML = (Number(shipping) + quantity.length > 0 ? quantity.reduce((item, total) => item + total) : 0).toLocaleString('en-KE', {
+        style: 'currency',
+        currency: "KES"
+    });
+}
+
 function cart() {
 
     const cartTableBody = document.getElementById("cartDetails")
 
-    if (p) {
+    if (productDetailsEl) {
         let btn = document.getElementById("single-page-product-button");
-        btn.addEventListener('click', () => addProductToCart)
+        btn.addEventListener('click', addProductToCart)
 
     }
 
 
     if (cartTableBody) {
         let totalSingleItemPrice;
-        let cartTotal = document.getElementById("totalGoodsInCart");
-        let grandTotalElement = document.getElementById("totalCost")
-        let shippingCost = document.getElementById("shippingFee")
 
         let item = cartArray;
 
@@ -177,20 +197,7 @@ function cart() {
                 }
             )
 
-            cartTotal.textContent = quantity.reduce((item, total) => item + total).toLocaleString('en-KE', {
-                style: 'currency',
-                currency: "KES"
-            });
-            let shipping = (quantity.reduce((item, total) => item + total) * 0.05)
-            shippingCost.textContent = (shipping).toLocaleString('en-KE', {
-                style: 'currency',
-                currency: "KES"
-            });
-
-            grandTotalElement.innerHTML = (Number(shipping) + quantity.reduce((item, total) => item + total)).toLocaleString('en-KE', {
-                style: 'currency',
-                currency: "KES"
-            });
+            updatePrices()
 
         }
         else {
@@ -211,23 +218,7 @@ function cart() {
                             PLEASE SHOP 🛍️</a></span><br><br></div>
              </tr>
     `
-            cartTotal.textContent = (quantity.length > 0) ? (quantity.reduce((item, total) => item + total).toLocaleString('en-KE', {
-                style: 'currency',
-                currency: "KES"
-            })) : (0).toLocaleString('en-KE', {
-                style: 'currency',
-                currency: "KES"
-            });
-            let shipping = quantity.length > 0 ? (quantity.reduce((item, total) => item + total) * 0.05) : 0
-            shippingCost.textContent = (shipping).toLocaleString('en-KE', {
-                style: 'currency',
-                currency: "KES"
-            });
-
-            grandTotalElement.innerHTML = (Number(shipping) + quantity.length > 0 ? quantity.reduce((item, total) => item + total) : 0).toLocaleString('en-KE', {
-                style: 'currency',
-                currency: "KES"
-            });
+            updatePrices()
         }
     }
 }
