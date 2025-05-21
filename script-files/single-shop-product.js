@@ -232,14 +232,23 @@ function cart() {
 
                 const productNameCell = document.createElement("td");
                 const productName = document.createTextNode(elem.productName)
-                //img.src = elem.productImage;
                 productNameCell.appendChild(productName);
                 row.appendChild(productNameCell);
 
+                const productPriceCell = document.createElement("td");
+                const productPrice = document.createTextNode(elem.productPrice)
+                productPriceCell.appendChild(productPrice);
+                row.appendChild(productPriceCell);
+
+                const productQuantityCell = document.createElement("td");
+                const productQuantity = document.createTextNode(elem.productQuantity)
+                productQuantityCell.appendChild(productQuantity);
+                row.appendChild(productQuantityCell);
 
 
 
-                // Repeat for product name, price, quantity, total, using createElement/textContent
+
+                //  price, quantity, total, using createElement/textContent
 
                 fragment.appendChild(row);
             });
