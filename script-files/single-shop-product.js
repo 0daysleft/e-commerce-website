@@ -276,13 +276,13 @@ function cart() {
                 quantityInput.setAttribute('class', 'updated-item-quantity');
                 quantityInput.setAttribute('min', '1'); // Optional: prevent invalid quantities
                 quantityInput.setAttribute('max', '99'); // Optional: prevent invalid quantities
-                quantityInput.setAttribute('disabled', "true")
-                quantityInput.style.cursor = 'not-allowed'
+                //quantityInput.setAttribute('disabled', "true")
+                //quantityInput.style.cursor = 'not-allowed'
                 quantityInput.value = Number(elem.productQuantity);
 
                 quantityInput.addEventListener('input', (e) => {
-                    const newQuantity = Number(e.target.value);
-
+                    let newQuantity = Number(e.target.value);
+                    if (newQuantity > 99) { newQuantity = 99; alert('max value is 99'); return }
                     // Update the cart array
                     elem.productQuantity = newQuantity;
                     sessionStorage.setItem("cart", JSON.stringify(cartArray))
