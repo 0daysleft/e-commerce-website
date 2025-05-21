@@ -239,6 +239,7 @@ function cart() {
 
                 const productNameCell = document.createElement("td");
                 const productName = document.createTextNode(elem.productName)
+                productNameCell.setAttribute("class", 'product-name-cell')
                 productNameCell.appendChild(productName);
                 row.appendChild(productNameCell);
 
