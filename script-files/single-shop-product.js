@@ -74,7 +74,7 @@ export function call() {
                         </div>
 
                     </div>
-    
+
             `
         singlePageSection.append(singleItemDiv)
     }
@@ -161,9 +161,17 @@ function cart() {
                                     overflow: hidden;
                                     text-overflow: ellipsis;
                             "  >${elem.productName}</td>
-                            <td id="cartProductPrice" style="font-weight: 700" >${elem.productPrice}</td>
+                            <td id="cartProductPrice" style="font-weight: 700" >${(elem.productPrice).toLocaleString('en-KE', {
+                            style: 'currency',
+                            currency: "KES"
+                        })
+                        }</td>
                             <td id="cartProductQuantity" ><input type="number" name="" id="productQuantity" disabled value="${elem.productQuantity}" style='cursor: not-allowed'></td>
-                            <td id="cartTotalProductPrice" style="font-weight: 700" >$<span id="cartItemsCount">${totalSingleItemPrice.toLocaleString()}</span></td>
+                            <td id="cartTotalProductPrice" style="font-weight: 700" ><span id="cartItemsCount">${(totalSingleItemPrice).toLocaleString('en-KE', {
+                            style: 'currency',
+                            currency: "KES"
+                        })
+                        }</span></td>
                             </tr>
                         `
                 }
