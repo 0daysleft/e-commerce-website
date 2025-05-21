@@ -230,6 +230,15 @@ function cart() {
                 imgCell.appendChild(img);
                 row.appendChild(imgCell);
 
+                const productNameCell = document.createElement("td");
+                const productName = document.createTextNode(elem.productName)
+                //img.src = elem.productImage;
+                productNameCell.appendChild(productName);
+                row.appendChild(productNameCell);
+
+
+
+
                 // Repeat for product name, price, quantity, total, using createElement/textContent
 
                 fragment.appendChild(row);
