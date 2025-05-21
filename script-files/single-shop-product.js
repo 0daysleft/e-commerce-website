@@ -1,7 +1,7 @@
 import products from "./products.js";
 let selectedProductId = sessionStorage.getItem("elementId");
 export const product = products.find((prod) => prod.productId === selectedProductId);
-export let productDetailsEl = document.querySelector("#product-details");
+export let productDetailsDivElement = document.querySelector("#product-details");
 const cartIcon = document.getElementById("lg-bag");
 let cartTotal = document.getElementById("totalGoodsInCart");
 let grandTotalElement = document.getElementById("totalCost")
@@ -81,15 +81,15 @@ export function call() {
         singlePageSection.append(singleItemDiv)
     }
 
-    if (productDetailsEl) {
+    if (productDetailsDivElement) {
         if (product && typeof product === "object") {
             displaySingleProduct();
         } else {
             console.error("❌ Product not found. ID:", selectedProductId);
-            productDetailsEl.innerHTML = `
+            productDetailsDivElement.innerHTML = `
                     <div style="padding: 40px;">
                         <h2>⚠️ Product Not Found</h2>
-                        <productDetailsEl>This product does not exist or could not be loaded.</productDetailsEl>
+                        <productDetailsDivElement>This product does not exist or could not be loaded.</productDetailsDivElement>
                         <a href="../html-files/index.html">Go back to home</a>
                     </div>
                 `;
@@ -143,7 +143,7 @@ function cart() {
 
     const cartTableBody = document.getElementById("cartDetails")
 
-    if (productDetailsEl) {
+    if (productDetailsDivElement) {
         let btn = document.getElementById("single-page-product-button");
         btn.addEventListener('click', addProductToCart)
 
