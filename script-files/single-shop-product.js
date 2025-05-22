@@ -125,7 +125,6 @@ function addProductToCart(e) {
 }
 
 function updatePricesInLocaleString() {
-    console.log(quantity)
     cartTotal.textContent = (quantity.length > 0) ? (quantity.reduce((item, total) => item + total).toLocaleString('en-KE', {
         style: 'currency',
         currency: "KES"
@@ -295,7 +294,7 @@ function cart() {
                     // Recalculate totals and update UI
                     updateCartQuantity()
                     //addProductToCart()
-                    console.log("Qua:", newQuantity)
+                    //console.log("Qua:", newQuantity)
                     updatePrices(quantity);
                     //addProductToCart()
                     cart()
