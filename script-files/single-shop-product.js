@@ -224,7 +224,6 @@ function cart() {
         if (cartArray.length > 0) {
             cartTableBody.innerHTML = ""; // Reset the table body
             const fragment = document.createDocumentFragment();
-            //console.log(document.querySelectorAll('td input.updated-item-quantity'))
             cartArray.forEach(elem => {
                 const row = document.createElement("tr");
 
