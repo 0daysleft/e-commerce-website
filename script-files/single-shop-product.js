@@ -280,6 +280,7 @@ function cart() {
                 quantityInput.value = Number(elem.productQuantity);
 
                 quantityInput.addEventListener('input', (e) => {
+                    quantity = [];
                     let newQuantity = Number(e.target.value);
                     elem.productQuantity = newQuantity;
                     if (newQuantity > 99) {
@@ -294,7 +295,8 @@ function cart() {
                     // Recalculate totals and update UI
                     updateCartQuantity()
                     //addProductToCart()
-                    updatePrices(newQuantity);
+                    console.log(newQuantity)
+                    updatePrices(quantity);
                     //addProductToCart()
                     cart()
                     updatePricesInLocaleString(); // Your function to recalculate totals
