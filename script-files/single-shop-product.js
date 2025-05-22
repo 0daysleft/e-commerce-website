@@ -295,7 +295,7 @@ function cart() {
                     // Recalculate totals and update UI
                     updateCartQuantity()
                     //addProductToCart()
-                    console.log(newQuantity)
+                    console.log("Qua:", newQuantity)
                     updatePrices(quantity);
                     //addProductToCart()
                     cart()
