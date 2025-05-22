@@ -277,7 +277,6 @@ function cart() {
                 quantityInput.setAttribute('max', '99'); // Optional: prevent invalid quantities
                 //quantityInput.setAttribute('disabled', "true")
                 //quantityInput.style.cursor = 'not-allowed'
-                console.log(quantity)
                 quantityInput.value = Number(elem.productQuantity);
 
                 quantityInput.addEventListener('input', (e) => {
@@ -292,7 +291,6 @@ function cart() {
 
                     // Update the cart array
                     //sessionStorage.setItem("cart", JSON.stringify(cartArray))
-                    quantity = [];
                     // Recalculate totals and update UI
                     updateCartQuantity()
                     //addProductToCart()
