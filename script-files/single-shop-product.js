@@ -125,6 +125,7 @@ function addProductToCart(e) {
 }
 
 function updatePricesInLocaleString() {
+    console.log(quantity)
     cartTotal.textContent = (quantity.length > 0) ? (quantity.reduce((item, total) => item + total).toLocaleString('en-KE', {
         style: 'currency',
         currency: "KES"
@@ -276,10 +277,10 @@ function cart() {
                 quantityInput.setAttribute('max', '99'); // Optional: prevent invalid quantities
                 //quantityInput.setAttribute('disabled', "true")
                 //quantityInput.style.cursor = 'not-allowed'
+                console.log(quantity)
                 quantityInput.value = Number(elem.productQuantity);
 
                 quantityInput.addEventListener('input', (e) => {
-                    quantity = [];
                     let newQuantity = Number(e.target.value);
                     elem.productQuantity = newQuantity;
                     if (newQuantity > 99) {
@@ -288,8 +289,10 @@ function cart() {
                         alert('max value is 99')
                         return
                     }
+
                     // Update the cart array
-                    sessionStorage.setItem("cart", JSON.stringify(cartArray))
+                    //sessionStorage.setItem("cart", JSON.stringify(cartArray))
+                    quantity = [];
                     // Recalculate totals and update UI
                     updateCartQuantity()
                     //addProductToCart()
