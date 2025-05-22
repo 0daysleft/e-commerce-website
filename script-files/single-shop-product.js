@@ -226,6 +226,15 @@ function cart() {
                         return
                     }
 
+                    function updateCartRowPrice(elem, row) {
+                        const priceCell = row.querySelector('#cartTotalProductPrice span');
+                        const newTotal = elem.productPrice * elem.productQuantity;
+                        priceCell.textContent = newTotal.toLocaleString('en-KE', {
+                            style: 'currency',
+                            currency: "KES"
+                        });
+                    }
+
                     // Update the cart array
                     //sessionStorage.setItem("cart", JSON.stringify(cartArray))
                     // Recalculate totals and update UI
@@ -236,7 +245,7 @@ function cart() {
                     //addProductToCart()
                     cart()
                     updatePricesInLocaleString(); // Your function to recalculate totals
-                    //updateCartRowPrice(elem, row); // Optional: update just this row’s total
+                    updateCartRowPrice(elem, row); // Optional: update just this row’s total
                 });
 
                 productQuantityCell.appendChild(quantityInput);
