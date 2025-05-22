@@ -248,9 +248,6 @@ function cart() {
                 productSubtotalCell.appendChild(productSubtotal);
                 row.appendChild(productSubtotalCell);
 
-
-                //  price, quantity, total, using createElement/textContent
-
                 fragment.appendChild(row);
             });
 
