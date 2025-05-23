@@ -161,7 +161,7 @@ function cart() {
         if (cartArray.length > 0) {
             cartTableBody.innerHTML = ""; // Reset the table body
             const fragment = document.createDocumentFragment();
-            cartArray.forEach(elem => {
+            cartArray.forEach((elem, index) => {
                 const row = document.createElement("tr");
 
                 function updatePrices(totalQuantity) {
@@ -171,13 +171,13 @@ function cart() {
 
                 updatePrices(elem.productQuantity);
                 const removeCell = document.createElement("td");
-                removeCell.innerHTML = `<a href="#"><i class="fa-solid fa-times-circle"></i></a>`;
+                removeCell.innerHTML = `<a href="#"><i class="fa-solid fa-times-circle">##</i></a>`;
                 row.appendChild(removeCell);
-                // removeCell.addEventListener('click',
-                //     () => {
-                //         console.log(cartArray.pop())
-                //     }
-                // )
+                removeCell.addEventListener('click',
+                    () => {
+                        console.log(cartArray[index])
+                    }
+                )
 
                 const imgCell = document.createElement("td");
                 const img = document.createElement("img");
