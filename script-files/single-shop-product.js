@@ -175,10 +175,18 @@ function cart() {
                 row.appendChild(removeCell);
                 removeCell.addEventListener('click',
                     () => {
+                        //quantity = []
+                        cartArray = []
                         //console.log(cartArray[index])
                         cartArray.splice(index, 1)
                         console.log(cartArray)
                         sessionStorage.setItem("cart", JSON.stringify(cartArray))
+
+
+
+                        let f = quantity.reduce((t, i) => t + i)
+                        console.log(f)
+                        updatePrices(f)
                         cart()
                         updatePricesInLocaleString()
                     }
