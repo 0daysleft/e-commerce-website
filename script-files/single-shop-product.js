@@ -176,7 +176,7 @@ function cart() {
                 removeCell.addEventListener('click',
                     () => {
                         //quantity = []
-                        cartArray = []
+                        //cartArray = []
                         //console.log(cartArray[index])
                         cartArray.splice(index, 1)
                         console.log(cartArray)
