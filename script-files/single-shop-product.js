@@ -175,7 +175,8 @@ function cart() {
                 row.appendChild(removeCell);
                 removeCell.addEventListener('click',
                     () => {
-                        console.log(cartArray[index])
+                        //console.log(cartArray[index])
+                        console.log(cartArray.slice(index, 1))
                     }
                 )
 
