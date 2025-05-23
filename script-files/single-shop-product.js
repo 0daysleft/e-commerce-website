@@ -165,6 +165,7 @@ function cart() {
                 const row = document.createElement("tr");
 
                 function updatePrices(totalQuantity) {
+
                     totalSingleItemPrice = (elem.productPrice * totalQuantity)
                     quantity.push(totalSingleItemPrice)
                 }
@@ -178,17 +179,26 @@ function cart() {
                         //quantity = []
                         //cartArray = []
                         //console.log(cartArray[index])
+                        //console.log(quantity.indexOf())
+                        console.log(cartTotal)
                         cartArray.splice(index, 1)
                         console.log(cartArray)
                         sessionStorage.setItem("cart", JSON.stringify(cartArray))
 
+                        let c = cartArray.map(
+                            (v) => {
+                                return v.productQuantity
+                            }
+                        )
 
+                        console.log("This is C:", c)
 
                         let f = quantity.reduce((t, i) => t + i)
                         console.log(f)
-                        updatePrices(f)
+                        console.log(updatePrices(f))
+                        console.log("All:", quantity)
                         cart()
-                        updatePricesInLocaleString()
+                        //updatePricesInLocaleString()
                     }
                 )
 
