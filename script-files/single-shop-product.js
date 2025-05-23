@@ -178,6 +178,7 @@ function cart() {
                         //console.log(cartArray[index])
                         cartArray.splice(index, 1)
                         console.log(cartArray)
+                        sessionStorage.setItem("cart", JSON.stringify(cartArray))
                     }
                 )
 
