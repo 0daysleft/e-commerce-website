@@ -236,7 +236,7 @@ function cart() {
                     }
 
                     // Update the cart array
-                    //sessionStorage.setItem("cart", JSON.stringify(cartArray))
+                    sessionStorage.setItem("cart", JSON.stringify(cartArray))
                     // Recalculate totals and update UI
                     updateCartQuantity()
                     //addProductToCart()
