@@ -180,6 +180,7 @@ function cart() {
                         console.log(cartArray)
                         sessionStorage.setItem("cart", JSON.stringify(cartArray))
                         cart()
+                        updatePricesInLocaleString()
                     }
                 )
 
