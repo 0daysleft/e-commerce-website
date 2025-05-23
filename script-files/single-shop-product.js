@@ -176,7 +176,8 @@ function cart() {
                 removeCell.addEventListener('click',
                     () => {
                         //console.log(cartArray[index])
-                        console.log(cartArray.slice(index, 1))
+                        cartArray.slice(index, 1)
+                        console.log(cartArray)
                     }
                 )
 
