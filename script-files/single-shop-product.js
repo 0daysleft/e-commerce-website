@@ -166,12 +166,12 @@ function mainCart() {
 
             function deleteProduct() {
 
-                cartArray.forEach((index) => {
-                    console.log(cartTotal)
+                cartArray.forEach((value, index) => {
+                    //console.log(cartTotal)
                     cartArray.splice(index, 1)
-                    console.log(cartArray)
+                    console.log(cartArray.splice(index, 1))
+                    console.log("Index:", index, "\n", "Value:", value)
                     sessionStorage.setItem("cart", JSON.stringify(cartArray))
-
                     mainCart()
                     updateCartQuantity()
                 })
@@ -179,7 +179,7 @@ function mainCart() {
 
 
             const fragment = document.createDocumentFragment();
-            cartArray.forEach((elem, index) => {
+            cartArray.forEach((elem) => {
                 const row = document.createElement("tr");
 
                 function updatePrices(totalQuantity) {
