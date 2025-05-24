@@ -117,7 +117,7 @@ function convertToLocaleCurrencyString(price) {
 }
 
 
-function addProductToCart(e) {
+export function addProductToCart(e) {
     e.preventDefault()
     let existing = cartArray.find((item) => item.productId === product.productId);
 
