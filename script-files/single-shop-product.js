@@ -158,8 +158,26 @@ function mainCart() {
     if (cartTableBody) {
         let totalSingleItemPrice;
 
+
+
         if (cartArray.length > 0) {
+
             cartTableBody.innerHTML = ""; // Reset the table body
+
+            function deleteProduct() {
+
+                cartArray.forEach((index) => {
+                    console.log(cartTotal)
+                    cartArray.splice(index, 1)
+                    console.log(cartArray)
+                    sessionStorage.setItem("cart", JSON.stringify(cartArray))
+
+                    mainCart()
+                    updateCartQuantity()
+                })
+            }
+
+
             const fragment = document.createDocumentFragment();
             cartArray.forEach((elem, index) => {
                 const row = document.createElement("tr");
@@ -174,18 +192,7 @@ function mainCart() {
                 const removeCell = document.createElement("td");
                 removeCell.innerHTML = `<a href="#"><i class="fa-solid fa-times-circle">##</i></a>`;
                 row.appendChild(removeCell);
-                removeCell.addEventListener('click',
-                    () => {
-
-                        console.log(cartTotal)
-                        cartArray.splice(index, 1)
-                        console.log(cartArray)
-                        sessionStorage.setItem("cart", JSON.stringify(cartArray))
-
-                        cart()
-                        updateCartQuantity()
-                    }
-                )
+                removeCell.addEventListener('click', deleteProduct)
 
                 const imgCell = document.createElement("td");
                 const img = document.createElement("img");
@@ -219,7 +226,6 @@ function mainCart() {
                     let newQuantity = Number(e.target.value);
                     elem.productQuantity = newQuantity;
                     if (newQuantity > 99) {
-                        newQuantity = 99;
                         e.target.value = 99;
                         elem.productQuantity = 99;
                         sessionStorage.setItem("cart", JSON.stringify(cartArray))
