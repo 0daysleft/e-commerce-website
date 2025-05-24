@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
         (e) => {
             e.addEventListener('click',
                 () => {
-                    //console.log(e.src)
                     document.getElementById("MainImg").src = (e.src)
                 }
             )
