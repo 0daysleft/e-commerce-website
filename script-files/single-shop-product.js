@@ -219,8 +219,10 @@ function mainCart() {
                     let newQuantity = Number(e.target.value);
                     elem.productQuantity = newQuantity;
                     if (newQuantity > 99) {
-                        newQuantity = 99
-                        elem.productQuantity = 99
+                        newQuantity = 99;
+                        e.target.value = 99;
+                        elem.productQuantity = 99;
+                        sessionStorage.setItem("cart", JSON.stringify(cartArray))
                         alert('max value is 99')
                         return
                     }
