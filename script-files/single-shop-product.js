@@ -177,29 +177,13 @@ function mainCart() {
                     row.appendChild(removeCell);
                     removeCell.addEventListener('click',
                         () => {
-                            //quantity = []
-                            //cartArray = []
-                            //console.log(cartArray[index])
-                            //console.log(quantity.indexOf())
+
                             console.log(cartTotal)
                             cartArray.splice(index, 1)
                             console.log(cartArray)
                             sessionStorage.setItem("cart", JSON.stringify(cartArray))
 
-                            let c = cartArray.map(
-                                (v) => {
-                                    return v.productQuantity
-                                }
-                            )
-
-                            console.log("This is C:", c)
-
-                            let f = quantity.reduce((t, i) => t + i)
-                            console.log(f)
-                            console.log(updatePrices(f))
-                            console.log("All:", quantity)
                             cart()
-                            //updatePricesInLocaleString()
                             updateCartQuantity()
                         }
                     )
@@ -222,22 +206,13 @@ function mainCart() {
                     productPriceCell.appendChild(productPrice);
                     row.appendChild(productPriceCell);
 
-                    // const productQuantityCell = document.createElement("td");
-                    // let v = document.createElement("input")
-                    // v.setAttribute('type', 'number')
-                    // v.setAttribute('class', 'updated-item-quantity')
-                    // productQuantityCell.appendChild(v)
-                    // v.value = Number(elem.productQuantity)
-                    //row.appendChild(productQuantityCell);
                     const productQuantityCell = document.createElement("td");
 
                     const quantityInput = document.createElement("input");
                     quantityInput.setAttribute('type', 'number');
                     quantityInput.setAttribute('class', 'updated-item-quantity');
-                    quantityInput.setAttribute('min', '1'); // Optional: prevent invalid quantities
-                    quantityInput.setAttribute('max', '99'); // Optional: prevent invalid quantities
-                    //quantityInput.setAttribute('disabled', "true")
-                    //quantityInput.style.cursor = 'not-allowed'
+                    quantityInput.setAttribute('min', '1');
+                    quantityInput.setAttribute('max', '99');
                     quantityInput.value = Number(elem.productQuantity);
 
                     quantityInput.addEventListener('input', (e) => {
