@@ -1,4 +1,5 @@
 import products from "./products.js";
+
 let selectedProductId = sessionStorage.getItem("elementId");
 export const product = products.find((prod) => prod.productId === selectedProductId);
 export let productDetailsDivElement = document.querySelector("#product-details");
@@ -6,7 +7,8 @@ const cartIcon = document.getElementById("lg-bag");
 let cartTotal = document.getElementById("totalGoodsInCart");
 let grandTotalElement = document.getElementById("totalCost")
 let shippingCost = document.getElementById("shippingFee")
-let quantity = [];
+export let quantity = [];
+export let updatePrices;
 
 // this code here will be executed once any add button in the page is clicked, used for adding a prodiuct direct in the page without the need for viewing the product
 document.querySelectorAll("#single-page-product-button").forEach(elem => elem.addEventListener('click', addProductToCart))
@@ -102,7 +104,7 @@ export function call() {
 
 }
 
-let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
+export let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
 function updateCartQuantity() {
     if (cartArray.length < 1) { cartIcon.style.display = 'none'; return }
     cartIcon.style.display = 'block'
@@ -186,7 +188,7 @@ function mainCart() {
             cartArray.forEach((elem) => {
                 const row = document.createElement("tr");
 
-                function updatePrices(totalQuantity) {
+                updatePrices = (totalQuantity) => {
 
                     totalSingleItemPrice = (elem.productPrice * totalQuantity)
                     quantity.push(totalSingleItemPrice)
@@ -287,4 +289,4 @@ function mainCart() {
         }
     }
 }
-export default { mainCart, call }
+export default { mainCart, call, updateCartQuantity, updatePricesInLocaleString, addProductToCart }
