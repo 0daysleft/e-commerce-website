@@ -28,17 +28,23 @@ document.querySelectorAll("#single-page-product-button").forEach(elem => elem.ad
 
 //THIS CODE SNIPPET WILL CHANGE THE IMAGE OF THE BIGGER PRODUCT IMAGE FROM THE CLICKED ONE
 
-document.querySelectorAll(".small-img-col").forEach(
-    (e) => {
-        e.addEventListener('click',
-            () => {
+//if (document.getElementById("single-product-page")) {
 
-                document.getElementById("MainImg").src = e.firstElementChild.currentSrc;
-            }
-        )
-    }
-)
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("img.small-img").forEach(
+        (e) => {
+            e.addEventListener('click',
+                () => {
+                    //console.log(e.src)
+                    document.getElementById("MainImg").src = (e.src)
+                }
+            )
+        }
+    )
 
+    //console.log(document.querySelectorAll(".small-img-col"))
+})
+//}
 //FUNCTION FOR CLOSE NAVIGATION BAR IN SMALL SCREENS
 script();
 
