@@ -144,6 +144,20 @@ function updatePricesInLocaleString() {
     });
 }
 
+function deleteProduct() {
+
+    cartArray.forEach((value, index) => {
+        //console.log(cartTotal)
+        //console.log(cartArray)
+        cartArray.splice(index, 1)
+        //console.log(cartArray.splice(index, 1))
+        //console.log("Index:", index, "\n", "Value:", value)
+        sessionStorage.setItem("cart", JSON.stringify(cartArray))
+        mainCart()
+        updateCartQuantity()
+    })
+}
+
 function mainCart() {
 
     const cartTableBody = document.getElementById("cartDetails")
@@ -164,19 +178,6 @@ function mainCart() {
 
             cartTableBody.innerHTML = ""; // Reset the table body
 
-            function deleteProduct() {
-
-                cartArray.forEach((value, index) => {
-                    //console.log(cartTotal)
-                    cartArray.splice(index, 1)
-                    console.log(cartArray.splice(index, 1))
-                    console.log("Index:", index, "\n", "Value:", value)
-                    sessionStorage.setItem("cart", JSON.stringify(cartArray))
-                    mainCart()
-                    updateCartQuantity()
-                })
-            }
-
 
             const fragment = document.createDocumentFragment();
             cartArray.forEach((elem) => {
@@ -192,7 +193,23 @@ function mainCart() {
                 const removeCell = document.createElement("td");
                 removeCell.innerHTML = `<a href="#"><i class="fa-solid fa-times-circle">##</i></a>`;
                 row.appendChild(removeCell);
-                removeCell.addEventListener('click', deleteProduct)
+                //removeCell.addEventListener('click', deleteProduct)
+                removeCell.addEventListener('click',
+                    () => {
+
+                        cartArray.forEach((value, index) => {
+                            //console.log(cartTotal)
+                            //console.log(cartArray)
+                            cartArray.splice(index, 1)
+                            //console.log(cartArray.splice(index, 1))
+                            //console.log("Index:", index, "\n", "Value:", value)
+                            sessionStorage.setItem("cart", JSON.stringify(cartArray))
+                            mainCart()
+                            updateCartQuantity()
+                        })
+                    }
+
+                )
 
                 const imgCell = document.createElement("td");
                 const img = document.createElement("img");
