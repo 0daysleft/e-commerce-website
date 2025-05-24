@@ -238,11 +238,9 @@ function mainCart() {
                     sessionStorage.setItem("cart", JSON.stringify(cartArray))
                     // Recalculate totals and update UI
                     updateCartQuantity()
-                    //addProductToCart()
-                    //console.log("Qua:", newQuantity)
                     updatePrices(quantity);
                     //addProductToCart()
-                    cart()
+                    mainCart()
                     updatePricesInLocaleString(); // Your function to recalculate totals
                     updateCartRowPrice(elem, row); // Optional: update just this row’s total
                 });
