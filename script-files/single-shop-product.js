@@ -8,6 +8,7 @@ let grandTotalElement = document.getElementById("totalCost")
 let shippingCost = document.getElementById("shippingFee")
 let quantity = [];
 
+if (document.getElementById("product1")) document.getElementById("single-page-product-button").addEventListener('click', addProductToCart)
 export function call() {
 
     const displaySingleProduct = () => {

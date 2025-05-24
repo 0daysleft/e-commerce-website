@@ -7,7 +7,7 @@ import shopFunctions from "./single-shop-product.js";
 
 //IF YOU CLICK ANY ITEM IT TAKES YOU TO THE SINGLE SHOPE PRODUCT PAGE
 
-let productView = document.getElementsByClassName("pro");
+let productView = document.querySelectorAll("img");
 
 let productArray = [...productView]
 
