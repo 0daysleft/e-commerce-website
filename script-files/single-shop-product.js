@@ -10,6 +10,7 @@ let quantity = [];
 
 // this code here will be executed once any add button in the page is clicked, used for adding a prodiuct direct in the page without the need for viewing the product
 document.querySelectorAll("#single-page-product-button").forEach(elem => elem.addEventListener('click', addProductToCart))
+
 export function call() {
 
     const displaySingleProduct = () => {
