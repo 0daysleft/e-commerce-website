@@ -161,15 +161,15 @@ function mainCart() {
         if (cartArray.length > 0) {
             cartTableBody.innerHTML = ""; // Reset the table body
             const fragment = document.createDocumentFragment();
-            cartArray.forEach((elem, index) => {
-                const row = document.createElement("tr");
+            function cart() {
+                cartArray.forEach((elem, index) => {
+                    const row = document.createElement("tr");
 
-                function updatePrices(totalQuantity) {
+                    function updatePrices(totalQuantity) {
 
-                    totalSingleItemPrice = (elem.productPrice * totalQuantity)
-                    quantity.push(totalSingleItemPrice)
-                }
-                function cart() {
+                        totalSingleItemPrice = (elem.productPrice * totalQuantity)
+                        quantity.push(totalSingleItemPrice)
+                    }
 
                     updatePrices(elem.productQuantity);
                     const removeCell = document.createElement("td");
@@ -281,14 +281,13 @@ function mainCart() {
                     const productSubtotal = document.createTextNode(convertToLocaleCurrencyString(totalSingleItemPrice))
                     productSubtotalCell.appendChild(productSubtotal);
                     row.appendChild(productSubtotalCell);
-                }
-                fragment.appendChild(row);
-                cart()
-            });
+                    fragment.appendChild(row);
+                });
+            }
 
+            cart()
             cartTableBody.appendChild(fragment);
             updatePricesInLocaleString();
-
         } else {
             cartTableBody.innerHTML = ""; // Clear old rows
 
@@ -297,7 +296,7 @@ function mainCart() {
             emptyCell.colSpan = 6;
             emptyCell.innerHTML = `
                 <div style="padding: 20px; text-align: center; color: red;">
-                    🥲 Your cart is empty! <br><br>
+                     🥲 Your cart is empty! <br><br>
                     <a href="./shop.html" style="color: green;">Please Shop 🛍️</a>
                 </div>
             `;
@@ -305,9 +304,6 @@ function mainCart() {
             cartTableBody.appendChild(emptyRow);
             updatePricesInLocaleString();
         }
-
-
     }
 }
-
 export default { mainCart, call }
