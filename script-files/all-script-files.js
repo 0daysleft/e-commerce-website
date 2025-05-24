@@ -28,8 +28,6 @@ document.querySelectorAll("#single-page-product-button").forEach(elem => elem.ad
 
 //THIS CODE SNIPPET WILL CHANGE THE IMAGE OF THE BIGGER PRODUCT IMAGE FROM THE CLICKED ONE
 
-//if (document.getElementById("single-product-page")) {
-
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("img.small-img").forEach(
         (e) => {
@@ -42,9 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     )
 
-    //console.log(document.querySelectorAll(".small-img-col"))
 })
-//}
+
 //FUNCTION FOR CLOSE NAVIGATION BAR IN SMALL SCREENS
 script();
 
