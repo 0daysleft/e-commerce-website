@@ -40,6 +40,14 @@ p{
     margin: 15px 0 20px 0;
 }
 
+.add-to-cart{
+    font-weight: 900;
+    font-size: 2rem;
+    cursor: pointer;
+    width: 53px;
+    border-radius: 50%;
+}    
+
 .section-p1{
     padding: 40px 80px;
 }
