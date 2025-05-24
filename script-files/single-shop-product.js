@@ -199,6 +199,7 @@ function cart() {
                         console.log("All:", quantity)
                         cart()
                         //updatePricesInLocaleString()
+                        updateCartQuantity()
                     }
                 )
 
