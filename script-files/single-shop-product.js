@@ -169,41 +169,40 @@ function mainCart() {
                     totalSingleItemPrice = (elem.productPrice * totalQuantity)
                     quantity.push(totalSingleItemPrice)
                 }
-
-                updatePrices(elem.productQuantity);
-                const removeCell = document.createElement("td");
-                removeCell.innerHTML = `<a href="#"><i class="fa-solid fa-times-circle">##</i></a>`;
-                row.appendChild(removeCell);
-                removeCell.addEventListener('click',
-                    () => {
-                        //quantity = []
-                        //cartArray = []
-                        //console.log(cartArray[index])
-                        //console.log(quantity.indexOf())
-                        console.log(cartTotal)
-                        cartArray.splice(index, 1)
-                        console.log(cartArray)
-                        sessionStorage.setItem("cart", JSON.stringify(cartArray))
-
-                        let c = cartArray.map(
-                            (v) => {
-                                return v.productQuantity
-                            }
-                        )
-
-                        console.log("This is C:", c)
-
-                        let f = quantity.reduce((t, i) => t + i)
-                        console.log(f)
-                        console.log(updatePrices(f))
-                        console.log("All:", quantity)
-                        cart()
-                        //updatePricesInLocaleString()
-                        updateCartQuantity()
-                    }
-                )
-
                 function cart() {
+
+                    updatePrices(elem.productQuantity);
+                    const removeCell = document.createElement("td");
+                    removeCell.innerHTML = `<a href="#"><i class="fa-solid fa-times-circle">##</i></a>`;
+                    row.appendChild(removeCell);
+                    removeCell.addEventListener('click',
+                        () => {
+                            //quantity = []
+                            //cartArray = []
+                            //console.log(cartArray[index])
+                            //console.log(quantity.indexOf())
+                            console.log(cartTotal)
+                            cartArray.splice(index, 1)
+                            console.log(cartArray)
+                            sessionStorage.setItem("cart", JSON.stringify(cartArray))
+
+                            let c = cartArray.map(
+                                (v) => {
+                                    return v.productQuantity
+                                }
+                            )
+
+                            console.log("This is C:", c)
+
+                            let f = quantity.reduce((t, i) => t + i)
+                            console.log(f)
+                            console.log(updatePrices(f))
+                            console.log("All:", quantity)
+                            cart()
+                            //updatePricesInLocaleString()
+                            updateCartQuantity()
+                        }
+                    )
 
                     const imgCell = document.createElement("td");
                     const img = document.createElement("img");
@@ -284,6 +283,7 @@ function mainCart() {
                     row.appendChild(productSubtotalCell);
                 }
                 fragment.appendChild(row);
+                cart()
             });
 
             cartTableBody.appendChild(fragment);
