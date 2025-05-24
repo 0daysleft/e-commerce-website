@@ -1,6 +1,6 @@
 
 import script from "./script.js";
-import addProductToCart from "./single-shop-product.js";
+import { addProductToCart } from "./single-shop-product.js";
 import shopFunctions from "./single-shop-product.js";
 
 
