@@ -144,7 +144,7 @@ function updatePricesInLocaleString() {
     });
 }
 
-function cart() {
+function mainCart() {
 
     const cartTableBody = document.getElementById("cartDetails")
 
@@ -203,84 +203,86 @@ function cart() {
                     }
                 )
 
-                const imgCell = document.createElement("td");
-                const img = document.createElement("img");
-                img.src = elem.productImage;
-                img.alt = elem.productName;
-                imgCell.appendChild(img);
-                row.appendChild(imgCell);
+                function cart() {
 
-                const productNameCell = document.createElement("td");
-                const productName = document.createTextNode(elem.productName)
-                productNameCell.setAttribute("class", 'product-name-cell')
-                productNameCell.appendChild(productName);
-                row.appendChild(productNameCell);
+                    const imgCell = document.createElement("td");
+                    const img = document.createElement("img");
+                    img.src = elem.productImage;
+                    img.alt = elem.productName;
+                    imgCell.appendChild(img);
+                    row.appendChild(imgCell);
 
-                const productPriceCell = document.createElement("td");
-                const productPrice = document.createTextNode(convertToLocaleCurrencyString(Number(elem.productPrice)))
-                productPriceCell.appendChild(productPrice);
-                row.appendChild(productPriceCell);
+                    const productNameCell = document.createElement("td");
+                    const productName = document.createTextNode(elem.productName)
+                    productNameCell.setAttribute("class", 'product-name-cell')
+                    productNameCell.appendChild(productName);
+                    row.appendChild(productNameCell);
 
-                // const productQuantityCell = document.createElement("td");
-                // let v = document.createElement("input")
-                // v.setAttribute('type', 'number')
-                // v.setAttribute('class', 'updated-item-quantity')
-                // productQuantityCell.appendChild(v)
-                // v.value = Number(elem.productQuantity)
-                //row.appendChild(productQuantityCell);
-                const productQuantityCell = document.createElement("td");
+                    const productPriceCell = document.createElement("td");
+                    const productPrice = document.createTextNode(convertToLocaleCurrencyString(Number(elem.productPrice)))
+                    productPriceCell.appendChild(productPrice);
+                    row.appendChild(productPriceCell);
 
-                const quantityInput = document.createElement("input");
-                quantityInput.setAttribute('type', 'number');
-                quantityInput.setAttribute('class', 'updated-item-quantity');
-                quantityInput.setAttribute('min', '1'); // Optional: prevent invalid quantities
-                quantityInput.setAttribute('max', '99'); // Optional: prevent invalid quantities
-                //quantityInput.setAttribute('disabled', "true")
-                //quantityInput.style.cursor = 'not-allowed'
-                quantityInput.value = Number(elem.productQuantity);
+                    // const productQuantityCell = document.createElement("td");
+                    // let v = document.createElement("input")
+                    // v.setAttribute('type', 'number')
+                    // v.setAttribute('class', 'updated-item-quantity')
+                    // productQuantityCell.appendChild(v)
+                    // v.value = Number(elem.productQuantity)
+                    //row.appendChild(productQuantityCell);
+                    const productQuantityCell = document.createElement("td");
 
-                quantityInput.addEventListener('input', (e) => {
-                    quantity = [];
-                    let newQuantity = Number(e.target.value);
-                    elem.productQuantity = newQuantity;
-                    if (newQuantity > 99) {
-                        newQuantity = 99
-                        elem.productQuantity = 99
-                        alert('max value is 99')
-                        return
-                    }
+                    const quantityInput = document.createElement("input");
+                    quantityInput.setAttribute('type', 'number');
+                    quantityInput.setAttribute('class', 'updated-item-quantity');
+                    quantityInput.setAttribute('min', '1'); // Optional: prevent invalid quantities
+                    quantityInput.setAttribute('max', '99'); // Optional: prevent invalid quantities
+                    //quantityInput.setAttribute('disabled', "true")
+                    //quantityInput.style.cursor = 'not-allowed'
+                    quantityInput.value = Number(elem.productQuantity);
 
-                    function updateCartRowPrice(elem, row) {
-                        const priceCell = row.querySelector('#cartTotalProductPrice span');
-                        const newTotal = elem.productPrice * elem.productQuantity;
-                        priceCell.textContent = newTotal.toLocaleString('en-KE', {
-                            style: 'currency',
-                            currency: "KES"
-                        });
-                    }
+                    quantityInput.addEventListener('input', (e) => {
+                        quantity = [];
+                        let newQuantity = Number(e.target.value);
+                        elem.productQuantity = newQuantity;
+                        if (newQuantity > 99) {
+                            newQuantity = 99
+                            elem.productQuantity = 99
+                            alert('max value is 99')
+                            return
+                        }
 
-                    // Update the cart array
-                    sessionStorage.setItem("cart", JSON.stringify(cartArray))
-                    // Recalculate totals and update UI
-                    updateCartQuantity()
-                    //addProductToCart()
-                    //console.log("Qua:", newQuantity)
-                    updatePrices(quantity);
-                    //addProductToCart()
-                    cart()
-                    updatePricesInLocaleString(); // Your function to recalculate totals
-                    updateCartRowPrice(elem, row); // Optional: update just this row’s total
-                });
+                        function updateCartRowPrice(elem, row) {
+                            const priceCell = row.querySelector('#cartTotalProductPrice span');
+                            const newTotal = elem.productPrice * elem.productQuantity;
+                            priceCell.textContent = newTotal.toLocaleString('en-KE', {
+                                style: 'currency',
+                                currency: "KES"
+                            });
+                        }
 
-                productQuantityCell.appendChild(quantityInput);
-                row.appendChild(productQuantityCell);
+                        // Update the cart array
+                        sessionStorage.setItem("cart", JSON.stringify(cartArray))
+                        // Recalculate totals and update UI
+                        updateCartQuantity()
+                        //addProductToCart()
+                        //console.log("Qua:", newQuantity)
+                        updatePrices(quantity);
+                        //addProductToCart()
+                        cart()
+                        updatePricesInLocaleString(); // Your function to recalculate totals
+                        updateCartRowPrice(elem, row); // Optional: update just this row’s total
+                    });
+
+                    productQuantityCell.appendChild(quantityInput);
+                    row.appendChild(productQuantityCell);
 
 
-                const productSubtotalCell = document.createElement("td");
-                const productSubtotal = document.createTextNode(convertToLocaleCurrencyString(totalSingleItemPrice))
-                productSubtotalCell.appendChild(productSubtotal);
-                row.appendChild(productSubtotalCell);
-
+                    const productSubtotalCell = document.createElement("td");
+                    const productSubtotal = document.createTextNode(convertToLocaleCurrencyString(totalSingleItemPrice))
+                    productSubtotalCell.appendChild(productSubtotal);
+                    row.appendChild(productSubtotalCell);
+                }
                 fragment.appendChild(row);
             });
 
@@ -308,4 +310,4 @@ function cart() {
     }
 }
 
-export default { cart, call }
+export default { mainCart, call }
