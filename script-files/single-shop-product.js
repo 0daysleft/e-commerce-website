@@ -13,7 +13,7 @@ export let updatePrices;
 // this code here will be executed once any add button in the page is clicked, used for adding a prodiuct direct in the page without the need for viewing the product
 document.querySelectorAll("#single-page-product-button").forEach(elem => elem.addEventListener('click', addProductToCart))
 
-export function call() {
+function call() {
 
     const displaySingleProduct = () => {
 
@@ -107,9 +107,9 @@ export function call() {
 export let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
 console.log(cartArray)
 function updateCartQuantity() {
-    if (cartArray.length < 1) { cartIcon.style.display = 'none'; return }
+    if (cartArray.length < 1 || cartArray.length == null) { cartIcon.style.display = 'none'; return }
     cartIcon.style.display = 'block'
-    let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total)
+    let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total) || 0
     cartIcon.setAttribute("data-count", cartQuantity);
 }
 
@@ -347,4 +347,4 @@ call()
 //updatePrices(quantity);
 //shopFunctions.updatePricesInLocaleString();
 // shopFunctions.cartArray;
-export default { mainCart, call, updateCartQuantity, updatePricesInLocaleString, addProductToCart }
+//export default { mainCart, call, updateCartQuantity, updatePricesInLocaleString, addProductToCart }
