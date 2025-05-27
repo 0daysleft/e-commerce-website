@@ -1,5 +1,6 @@
 import products from "./products.js";
 import script from "./script.js";
+let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
 let selectedProductId = sessionStorage.getItem("elementId");
 const product = products.find((prod) => prod.productId === selectedProductId);
 let productDetailsDivElement = document.querySelector("#product-details");
@@ -104,7 +105,6 @@ function call() {
 
 }
 
-export let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
 console.log(cartArray)
 function updateCartQuantity() {
     if (cartArray.length < 1 || cartArray.length == null) { cartIcon.style.display = 'none'; return }
