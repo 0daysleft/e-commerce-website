@@ -1,14 +1,14 @@
 import products from "./products.js";
-
+import script from "./script.js";
 let selectedProductId = sessionStorage.getItem("elementId");
-export const product = products.find((prod) => prod.productId === selectedProductId);
-export let productDetailsDivElement = document.querySelector("#product-details");
+const product = products.find((prod) => prod.productId === selectedProductId);
+let productDetailsDivElement = document.querySelector("#product-details");
 const cartIcon = document.getElementById("lg-bag");
 let cartTotal = document.getElementById("totalGoodsInCart");
 let grandTotalElement = document.getElementById("totalCost")
 let shippingCost = document.getElementById("shippingFee")
-export let quantity = [];
-export let updatePrices;
+let quantity = [];
+let updatePrices;
 
 // this code here will be executed once any add button in the page is clicked, used for adding a prodiuct direct in the page without the need for viewing the product
 document.querySelectorAll("#single-page-product-button").forEach(elem => elem.addEventListener('click', addProductToCart))
@@ -291,8 +291,6 @@ function mainCart() {
     }
 }
 
-
-import script from "./script.js";
 //import { addProductToCart, cartArray, quantity, updatePrices } from "./single-shop-product.js";
 //import shopFunctions from "./single-shop-product.js";
 
