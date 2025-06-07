@@ -291,13 +291,6 @@ function mainCart() {
     }
 }
 
-//import { addProductToCart, cartArray, quantity, updatePrices } from "./single-shop-product.js";
-//import shopFunctions from "./single-shop-product.js";
-
-
-//cartArray
-//updateCartQuantity, updatePricesInLocaleString, 
-//quantity//, updatePrices();
 //IF YOU CLICK ANY ITEM IT TAKES YOU TO THE SINGLE SHOPE PRODUCT PAGE
 
 let productView = document.querySelectorAll("img");
@@ -339,10 +332,3 @@ document.addEventListener("DOMContentLoaded", () => {
 script();
 mainCart()
 call()
-//shopFunctions.call();
-//shopFunctions.mainCart();
-//shopFunctions.updateCartQuantity();
-//updatePrices(quantity);
-//shopFunctions.updatePricesInLocaleString();
-// shopFunctions.cartArray;
-//export default { mainCart, call, updateCartQuantity, updatePricesInLocaleString, addProductToCart }
