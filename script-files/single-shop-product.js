@@ -107,7 +107,7 @@ function call() {
 
 console.log(cartArray)
 function updateCartQuantity() {
-    if (cartArray.length < 1 || cartArray.length == null) { cartIcon.style.display = 'none'; return }
+    if (cartArray.length < 1 || cartArray.length == null || cartArray == undefined) { cartIcon.style.display = 'none'; return }
     cartIcon.style.display = 'block'
     let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total) || []
     cartIcon.setAttribute("data-count", cartQuantity);
