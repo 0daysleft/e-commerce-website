@@ -153,11 +153,7 @@ function updatePricesInLocaleString() {
 function deleteProduct() {
 
     cartArray.forEach((value, index) => {
-        //console.log(cartTotal)
-        //console.log(cartArray)
         cartArray.splice(index, 1)
-        //console.log(cartArray.splice(index, 1))
-        //console.log("Index:", index, "\n", "Value:", value)
         sessionStorage.setItem("cart", JSON.stringify(cartArray))
         mainCart()
         updateCartQuantity()
