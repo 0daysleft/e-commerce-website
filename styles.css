@@ -47,6 +47,9 @@ p{
     width: 53px;
     border-radius: 50%;
     z-index: 999;
+    position: absolute;
+    right: 70px;
+    bottom: 20px;
 }    
 
 .section-p1{
