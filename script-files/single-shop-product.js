@@ -121,7 +121,7 @@ function convertToLocaleCurrencyString(price) {
 
 
 export function addProductToCart(e) {
-    e.preventDefault()
+    //e.preventDefault()
     let existing = cartArray.find((item) => item.productId === product.productId);
 
     (existing) ? existing.productQuantity += 1 : cartArray.push(product)
