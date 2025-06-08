@@ -31,7 +31,7 @@ productArray.forEach(
 
 // this code here will be executed once any add button in the page is clicked, used for adding a prodiuct direct in the page without the need for viewing the product
 document.querySelectorAll("#single-page-product-button").forEach(elem => elem.addEventListener('click', addProductToCart))
-let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
+
 function call() {
 
     const displaySingleProduct = () => {
@@ -128,10 +128,16 @@ function convertToLocaleCurrencyString(price) {
     return price.toLocaleString('en-KE', { style: 'currency', currency: "KES" })
 }
 
+let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
 
 export function addProductToCart(e) {
     e.preventDefault()
     console.log("Cart:", cartArray)
+    if (!product || !product.productId) {
+        console.error("Product is null or missing productId");
+        return;
+    }
+
     let existing = cartArray.find((item) => item.productId === product.productId);
 
     console.log("Existing: ", existing)
