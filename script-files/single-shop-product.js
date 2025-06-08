@@ -11,6 +11,25 @@ let shippingCost = document.getElementById("shippingFee")
 let quantity = [];
 let updatePrices;
 
+
+//IF YOU CLICK ANY ITEM IT TAKES YOU TO THE SINGLE SHOPE PRODUCT PAGE
+
+let productView = document.querySelectorAll("img");
+console.log(productView)
+
+let productArray = [...productView]
+
+productArray.forEach(
+    (element) => {
+        element.addEventListener('click',
+            () => {
+                window.location.href = './single-shop-product.html';
+                sessionStorage.setItem("elementId", element.id);
+            })
+    }
+)
+
+
 // this code here will be executed once any add button in the page is clicked, used for adding a prodiuct direct in the page without the need for viewing the product
 document.querySelectorAll("#single-page-product-button").forEach(elem => elem.addEventListener('click', addProductToCart))
 
@@ -286,23 +305,6 @@ function mainCart() {
         }
     }
 }
-
-//IF YOU CLICK ANY ITEM IT TAKES YOU TO THE SINGLE SHOPE PRODUCT PAGE
-
-let productView = document.querySelectorAll("img");
-console.log(productView)
-
-let productArray = [...productView]
-
-productArray.forEach(
-    (element) => {
-        element.addEventListener('click',
-            () => {
-                window.location.href = './single-shop-product.html';
-                sessionStorage.setItem("elementId", element.id);
-            })
-    }
-)
 
 //CHANGING THE IMAGE OF THE PRODUCT IN THE SINGLE PRODUCT PAGE.
 
