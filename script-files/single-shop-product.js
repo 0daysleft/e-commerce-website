@@ -133,10 +133,11 @@ let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
 export function addProductToCart(e) {
     e.preventDefault()
     console.log("Cart:", cartArray)
-    if (!product || !product.productId) {
-        console.error("Product is null or missing productId");
-        return;
-    }
+    // if (!product || !product.productId) {
+    //     console.error("Product is null or missing productId");
+    //     return;
+    // }
+
 
     let existing = cartArray.find((item) => item.productId === product.productId);
 
