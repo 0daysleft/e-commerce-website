@@ -1,6 +1,6 @@
 import products from "./products.js";
 import script from "./script.js";
-let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
+
 let selectedProductId = sessionStorage.getItem("elementId");
 const product = products.find((prod) => prod.productId === selectedProductId);
 let productDetailsDivElement = document.querySelector("#product-details");
@@ -15,7 +15,6 @@ let updatePrices;
 //IF YOU CLICK ANY ITEM IT TAKES YOU TO THE SINGLE SHOPE PRODUCT PAGE
 
 let productView = document.querySelectorAll("img");
-console.log(productView)
 
 let productArray = [...productView]
 
@@ -32,7 +31,7 @@ productArray.forEach(
 
 // this code here will be executed once any add button in the page is clicked, used for adding a prodiuct direct in the page without the need for viewing the product
 document.querySelectorAll("#single-page-product-button").forEach(elem => elem.addEventListener('click', addProductToCart))
-
+let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
 function call() {
 
     const displaySingleProduct = () => {
@@ -124,15 +123,6 @@ function call() {
 
 }
 
-console.log(cartArray)
-function updateCartQuantity() {
-    if (cartArray.length < 1 || cartArray.length == null || cartArray == undefined) { cartIcon.style.display = 'none'; return }
-    cartIcon.style.display = 'block'
-    let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total) || []
-    cartIcon.setAttribute("data-count", cartQuantity);
-}
-
-updateCartQuantity()
 
 function convertToLocaleCurrencyString(price) {
     return price.toLocaleString('en-KE', { style: 'currency', currency: "KES" })
@@ -141,9 +131,15 @@ function convertToLocaleCurrencyString(price) {
 
 export function addProductToCart(e) {
     //e.preventDefault()
-    let existing = cartArray.find((item) => item.productId === product.productId);
+    console.log(product.productId)
+    let existing = cartArray.find((item) => {
+        console.log(item)
+        item.productId === product.productId
+    });
 
-    (existing) ? existing.productQuantity += 1 : cartArray.push(product)
+    console.log("Existing: ", existing)
+
+        (existing) ? existing.productQuantity += 1 : cartArray.push(product)
     sessionStorage.setItem("cart", JSON.stringify(cartArray))
     updateCartQuantity()
 
@@ -322,6 +318,16 @@ document.addEventListener("DOMContentLoaded", () => {
     )
 
 })
+
+function updateCartQuantity() {
+    if (cartArray.length < 1 || cartArray.length == null || cartArray == undefined) { cartIcon.style.display = 'none'; return }
+    cartIcon.style.display = 'block'
+    let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total) || []
+    cartIcon.setAttribute("data-count", cartQuantity);
+}
+
+//updateCartQuantity()
+
 
 //FUNCTION FOR CLOSE NAVIGATION BAR IN SMALL SCREENS
 script();
