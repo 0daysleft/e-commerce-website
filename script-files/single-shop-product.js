@@ -141,9 +141,7 @@ export function addProductToCart(e) {
 
     let existing = cartArray.find((item) => item.productId === product.productId);
 
-    console.log("Existing: ", existing)
-
-        (existing) ? existing.productQuantity += 1 : cartArray.push(product)
+    (existing) ? existing.productQuantity += 1 : cartArray.push(product)
     sessionStorage.setItem("cart", JSON.stringify(cartArray))
     updateCartQuantity()
 
