@@ -176,15 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (document.querySelector('div.single-product-description')) {
             console.log('This Page')
             let btn = document.getElementById("single-page-product-button");
-            btn.addEventListener('click', function addProductToCart(e) {
-                e.preventDefault()
-                cartArray.push(product)
-                console.log(product)
-                sessionStorage.setItem("cart", JSON.stringify(cartArray))
-                updateCartQuantity()
-
-            }
-            )
+            btn.addEventListener('click', addProductToCart)
 
         }
         else {
