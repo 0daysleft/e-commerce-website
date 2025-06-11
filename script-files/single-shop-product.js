@@ -132,19 +132,10 @@ let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
 
 export function addProductToCart(e) {
     e.preventDefault()
-    console.log("Cart:", cartArray)
-    // if (!product || !product.productId) {
-    //     console.error("Product is null or missing productId");
-    //     return;
-    // }
-
-
-    let existing = cartArray.find((item) => item.productId === product.productId);
-
-    (existing) ? existing.productQuantity += 1 : cartArray.push(product)
+    cartArray.push(product)
+    console.log(product)
     sessionStorage.setItem("cart", JSON.stringify(cartArray))
     updateCartQuantity()
-
 }
 
 function updatePricesInLocaleString() {
@@ -181,23 +172,30 @@ function mainCart() {
 
     const cartTableBody = document.getElementById("cartDetails")
 
-    if (productDetailsDivElement) {
+    if (document.querySelector('.single-product-description')) {
+        console.log('This Page')
         let btn = document.getElementById("single-page-product-button");
-        btn.addEventListener('click', addProductToCart)
+        btn.addEventListener('click', function addProductToCart(e) {
+            e.preventDefault()
+            cartArray.push(product)
+            console.log(product)
+            sessionStorage.setItem("cart", JSON.stringify(cartArray))
+            updateCartQuantity()
 
+        }
+        )
+
+    }
+    else {
+        console.log('Wrong Page')
     }
 
 
     if (cartTableBody) {
         let totalSingleItemPrice;
-
-
-
         if (cartArray.length > 0) {
 
             cartTableBody.innerHTML = ""; // Reset the table body
-
-
             const fragment = document.createDocumentFragment();
             cartArray.forEach((elem) => {
                 const row = document.createElement("tr");
@@ -321,12 +319,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 })
 
-function updateCartQuantity() {
-    if (cartArray.length < 1 || cartArray.length == null || cartArray == undefined) { cartIcon.style.display = 'none'; return }
-    cartIcon.style.display = 'block'
-    let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total) || []
-    cartIcon.setAttribute("data-count", cartQuantity);
-}
+// function updateCartQuantity() {
+//     if (cartArray.length < 1 || cartArray.length == null || cartArray == undefined) { cartIcon.style.display = 'none'; return }
+//     cartIcon.style.display = 'block'
+//     let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total) || []
+//     cartIcon.setAttribute("data-count", cartQuantity);
+// }
 
 //updateCartQuantity()
 
