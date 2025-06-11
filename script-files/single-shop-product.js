@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const cartTableBody = document.getElementById("cartDetails")
 
-        if (document.querySelector('div.single-product-description')) {
+        if (document.querySelector('div.single-product-image')) {
             console.log('This Page')
             let btn = document.getElementById("single-page-product-button");
             btn.addEventListener('click', addProductToCart)
