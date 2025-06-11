@@ -28,6 +28,17 @@ productArray.forEach(
     }
 )
 
+function addProductToCart(pro) {
+
+    let existing = cartArray.find(item => item === pro)
+
+        (existing) ? console.log('item exists') : console.log('item added')
+    cartArray.push(pro)
+    sessionStorage.setItem("cart", JSON.stringify(cartArray))
+    updateCartQuantity()
+}
+
+
 
 // this code here will be executed once any add button in the page is clicked, used for adding a prodiuct direct in the page without the need for viewing the product
 document.querySelectorAll("#single-page-product-button").forEach((elem, ind) => elem.addEventListener('click', () => {
@@ -283,16 +294,6 @@ function mainCart() {
             updatePricesInLocaleString();
         }
     }
-}
-
-
-function addProductToCart(pro) {
-
-    let existing = cartArray.find(item => item === pro)
-    console.log(existing)
-    cartArray.push(pro)
-    sessionStorage.setItem("cart", JSON.stringify(cartArray))
-    updateCartQuantity()
 }
 
 
