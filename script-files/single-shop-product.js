@@ -1,6 +1,8 @@
 import products from "./products.js";
 import script from "./script.js";
 
+let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
+
 let selectedProductId = sessionStorage.getItem("elementId");
 const product = products.find((prod) => prod.productId === selectedProductId);
 let productDetailsDivElement = document.querySelector("#product-details");
@@ -27,12 +29,12 @@ productArray.forEach(
             })
     }
 )
+let existing = cartArray.find(item => item === pro)
 
 function addProductToCart(pro) {
 
-    let existing = cartArray.find(item => item === pro)
 
-        (existing) ? console.log('item exists') : console.log('item added')
+    (existing) ? console.log('item exists') : console.log('item added')
     cartArray.push(pro)
     sessionStorage.setItem("cart", JSON.stringify(cartArray))
     updateCartQuantity()
@@ -139,8 +141,6 @@ function call() {
 function convertToLocaleCurrencyString(price) {
     return price.toLocaleString('en-KE', { style: 'currency', currency: "KES" })
 }
-
-let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
 
 function updatePricesInLocaleString() {
     cartTotal.textContent = (quantity.length > 0) ? (quantity.reduce((item, total) => item + total).toLocaleString('en-KE', {
