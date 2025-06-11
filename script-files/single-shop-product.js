@@ -130,9 +130,6 @@ function addProductToCart() {
     updateCartQuantity()
 }
 
-
-
-
 function convertToLocaleCurrencyString(price) {
     return price.toLocaleString('en-KE', { style: 'currency', currency: "KES" })
 }
@@ -174,7 +171,7 @@ function mainCart() {
     const cartTableBody = document.getElementById("cartDetails")
 
     if (document.getElementById("single-page-product-button")) {
-        console.log('This Page')
+        console.log('This Pageue')
         let btn = document.getElementById("single-page-product-button");
         btn.addEventListener('click', addProductToCart)
 
