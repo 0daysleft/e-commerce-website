@@ -123,13 +123,6 @@ function call() {
 
 }
 
-function addProductToCart() {
-    cartArray.push(product)
-    console.log(product)
-    sessionStorage.setItem("cart", JSON.stringify(cartArray))
-    updateCartQuantity()
-}
-
 function convertToLocaleCurrencyString(price) {
     return price.toLocaleString('en-KE', { style: 'currency', currency: "KES" })
 }
@@ -290,6 +283,15 @@ function mainCart() {
         }
     }
 }
+
+
+function addProductToCart() {
+    cartArray.push(product)
+    console.log(product)
+    sessionStorage.setItem("cart", JSON.stringify(cartArray))
+    updateCartQuantity()
+}
+
 
 //CHANGING THE IMAGE OF THE PRODUCT IN THE SINGLE PRODUCT PAGE.
 
