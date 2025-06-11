@@ -124,9 +124,6 @@ function call() {
 }
 
 
-
-/*
-
 function convertToLocaleCurrencyString(price) {
     return price.toLocaleString('en-KE', { style: 'currency', currency: "KES" })
 }
@@ -336,4 +333,3 @@ document.addEventListener("DOMContentLoaded", () => {
 script();
 mainCart()
 call()
-*/
