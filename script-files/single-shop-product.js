@@ -29,12 +29,14 @@ productArray.forEach(
             })
     }
 )
-let existing = cartArray.find(item => item === pro)
 
 function addProductToCart(pro) {
 
+    var existing = cartArray.find(item => item === pro)
 
-    (existing) ? console.log('item exists') : console.log('item added')
+    //     (existing) ? console.log('item exists') : console.log('item added')
+
+    console.log(existing)
     cartArray.push(pro)
     sessionStorage.setItem("cart", JSON.stringify(cartArray))
     updateCartQuantity()
