@@ -72,7 +72,7 @@ function call() {
                         <h4 id="product-title" >${product.productName}</h4>
                         <h2 id="product-price">Price: $${product.productPrice}</h2>
 
-                        <form>
+                        <div>
                         <select required>
                             <option>Select Size</option>
                             <option>S</option>
@@ -82,7 +82,7 @@ function call() {
                             <option>XXL</option>  
                         </select>
                         <button class="normal" id="single-page-product-button" >Add To Cart</button>
-                        </form>
+                        </div>
                         <div class="material-h3" >
                         <h3 >Material: </h3> <span id="single-page-product-material" >${product.productMaterial}</span>
                         </div>
