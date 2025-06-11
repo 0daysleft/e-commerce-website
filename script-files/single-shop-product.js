@@ -173,15 +173,15 @@ function mainCart() {
 
     const cartTableBody = document.getElementById("cartDetails")
 
-    if (document.querySelector('div#single-product-page')) {
-        console.log('This Page')
-        let btn = document.getElementById("single-page-product-button");
-        btn.addEventListener('click', addProductToCart)
+    //if (document.querySelector('div#single-product-page')) {
+    console.log('This Page')
+    let btn = document.getElementById("single-page-product-button");
+    btn.addEventListener('click', addProductToCart)
 
-    }
-    else {
-        console.log('Wrong Page')
-    }
+    //}
+    // else {
+    //     console.log('Wrong Page')
+    // }
 
 
     if (cartTableBody) {
