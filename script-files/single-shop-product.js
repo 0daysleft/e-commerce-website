@@ -312,14 +312,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 })
 
-// function updateCartQuantity() {
-//     if (cartArray.length < 1 || cartArray.length == null || cartArray == undefined) { cartIcon.style.display = 'none'; return }
-//     cartIcon.style.display = 'block'
-//     let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total) || []
-//     cartIcon.setAttribute("data-count", cartQuantity);
-// }
+function updateCartQuantity() {
+    if (cartArray.length < 1 || cartArray.length == null || cartArray == undefined) { cartIcon.style.display = 'none'; return }
+    cartIcon.style.display = 'block'
+    let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total) || []
+    cartIcon.setAttribute("data-count", cartQuantity);
+}
 
-//updateCartQuantity()
+updateCartQuantity()
 
 
 //FUNCTION FOR CLOSE NAVIGATION BAR IN SMALL SCREENS
