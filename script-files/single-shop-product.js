@@ -32,11 +32,18 @@ productArray.forEach(
 
 function addProductToCart(pro) {
 
-    var existing = cartArray.find(item => item === pro)
+    console.log("cartArray =", cartArray);
+    console.log("Type of cartArray:", typeof cartArray);
+    console.log("Is Array:", Array.isArray(cartArray));
+    console.log("Raw from localStorage:", localStorage.getItem("cart"));
 
-    //     (existing) ? console.log('item exists') : console.log('item added')
 
-    console.log(existing)
+    var existing = cartArray.find(item => item.productId === pro.productId)
+
+        (existing) ? console.log('item exists') : console.log('item added')
+
+
+    //console.log(existing)
     cartArray.push(pro)
     sessionStorage.setItem("cart", JSON.stringify(cartArray))
     updateCartQuantity()
