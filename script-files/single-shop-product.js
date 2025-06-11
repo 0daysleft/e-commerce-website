@@ -163,15 +163,9 @@ function mainCart() {
 
     let btn = document.getElementById("single-page-product-button");
     const cartTableBody = document.getElementById("cartDetails")
-    if (document.getElementById("single-page-product-button")) {
+    if (document.getElementById("single-product-page")) {
         console.log('This Pageue')
-
-
-        btn.addEventListener('click', () => {
-            console.log(this)
-            addProductToCart()
-            alert('clicked')
-        })
+        btn.addEventListener('click', addProductToCart)
 
     }
     else {
