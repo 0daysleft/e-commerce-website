@@ -161,12 +161,17 @@ function deleteProduct() {
 
 function mainCart() {
 
+    let btn = document.getElementById("single-page-product-button");
     const cartTableBody = document.getElementById("cartDetails")
-
     if (document.getElementById("single-page-product-button")) {
         console.log('This Pageue')
-        let btn = document.getElementById("single-page-product-button");
-        btn.addEventListener('click', addProductToCart)
+
+
+        btn.addEventListener('click', () => {
+            console.log(this)
+            addProductToCart()
+            alert('clicked')
+        })
 
     }
     else {
