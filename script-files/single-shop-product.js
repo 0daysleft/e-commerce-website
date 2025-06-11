@@ -123,6 +123,14 @@ function call() {
 
 }
 
+function addProductToCart() {
+    cartArray.push(product)
+    console.log(product)
+    sessionStorage.setItem("cart", JSON.stringify(cartArray))
+    updateCartQuantity()
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
     function convertToLocaleCurrencyString(price) {
@@ -130,13 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
-
-    function addProductToCart() {
-        cartArray.push(product)
-        console.log(product)
-        sessionStorage.setItem("cart", JSON.stringify(cartArray))
-        updateCartQuantity()
-    }
 
     function updatePricesInLocaleString() {
         cartTotal.textContent = (quantity.length > 0) ? (quantity.reduce((item, total) => item + total).toLocaleString('en-KE', {
