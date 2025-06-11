@@ -30,7 +30,12 @@ productArray.forEach(
 
 
 // this code here will be executed once any add button in the page is clicked, used for adding a prodiuct direct in the page without the need for viewing the product
-document.querySelectorAll("#single-page-product-button").forEach(elem => elem.addEventListener('click', addProductToCart))
+document.querySelectorAll("#single-page-product-button").forEach((elem, ind) => elem.addEventListener('click', () => {
+
+    console.log(ind)
+    // console.log()
+    addProductToCart(products[ind])
+}))
 
 function call() {
 
@@ -284,9 +289,8 @@ function mainCart() {
 }
 
 
-function addProductToCart() {
-    cartArray.push(product)
-    console.log(product)
+function addProductToCart(pro) {
+    cartArray.push(pro)
     sessionStorage.setItem("cart", JSON.stringify(cartArray))
     updateCartQuantity()
 }
