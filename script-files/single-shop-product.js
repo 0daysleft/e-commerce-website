@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
 
-    export function addProductToCart(e) {
+    function addProductToCart(e) {
         e.preventDefault()
         cartArray.push(product)
         console.log(product)
