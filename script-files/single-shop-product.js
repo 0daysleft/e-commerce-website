@@ -34,21 +34,16 @@ function addProductToCart(pro) {
 
     var existing = cartArray.find(item => item.productId === pro.productId)
 
-
     if (pro) {
-        console.log(pro.productId);
         (existing) ? existing.productQuantity++ : cartArray.push(pro)
         console.log("Pro:", existing.productQuantity)
     }
     else {
         (existing) ? existing.productQuantity++ : cartArray.push(product)
-        console.log("Not PRo:", existing.productQuantity)
     }
     sessionStorage.setItem("cart", JSON.stringify(cartArray))
     updateCartQuantity()
 }
-
-
 
 // this code here will be executed once any add button in the page is clicked, used for adding a prodiuct direct in the page without the need for viewing the product
 document.querySelectorAll("#single-page-product-button").forEach((elem, ind) => elem.addEventListener('click', () => {
