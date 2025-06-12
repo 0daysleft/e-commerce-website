@@ -168,13 +168,14 @@ function updatePricesInLocaleString() {
 function deleteProduct() {
 
     cartArray.forEach((value, index) => {
-        cartArray.splice(index, 1)
-        console.log("cartArray.splice(index, 1)", cartArray.splice(index, 1))
-        console.log("Index:", index)
-        console.log("Value:", value)
-        sessionStorage.setItem("cart", JSON.stringify(cartArray))
-        displayCart()
-        updateCartQuantity()
+        // cartArray.splice(index, 1)
+        // console.log("cartArray.splice(index, 1)", cartArray.splice(index, 1))
+        //console.log("Index:", value)
+        // console.log("Value:", value)
+        // sessionStorage.setItem("cart", JSON.stringify(cartArray))
+        // displayCart()
+        // updateCartQuantity()
+
     })
 }
 
@@ -200,7 +201,7 @@ function mainCart() {
             displayCart = () => {
                 cartTableBody.innerHTML = ""; // Reset the table body
                 const fragment = document.createDocumentFragment();
-                cartArray.forEach((elem) => {
+                cartArray.forEach((elem, index) => {
                     const row = document.createElement("tr");
 
                     updatePrices = (totalQuantity) => {
@@ -213,7 +214,11 @@ function mainCart() {
                     const removeCell = document.createElement("td");
                     removeCell.innerHTML = `<a href="#"><i class="fa-solid fa-times-circle">##</i></a>`;
                     row.appendChild(removeCell);
-                    removeCell.addEventListener('click', deleteProduct)
+                    removeCell.textContent = index
+                    removeCell.addEventListener('click', (e) => {
+                        deleteProduct(index)
+                        console.log(e.target)
+                    })
 
                     const imgCell = document.createElement("td");
                     const img = document.createElement("img");
