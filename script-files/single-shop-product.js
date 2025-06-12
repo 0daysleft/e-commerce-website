@@ -214,7 +214,6 @@ function mainCart() {
                     const removeCell = document.createElement("td");
                     removeCell.innerHTML = `<a href="#"><i class="fa-solid fa-times-circle"></i></a>`;
                     row.appendChild(removeCell);
-                    //removeCell.textContent = index
                     removeCell.setAttribute('data-delete', index)
                     removeCell.addEventListener('click', () => deleteProduct(index))
 
