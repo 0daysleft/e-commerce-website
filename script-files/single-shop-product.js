@@ -38,12 +38,10 @@ function addProductToCart(pro) {
     console.log("Raw from localStorage:", localStorage.getItem("cart"));
 
 
-    var existing = cartArray.find(item => item.productId === pro.productId)
+    //var existing = cartArray.find(item => item.productId === pro.productId)
 
-        (existing) ? console.log('item exists') : console.log('item added')
-
-
-    //console.log(existing)
+    //(existing) ? existing.productQuantity++ :
+    console.log(pro.productId)
     cartArray.push(pro)
     sessionStorage.setItem("cart", JSON.stringify(cartArray))
     updateCartQuantity()
