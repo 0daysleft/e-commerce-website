@@ -169,6 +169,9 @@ function deleteProduct() {
 
     cartArray.forEach((value, index) => {
         cartArray.splice(index, 1)
+        console.log("cartArray.splice(index, 1)", cartArray.splice(index, 1))
+        console.log("Index:", index)
+        console.log("Value:", value)
         sessionStorage.setItem("cart", JSON.stringify(cartArray))
         mainCart()
         updateCartQuantity()
@@ -192,94 +195,98 @@ function mainCart() {
         let totalSingleItemPrice;
         if (cartArray.length > 0) {
 
-            cartTableBody.innerHTML = ""; // Reset the table body
-            const fragment = document.createDocumentFragment();
-            cartArray.forEach((elem) => {
-                const row = document.createElement("tr");
 
-                updatePrices = (totalQuantity) => {
 
-                    totalSingleItemPrice = (elem.productPrice * totalQuantity)
-                    quantity.push(totalSingleItemPrice)
-                }
+            function displayCart() {
+                cartTableBody.innerHTML = ""; // Reset the table body
+                const fragment = document.createDocumentFragment();
+                cartArray.forEach((elem) => {
+                    const row = document.createElement("tr");
 
-                updatePrices(elem.productQuantity);
-                const removeCell = document.createElement("td");
-                removeCell.innerHTML = `<a href="#"><i class="fa-solid fa-times-circle">##</i></a>`;
-                row.appendChild(removeCell);
-                removeCell.addEventListener('click', deleteProduct)
+                    updatePrices = (totalQuantity) => {
 
-                const imgCell = document.createElement("td");
-                const img = document.createElement("img");
-                img.src = elem.productImage;
-                img.alt = elem.productName;
-                imgCell.appendChild(img);
-                row.appendChild(imgCell);
+                        totalSingleItemPrice = (elem.productPrice * totalQuantity)
+                        quantity.push(totalSingleItemPrice)
+                    }
 
-                const productNameCell = document.createElement("td");
-                const productName = document.createTextNode(elem.productName)
-                productNameCell.setAttribute("class", 'product-name-cell')
-                productNameCell.appendChild(productName);
-                row.appendChild(productNameCell);
+                    updatePrices(elem.productQuantity);
+                    const removeCell = document.createElement("td");
+                    removeCell.innerHTML = `<a href="#"><i class="fa-solid fa-times-circle">##</i></a>`;
+                    row.appendChild(removeCell);
+                    removeCell.addEventListener('click', deleteProduct)
 
-                const productPriceCell = document.createElement("td");
-                const productPrice = document.createTextNode(convertToLocaleCurrencyString(Number(elem.productPrice)))
-                productPriceCell.appendChild(productPrice);
-                row.appendChild(productPriceCell);
+                    const imgCell = document.createElement("td");
+                    const img = document.createElement("img");
+                    img.src = elem.productImage;
+                    img.alt = elem.productName;
+                    imgCell.appendChild(img);
+                    row.appendChild(imgCell);
 
-                const productQuantityCell = document.createElement("td");
+                    const productNameCell = document.createElement("td");
+                    const productName = document.createTextNode(elem.productName)
+                    productNameCell.setAttribute("class", 'product-name-cell')
+                    productNameCell.appendChild(productName);
+                    row.appendChild(productNameCell);
 
-                const quantityInput = document.createElement("input");
-                quantityInput.setAttribute('type', 'number');
-                quantityInput.setAttribute('class', 'updated-item-quantity');
-                quantityInput.setAttribute('min', '1');
-                quantityInput.setAttribute('max', '99');
-                quantityInput.value = Number(elem.productQuantity);
+                    const productPriceCell = document.createElement("td");
+                    const productPrice = document.createTextNode(convertToLocaleCurrencyString(Number(elem.productPrice)))
+                    productPriceCell.appendChild(productPrice);
+                    row.appendChild(productPriceCell);
 
-                quantityInput.addEventListener('input', (e) => {
-                    quantity = [];
-                    let newQuantity = Number(e.target.value);
-                    elem.productQuantity = newQuantity;
-                    if (newQuantity > 99) {
-                        e.target.value = 99;
-                        elem.productQuantity = 99;
+                    const productQuantityCell = document.createElement("td");
+
+                    const quantityInput = document.createElement("input");
+                    quantityInput.setAttribute('type', 'number');
+                    quantityInput.setAttribute('class', 'updated-item-quantity');
+                    quantityInput.setAttribute('min', '1');
+                    quantityInput.setAttribute('max', '99');
+                    quantityInput.value = Number(elem.productQuantity);
+
+                    quantityInput.addEventListener('input', (e) => {
+                        quantity = [];
+                        let newQuantity = Number(e.target.value);
+                        elem.productQuantity = newQuantity;
+                        if (newQuantity > 99) {
+                            e.target.value = 99;
+                            elem.productQuantity = 99;
+                            sessionStorage.setItem("cart", JSON.stringify(cartArray))
+                            alert('max value is 99')
+                            return
+                        }
+
+                        function updateCartRowPrice(elem, row) {
+                            const priceCell = row.querySelector('#cartTotalProductPrice span');
+                            const newTotal = elem.productPrice * elem.productQuantity;
+                            priceCell.textContent = newTotal.toLocaleString('en-KE', {
+                                style: 'currency',
+                                currency: "KES"
+                            });
+                        }
+
+                        // Update the cart array
                         sessionStorage.setItem("cart", JSON.stringify(cartArray))
-                        alert('max value is 99')
-                        return
-                    }
+                        // Recalculate totals and update UI
+                        updateCartQuantity()
+                        updatePrices(quantity);
+                        //addProductToCart()
+                        mainCart()
+                        updatePricesInLocaleString(); // Your function to recalculate totals
+                        updateCartRowPrice(elem, row); // Optional: update just this row’s total
+                    });
 
-                    function updateCartRowPrice(elem, row) {
-                        const priceCell = row.querySelector('#cartTotalProductPrice span');
-                        const newTotal = elem.productPrice * elem.productQuantity;
-                        priceCell.textContent = newTotal.toLocaleString('en-KE', {
-                            style: 'currency',
-                            currency: "KES"
-                        });
-                    }
+                    productQuantityCell.appendChild(quantityInput);
+                    row.appendChild(productQuantityCell);
 
-                    // Update the cart array
-                    sessionStorage.setItem("cart", JSON.stringify(cartArray))
-                    // Recalculate totals and update UI
-                    updateCartQuantity()
-                    updatePrices(quantity);
-                    //addProductToCart()
-                    mainCart()
-                    updatePricesInLocaleString(); // Your function to recalculate totals
-                    updateCartRowPrice(elem, row); // Optional: update just this row’s total
+
+                    const productSubtotalCell = document.createElement("td");
+                    const productSubtotal = document.createTextNode(convertToLocaleCurrencyString(totalSingleItemPrice))
+                    productSubtotalCell.appendChild(productSubtotal);
+                    row.appendChild(productSubtotalCell);
+                    fragment.appendChild(row);
                 });
-
-                productQuantityCell.appendChild(quantityInput);
-                row.appendChild(productQuantityCell);
-
-
-                const productSubtotalCell = document.createElement("td");
-                const productSubtotal = document.createTextNode(convertToLocaleCurrencyString(totalSingleItemPrice))
-                productSubtotalCell.appendChild(productSubtotal);
-                row.appendChild(productSubtotalCell);
-                fragment.appendChild(row);
-            });
-            cartTableBody.appendChild(fragment);
-            updatePricesInLocaleString();
+                cartTableBody.appendChild(fragment);
+                updatePricesInLocaleString();
+            }
         } else {
             cartTableBody.innerHTML = ""; // Clear old rows
 
