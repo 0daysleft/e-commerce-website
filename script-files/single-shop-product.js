@@ -165,18 +165,18 @@ function updatePricesInLocaleString() {
     });
 }
 
-function deleteProduct() {
+function deleteProduct(cartNo) {
 
-    cartArray.forEach((value, index) => {
-        // cartArray.splice(index, 1)
-        // console.log("cartArray.splice(index, 1)", cartArray.splice(index, 1))
-        //console.log("Index:", value)
-        // console.log("Value:", value)
-        // sessionStorage.setItem("cart", JSON.stringify(cartArray))
-        // displayCart()
-        // updateCartQuantity()
+    //cartArray.forEach((value, index) => {
+    cartArray.splice(cartNo, 1)
+    // console.log("cartArray.splice(index, 1)", cartArray.splice(index, 1))
+    //console.log("Index:", value)
+    // console.log("Value:", value)
+    sessionStorage.setItem("cart", JSON.stringify(cartArray))
+    displayCart()
+    updateCartQuantity()
 
-    })
+    //})
 }
 
 function mainCart() {
