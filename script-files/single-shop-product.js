@@ -14,7 +14,7 @@ let quantity = [];
 let updatePrices;
 
 
-//IF YOU CLICK ANY ITEM IT TAKES YOU TO THE SINGLE SHOPE PRODUCT PAGE
+//IF YOU CLICK ANY ITEM IT TAKES YOU TO THE SINGLE SHOP PRODUCT PAGE
 
 let productView = document.querySelectorAll("img");
 
