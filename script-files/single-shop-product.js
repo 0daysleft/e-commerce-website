@@ -212,7 +212,7 @@ function mainCart() {
 
                     updatePrices(elem.productQuantity);
                     const removeCell = document.createElement("td");
-                    removeCell.innerHTML = `<a href="data-delete"><i class="fa-solid fa-times-circle"></i></a>`;
+                    removeCell.innerHTML = `<a href="#"><i class="fa-solid fa-times-circle"></i></a>`;
                     row.appendChild(removeCell);
                     removeCell.setAttribute('data-delete', index)
                     removeCell.addEventListener('click', (e) => {
