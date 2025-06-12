@@ -2,7 +2,7 @@ import products from "./products.js";
 import script from "./script.js";
 
 let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
-
+let displayCart;
 let selectedProductId = sessionStorage.getItem("elementId");
 const product = products.find((prod) => prod.productId === selectedProductId);
 let productDetailsDivElement = document.querySelector("#product-details");
@@ -173,7 +173,7 @@ function deleteProduct() {
         console.log("Index:", index)
         console.log("Value:", value)
         sessionStorage.setItem("cart", JSON.stringify(cartArray))
-        mainCart()
+        displayCart()
         updateCartQuantity()
     })
 }
@@ -197,7 +197,7 @@ function mainCart() {
 
 
 
-            function displayCart() {
+            displayCart = () => {
                 cartTableBody.innerHTML = ""; // Reset the table body
                 const fragment = document.createDocumentFragment();
                 cartArray.forEach((elem) => {
@@ -287,6 +287,8 @@ function mainCart() {
                 cartTableBody.appendChild(fragment);
                 updatePricesInLocaleString();
             }
+
+            displayCart()
         } else {
             cartTableBody.innerHTML = ""; // Clear old rows
 
