@@ -215,10 +215,7 @@ function mainCart() {
                     removeCell.innerHTML = `<a href="#"><i class="fa-solid fa-times-circle">##</i></a>`;
                     row.appendChild(removeCell);
                     removeCell.textContent = index
-                    removeCell.addEventListener('click', (e) => {
-                        deleteProduct(index)
-                        console.log(e.target)
-                    })
+                    removeCell.addEventListener('click', () => deleteProduct(index))
 
                     const imgCell = document.createElement("td");
                     const img = document.createElement("img");
