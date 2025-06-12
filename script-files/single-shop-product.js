@@ -32,13 +32,6 @@ productArray.forEach(
 
 function addProductToCart(pro) {
 
-    console.log("cartArray =", cartArray);
-    console.log("Type of cartArray:", typeof cartArray);
-    console.log("Is Array:", Array.isArray(cartArray));
-    console.log("Raw from localStorage:", localStorage.getItem("cart"));
-
-
-
     var existing = cartArray.find(item => item.productId === pro.productId)
 
 
