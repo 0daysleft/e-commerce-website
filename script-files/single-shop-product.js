@@ -35,11 +35,11 @@ function addProductToCart(pro) {
     var existing = cartArray.find(item => item.productId === pro.productId)
 
     if (pro) {
-        (existing) ? existing.productQuantity++ : cartArray.push(pro)
+        (existing) ? existing.productQuantity += 1 : cartArray.push(pro)
         console.log("Pro:", existing.productQuantity)
     }
     else {
-        (existing) ? existing.productQuantity++ : cartArray.push(product)
+        (existing) ? existing.productQuantity += 1 : cartArray.push(product)
     }
     sessionStorage.setItem("cart", JSON.stringify(cartArray))
     updateCartQuantity()
