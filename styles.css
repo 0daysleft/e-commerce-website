@@ -305,6 +305,7 @@ body{
 #product1 .pro img{
     width: 100%;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 #product1 .pro .des{
@@ -976,6 +977,7 @@ SINGLE PRODUCT
 
 .small-img-group{
     display: flex;
+    cursor: pointer;
     justify-content: space-between;
 }
 
@@ -1276,6 +1278,7 @@ Contact Page
 
 #cart table img{
     width: 70px;
+    cursor: pointer;
 }
 
 #cart table td:nth-child(1){
