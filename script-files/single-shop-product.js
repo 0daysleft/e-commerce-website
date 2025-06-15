@@ -143,6 +143,7 @@ function call() {
 
 if (document.title == "Shop Page") {
 
+    console.log(document.querySelectorAll("img.small-img"))
     document.querySelectorAll("img .small-img").forEach(
         (e) => {
             e.addEventListener('click',
