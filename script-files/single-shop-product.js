@@ -143,18 +143,15 @@ function call() {
 
 if (document.title == "Shop Page") {
 
-    document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll("img .small-img").forEach(
-            (e) => {
-                e.addEventListener('click',
-                    () => {
-                        document.getElementById("MainImg").src = (e.src)
-                    }
-                )
-            }
-        )
-
-    })
+    document.querySelectorAll("img .small-img").forEach(
+        (e) => {
+            e.addEventListener('click',
+                () => {
+                    document.getElementById("MainImg").src = (e.src)
+                }
+            )
+        }
+    )
 }
 else {
     console.log('error')
