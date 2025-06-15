@@ -64,7 +64,7 @@ function call() {
                     
             <h6> <span style=" text-decoration: 'none'; " > <a href="../html-files/index.html"  " > Home </a> </span> / T-Shirt</h6>
 
-                        <img src="${product.productImage}" width="100%" id="MainImg">
+                        <img src="${product.productImage}" width="100%" id="MainImg" alt='a picture of a ${product.productName}'/>
 
                         <div class="small-img-group">
                             <div class="small-img-col">
@@ -140,6 +140,31 @@ function call() {
     }
 
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("img .small-img").forEach(
+        (e) => {
+            e.addEventListener('click',
+                () => {
+                    document.getElementById("MainImg").src = (e.src)
+                }
+            )
+        }
+    )
+
+})
+
+function updateCartQuantity() {
+    if (cartArray.length < 1) { cartIcon.style.display = 'none'; return }
+    cartIcon.style.display = 'block'
+    let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total) || []
+    cartIcon.setAttribute("data-count", cartQuantity);
+}
+
+updateCartQuantity()
+
+
 
 function convertToLocaleCurrencyString(price) {
     return price.toLocaleString('en-KE', { style: 'currency', currency: "KES" })
@@ -310,29 +335,6 @@ function mainCart() {
 //CHANGING THE IMAGE OF THE PRODUCT IN THE SINGLE PRODUCT PAGE.
 
 //THIS CODE SNIPPET WILL CHANGE THE IMAGE OF THE BIGGER PRODUCT IMAGE FROM THE CLICKED ONE
-
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("img .small-img").forEach(
-        (e) => {
-            e.addEventListener('click',
-                () => {
-                    document.getElementById("MainImg").src = (e.src)
-                }
-            )
-        }
-    )
-
-})
-
-function updateCartQuantity() {
-    if (cartArray.length < 1) { cartIcon.style.display = 'none'; return }
-    cartIcon.style.display = 'block'
-    let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total) || []
-    cartIcon.setAttribute("data-count", cartQuantity);
-}
-
-updateCartQuantity()
-
 
 //FUNCTION FOR CLOSE NAVIGATION BAR IN SMALL SCREENS
 script();
