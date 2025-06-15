@@ -181,7 +181,6 @@ function mainCart() {
     if (document.getElementById("single-product-page")) {
         console.log('This Pageue')
         btn.addEventListener('click', addProductToCart)
-
     }
     else {
         console.log('Wrong Page')
@@ -190,8 +189,6 @@ function mainCart() {
     if (cartTableBody) {
         let totalSingleItemPrice;
         if (cartArray.length > 0) {
-
-
 
             displayCart = () => {
                 cartTableBody.innerHTML = ""; // Reset the table body
