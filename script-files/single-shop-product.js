@@ -335,9 +335,7 @@ updateCartQuantity()
 
 
 //FUNCTION FOR CLOSE NAVIGATION BAR IN SMALL SCREENS
+script();
 
-document.addEventListener('DOMContentLoaded', () => {
-    script();
-    mainCart()
-    call()
-})
+mainCart()
+call()
