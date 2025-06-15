@@ -312,7 +312,7 @@ function mainCart() {
 //THIS CODE SNIPPET WILL CHANGE THE IMAGE OF THE BIGGER PRODUCT IMAGE FROM THE CLICKED ONE
 
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("img.small-img").forEach(
+    document.querySelectorAll("img .small-img").forEach(
         (e) => {
             e.addEventListener('click',
                 () => {
