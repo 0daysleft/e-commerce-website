@@ -1,6 +1,6 @@
 import products from "./products.js";
 import script from "./script.js";
-
+const cartTableBody = document.getElementById("cartDetails")
 let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
 let selectedProductId = sessionStorage.getItem("elementId");
 const product = products.find((prod) => prod.productId === selectedProductId);
@@ -164,7 +164,7 @@ updateCartQuantity()
 function mainCart() {
 
     let btn = document.getElementById("single-page-product-button");
-    const cartTableBody = document.getElementById("cartDetails")
+
     if (document.getElementById("single-product-page")) {
         console.log('This Pageue')
         btn.addEventListener('click', addProductToCart)

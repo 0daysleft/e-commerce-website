@@ -12,6 +12,7 @@ function convertToLocaleCurrencyString(price) {
 
 function updatePricesInLocaleString() {
      let totalCartPrice = cartArray.reduce((sum, item) => { return sum + (item.productPrice * item.productQuantity) }, 0)
+     console.log("Cart Total: ", totalCartPrice)
      cartTotal.textContent = totalCartPrice.toLocaleString('en-KE', {
           style: 'currency',
           currency: "KES"
@@ -31,6 +32,7 @@ function updatePricesInLocaleString() {
 function deleteProduct(cartNo) {
      cartArray.splice(cartNo, 1)
      sessionStorage.setItem("cart", JSON.stringify(cartArray))
+     updatePricesInLocaleString();
      displayCart()
      updateCartQuantity()
 }
@@ -133,7 +135,6 @@ if (cartArray.length > 0) {
           updatePricesInLocaleString();
      }
 
-     displayCart()
 } else {
      cartTableBody.innerHTML = ""; // Clear old rows
 
@@ -150,3 +151,6 @@ if (cartArray.length > 0) {
      cartTableBody.appendChild(emptyRow);
      updatePricesInLocaleString();
 }
+
+
+displayCart()
