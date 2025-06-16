@@ -166,37 +166,6 @@ function updateCartQuantity() {
 
 updateCartQuantity()
 
-
-
-function convertToLocaleCurrencyString(price) {
-    return price.toLocaleString('en-KE', { style: 'currency', currency: "KES" })
-}
-
-function updatePricesInLocaleString() {
-    let totalCartPrice = cartArray.reduce((sum, item) => { return sum + (item.productPrice * item.productQuantity) }, 0)
-    cartTotal.textContent = totalCartPrice.toLocaleString('en-KE', {
-        style: 'currency',
-        currency: "KES"
-    })
-    let shipping = (totalCartPrice * 0.05)
-    shippingCost.textContent = (shipping).toLocaleString('en-KE', {
-        style: 'currency',
-        currency: "KES"
-    });
-
-    grandTotalElement.innerHTML = (shipping + totalCartPrice).toLocaleString('en-KE', {
-        style: 'currency',
-        currency: "KES"
-    });
-}
-
-function deleteProduct(cartNo) {
-    cartArray.splice(cartNo, 1)
-    sessionStorage.setItem("cart", JSON.stringify(cartArray))
-    displayCart()
-    updateCartQuantity()
-}
-
 function mainCart() {
 
     let btn = document.getElementById("single-page-product-button");
