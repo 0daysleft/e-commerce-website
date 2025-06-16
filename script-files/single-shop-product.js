@@ -176,7 +176,7 @@ function updatePricesInLocaleString() {
     let total = cartArray.reduce((sum, item) => {
         // Ensure the object has valid price and quantity properties
         if (typeof item.price === "number" && typeof item.quantity === "number") {
-            return sum + (item.price * item.quantity);
+            return sum + (item.productPrice * item.productQuantity);
         }
         return sum; // skip if item is invalid or missing data
     }, 0);
