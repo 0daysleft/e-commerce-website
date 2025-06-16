@@ -2,15 +2,10 @@ import products from "./products.js";
 import script from "./script.js";
 
 let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
-let displayCart;
 let selectedProductId = sessionStorage.getItem("elementId");
 const product = products.find((prod) => prod.productId === selectedProductId);
 let productDetailsDivElement = document.querySelector("#product-details");
 const cartIcon = document.getElementById("lg-bag");
-let cartTotal = document.getElementById("totalGoodsInCart");
-let grandTotalElement = document.getElementById("totalCost")
-let shippingCost = document.getElementById("shippingFee")
-let updatePrices;
 
 
 //IF YOU CLICK ANY ITEM IT TAKES YOU TO THE SINGLE SHOP PRODUCT PAGE
