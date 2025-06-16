@@ -1,4 +1,4 @@
-let cartArray = sessionStorage.getItem('cart')
+let cartArray = JSON.parse(sessionStorage.getItem('cart'))
 let totalSingleItemPrice;
 let cartTotal = document.getElementById("totalGoodsInCart");
 let grandTotalElement = document.getElementById("totalCost")
