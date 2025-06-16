@@ -184,13 +184,13 @@ function updatePricesInLocaleString() {
         currency: "KES"
     });
     */
-    let shipping = quantity.length > 0 ? (quantity.reduce((item, total) => item + total) * 0.05) : 0
+    let shipping = (totalCartPrice * 0.05)
     shippingCost.textContent = (shipping).toLocaleString('en-KE', {
         style: 'currency',
         currency: "KES"
     });
 
-    grandTotalElement.innerHTML = (Number(shipping) + (quantity.length > 0 ? quantity.reduce((item, total) => item + total) : 0)).toLocaleString('en-KE', {
+    grandTotalElement.innerHTML = (shipping + totalCartPrice).toLocaleString('en-KE', {
         style: 'currency',
         currency: "KES"
     });
