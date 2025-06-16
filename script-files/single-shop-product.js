@@ -174,16 +174,10 @@ function convertToLocaleCurrencyString(price) {
 
 function updatePricesInLocaleString() {
     let totalCartPrice = cartArray.reduce((sum, item) => { return sum + (item.productPrice * item.productQuantity) }, 0)
-    cartTotal.textContent = totalCartPrice//cartArray.reduce((item, total) => { item + (total.productPrice * total.productQuantity), 0 })
-
-    /*(cartArray.length > 0) ? (cartArray.reduce((item, total) => { item + (total.productPrice * total.productQuantity), 0 }).toLocaleString('en-KE', {
+    cartTotal.textContent = totalCartPrice.toLocaleString('en-KE', {
         style: 'currency',
         currency: "KES"
-    })) : (0).toLocaleString('en-KE', {
-        style: 'currency',
-        currency: "KES"
-    });
-    */
+    })
     let shipping = (totalCartPrice * 0.05)
     shippingCost.textContent = (shipping).toLocaleString('en-KE', {
         style: 'currency',
