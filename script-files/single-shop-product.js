@@ -140,22 +140,23 @@ function call() {
 
 }
 
-if (document.title == "Shop Page") {
-
-    console.log(document.querySelectorAll("img.small-img"))
-    document.querySelectorAll("img .small-img").forEach(
-        (e) => {
-            e.addEventListener('click',
-                () => {
-                    document.getElementById("MainImg").src = (e.src)
-                }
-            )
-        }
-    )
-}
-else {
-    console.log('error')
-}
+document.addEventListener("DOMContentLoaded", () => {
+    if (document.title == "Shop Page") {
+        console.log(document.querySelectorAll("img.small-img"))
+        document.querySelectorAll("img .small-img").forEach(
+            (e) => {
+                e.addEventListener('click',
+                    () => {
+                        document.getElementById("MainImg").src = (e.src)
+                    }
+                )
+            }
+        )
+    }
+    else {
+        console.log('error')
+    }
+})
 function updateCartQuantity() {
     if (cartArray.length < 1) { cartIcon.style.display = 'none'; return }
     cartIcon.style.display = 'block'
