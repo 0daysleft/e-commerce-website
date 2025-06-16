@@ -195,8 +195,6 @@ function deleteProduct(cartNo) {
     sessionStorage.setItem("cart", JSON.stringify(cartArray))
     displayCart()
     updateCartQuantity()
-    updatePricesInLocaleString()
-    updatePrices()
 }
 
 function mainCart() {
