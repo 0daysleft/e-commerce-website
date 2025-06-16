@@ -1,5 +1,7 @@
 let cartArray = JSON.parse(sessionStorage.getItem('cart'))
 let totalSingleItemPrice;
+const cartIcon = document.getElementById("lg-bag");
+const cartTableBody = document.getElementById("cartDetails")
 let cartTotal = document.getElementById("totalGoodsInCart");
 let grandTotalElement = document.getElementById("totalCost")
 let shippingCost = document.getElementById("shippingFee")
@@ -37,6 +39,12 @@ function deleteProduct(cartNo) {
      updateCartQuantity()
 }
 
+function updateCartQuantity() {
+     if (cartArray.length < 1) { cartIcon.style.display = 'none'; return }
+     cartIcon.style.display = 'block'
+     let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total) || []
+     cartIcon.setAttribute("data-count", cartQuantity);
+}
 
 if (cartArray.length > 0) {
 
@@ -47,9 +55,7 @@ if (cartArray.length > 0) {
                const row = document.createElement("tr");
 
                updatePrices = (totalQuantity) => {
-
                     totalSingleItemPrice = (elem.productPrice * totalQuantity)
-                    quantity.push(totalSingleItemPrice)
                }
 
                updatePrices(elem.productQuantity);

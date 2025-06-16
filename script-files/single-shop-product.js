@@ -1,6 +1,5 @@
 import products from "./products.js";
 import script from "./script.js";
-const cartTableBody = document.getElementById("cartDetails")
 let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
 let selectedProductId = sessionStorage.getItem("elementId");
 const product = products.find((prod) => prod.productId === selectedProductId);
