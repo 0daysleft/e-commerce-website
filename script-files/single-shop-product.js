@@ -6,10 +6,16 @@ const product = products.find((prod) => prod.productId === selectedProductId);
 let productDetailsDivElement = document.querySelector("#product-details");
 const cartIcon = document.getElementById("lg-bag");
 
-
 //IF YOU CLICK ANY ITEM IT TAKES YOU TO THE SINGLE SHOP PRODUCT PAGE
 
 let productView = document.querySelectorAll("img");
+
+function updateCartQuantity() {
+    if (cartArray.length < 1) { cartIcon.style.display = 'none'; return }
+    cartIcon.style.display = 'block'
+    let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total) || []
+    cartIcon.setAttribute("data-count", cartQuantity);
+}
 
 let productArray = [...productView]
 
@@ -29,7 +35,6 @@ function addProductToCart(pro) {
 
     if (pro) {
         (existing) ? existing.productQuantity += 1 : cartArray.push(pro)
-        console.log("Pro:", existing.productQuantity)
     }
     else {
         (existing) ? existing.productQuantity += 1 : cartArray.push(product)
@@ -134,34 +139,16 @@ function call() {
 
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    if (document.title == "Shop Page") {
-        console.log(document.querySelectorAll("img.small-img"))
-        document.querySelectorAll("img .small-img").forEach(
-            (e) => {
-                e.addEventListener('click',
-                    () => {
-                        document.getElementById("MainImg").src = (e.src)
-                    }
-                )
-            }
-        )
-    }
-    else {
-        console.log('error')
-    }
-})
-function updateCartQuantity() {
-    if (cartArray.length < 1) { cartIcon.style.display = 'none'; return }
-    cartIcon.style.display = 'block'
-    let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total) || []
-    cartIcon.setAttribute("data-count", cartQuantity);
-}
-
-updateCartQuantity()
-
-function mainCart() {
-
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll("img.small-img").forEach(
+        (e) => {
+            e.addEventListener('click',
+                () => {
+                    document.getElementById("MainImg").src = (e.src)
+                }
+            )
+        }
+    )
     let btn = document.getElementById("single-page-product-button");
 
     if (document.getElementById("single-product-page")) {
@@ -171,8 +158,10 @@ function mainCart() {
     else {
         console.log('Wrong Page')
     }
+})
 
-}
+
+
 
 
 //CHANGING THE IMAGE OF THE PRODUCT IN THE SINGLE PRODUCT PAGE.
@@ -181,6 +170,4 @@ function mainCart() {
 
 //FUNCTION FOR CLOSE NAVIGATION BAR IN SMALL SCREENS
 script();
-
-mainCart()
 call()
