@@ -173,7 +173,7 @@ function convertToLocaleCurrencyString(price) {
 }
 
 function updatePricesInLocaleString() {
-    let total = myArray.reduce((sum, item) => {
+    let total = cartArray.reduce((sum, item) => {
         // Ensure the object has valid price and quantity properties
         if (typeof item.price === "number" && typeof item.quantity === "number") {
             return sum + (item.price * item.quantity);
