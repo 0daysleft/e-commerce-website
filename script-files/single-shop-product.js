@@ -10,7 +10,6 @@ const cartIcon = document.getElementById("lg-bag");
 let cartTotal = document.getElementById("totalGoodsInCart");
 let grandTotalElement = document.getElementById("totalCost")
 let shippingCost = document.getElementById("shippingFee")
-let quantity = [];
 let updatePrices;
 
 
@@ -264,7 +263,6 @@ function mainCart() {
                     quantityInput.value = Number(elem.productQuantity);
 
                     quantityInput.addEventListener('input', (e) => {
-                        quantity = [];
                         let newQuantity = Number(e.target.value);
                         elem.productQuantity = newQuantity;
                         if (newQuantity > 99) {
