@@ -173,7 +173,7 @@ function convertToLocaleCurrencyString(price) {
 }
 
 function updatePricesInLocaleString() {
-    cartTotal.textContent = (quantity.length > 0) ? (quantity.reduce((item, total) => item + total).toLocaleString('en-KE', {
+    cartTotal.textContent = (quantity.length > 0) ? (cartArray.reduce((item, total) => item + (total.productPrice * total.productQuantity)).toLocaleString('en-KE', {
         style: 'currency',
         currency: "KES"
     })) : (0).toLocaleString('en-KE', {
