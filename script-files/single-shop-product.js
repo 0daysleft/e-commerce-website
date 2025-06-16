@@ -173,13 +173,16 @@ function convertToLocaleCurrencyString(price) {
 }
 
 function updatePricesInLocaleString() {
-    cartTotal.textContent = (cartArray.length > 0) ? (cartArray.reduce((item, total) => { item + (total.productPrice * total.productQuantity), 0 }).toLocaleString('en-KE', {
+    cartTotal.textContent = cartArray.reduce((item, total) => { item + (total.productPrice * total.productQuantity), 0 })
+
+    /*(cartArray.length > 0) ? (cartArray.reduce((item, total) => { item + (total.productPrice * total.productQuantity), 0 }).toLocaleString('en-KE', {
         style: 'currency',
         currency: "KES"
     })) : (0).toLocaleString('en-KE', {
         style: 'currency',
         currency: "KES"
     });
+    */
     let shipping = quantity.length > 0 ? (quantity.reduce((item, total) => item + total) * 0.05) : 0
     shippingCost.textContent = (shipping).toLocaleString('en-KE', {
         style: 'currency',
