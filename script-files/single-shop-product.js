@@ -180,7 +180,7 @@ function updatePricesInLocaleString() {
         }
         return sum; // skip if item is invalid or missing data
     }, 0);
-    cartTotal.textContent = total//cartArray.reduce((item, total) => { item + (total.productPrice * total.productQuantity), 0 })
+    cartTotal.textContent = cartArray.reduce((item, ite) => { return item + (ite.productPrice * ite.productQuantity) }, 0)//cartArray.reduce((item, total) => { item + (total.productPrice * total.productQuantity), 0 })
 
     /*(cartArray.length > 0) ? (cartArray.reduce((item, total) => { item + (total.productPrice * total.productQuantity), 0 }).toLocaleString('en-KE', {
         style: 'currency',
