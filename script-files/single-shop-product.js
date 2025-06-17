@@ -31,7 +31,7 @@ productArray.forEach(
 
 
 function addProductToCart(pro) {
-    const existing = cartArray.find(item => item.productId === productToAdd.productId);
+    const existing = cartArray.find(item => item.productId === pro.productId);
 
     if (existing) {
         existing.productQuantity += 1;
