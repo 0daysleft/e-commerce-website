@@ -153,12 +153,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let btn = document.getElementById("single-page-product-button");
 
     if (document.getElementById("single-product-page")) {
-        let productExistsInTheCart = cartArray.find((item) => item.productId === product.productId)
         btn.addEventListener('click', () => {
+            let productExistsInTheCart = cartArray.find((item) => item.productId === product.productId)
             if (productExistsInTheCart) {
                 productExistsInTheCart.productQuantity++
-                console.log("Exis:", productExistsInTheCart)
-                console.log("Quant:", productExistsInTheCart.productQuantity)
             } else { cartArray.push(product) }
             sessionStorage.setItem("cart", JSON.stringify(cartArray));
             updateCartQuantity()
