@@ -19,7 +19,7 @@ html{
     flex-direction: column;
     background-color: red;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     z-index: 2;
 }
 
