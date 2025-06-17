@@ -154,17 +154,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (document.getElementById("single-product-page")) {
         btn.addEventListener('click', () => {
-            let productExistsInTheCart = cartArray.find((item) => item.productId === product.productId)
-            if (productExistsInTheCart) {
-                productExistsInTheCart.productQuantity++
-            } else { cartArray.push(product) }
-            sessionStorage.setItem("cart", JSON.stringify(cartArray));
+            addProductToCart(product)
+            // let productExistsInTheCart = cartArray.find((item) => item.productId === product.productId)
+            // if (productExistsInTheCart) {
+            //     productExistsInTheCart.productQuantity++
+            // } else { cartArray.push(product) }
+            // sessionStorage.setItem("cart", JSON.stringify(cartArray));
             updateCartQuantity()
         })
     }
     else {
         console.log('Wrong Page')
     }
+    updateCartQuantity()
 })
 
 
