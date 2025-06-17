@@ -36,7 +36,7 @@ function addProductToCart(pro) {
     if (existing) {
         existing.productQuantity += 1;
     } else {
-        cartArray.push(product);
+        cartArray.push(pro);
     }
 
     // Step 4: Save and update
