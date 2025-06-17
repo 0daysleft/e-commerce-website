@@ -36,7 +36,6 @@ function addProductToCart(pro) {
     if (existing) {
         existing.productQuantity += 1;
     } else {
-        productToAdd.productQuantity = 1;
         cartArray.push(productToAdd);
     }
 
