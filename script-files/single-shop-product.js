@@ -157,9 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
             addProductToCart(product)
         })
     }
-    else {
-        console.log('Wrong Page')
-    }
     updateCartQuantity()
 })
 
