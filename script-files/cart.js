@@ -150,7 +150,7 @@ if (cartArray.length > 0 || cartArray == []) {
      const emptyCell = document.createElement("td");
      emptyCell.colSpan = 6;
      emptyCell.innerHTML = `
-                <div style="padding: 20px; text-align: center; color: red;">
+                <div style="padding: 20px; text-align: center; color: red; height: 40vh; display: flex; justify-content: center; align-items: center; flex-direction: column">
                      🥲 Your cart is empty! <br><br>
                     <a href="./shop.html" style="color: green;">Please Shop 🛍️</a>
                 </div>
