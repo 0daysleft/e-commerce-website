@@ -7,6 +7,7 @@ let grandTotalElement = document.getElementById("totalCost")
 let shippingCost = document.getElementById("shippingFee")
 let updatePrices;
 let displayCart;
+let cartVoucherAndSubtotal = document.getElementById('cart-add')
 
 function convertToLocaleCurrencyString(price) {
      return price.toLocaleString('en-KE', { style: 'currency', currency: "KES" })
@@ -46,7 +47,7 @@ function updateCartQuantity() {
      cartIcon.setAttribute("data-count", cartQuantity);
 }
 
-if (cartArray.length > 0) {
+if (cartArray.length > 0 || cartArray == []) {
 
      displayCart = () => {
           cartTableBody.innerHTML = ""; // Reset the table body
@@ -143,8 +144,8 @@ if (cartArray.length > 0) {
      displayCart()
 
 } else {
+     cartVoucherAndSubtotal.style.display = 'none'
      cartTableBody.innerHTML = ""; // Clear old rows
-
      const emptyRow = document.createElement("tr");
      const emptyCell = document.createElement("td");
      emptyCell.colSpan = 6;
