@@ -15,7 +15,6 @@ function convertToLocaleCurrencyString(price) {
 
 function updatePricesInLocaleString() {
      let totalCartPrice = cartArray.reduce((sum, item) => { return sum + (item.productPrice * item.productQuantity) }, 0)
-     console.log("Cart Total: ", totalCartPrice)
      cartTotal.textContent = totalCartPrice.toLocaleString('en-KE', {
           style: 'currency',
           currency: "KES"
