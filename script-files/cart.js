@@ -140,6 +140,7 @@ if (cartArray.length > 0) {
           cartTableBody.appendChild(fragment);
           updatePricesInLocaleString();
      }
+     displayCart()
 
 } else {
      cartTableBody.innerHTML = ""; // Clear old rows
@@ -159,4 +160,3 @@ if (cartArray.length > 0) {
 }
 
 
-displayCart()

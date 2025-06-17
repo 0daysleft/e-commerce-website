@@ -29,18 +29,30 @@ productArray.forEach(
     }
 )
 
+
 function addProductToCart(pro) {
+    // Step 1: Decide which product to work with
+    const productToAdd = pro || product; // If pro is passed, use it. Else, use global `product`.
 
-    var existing = cartArray.find(item => item.productId === pro.productId)
+    // Step 2: Sanity check
+    if (!productToAdd || !productToAdd.productId) {
+        console.error("No valid product to add to cart.");
+        return;
+    }
 
-    if (pro) {
-        (existing) ? existing.productQuantity += 1 : cartArray.push(pro)
+    // Step 3: Check if product already exists in the cart
+    const existing = cartArray.find(item => item.productId === productToAdd.productId);
+
+    if (existing) {
+        existing.productQuantity += 1;
+    } else {
+        productToAdd.productQuantity = 1;
+        cartArray.push(productToAdd);
     }
-    else {
-        (existing) ? existing.productQuantity += 1 : cartArray.push(product)
-    }
-    sessionStorage.setItem("cart", JSON.stringify(cartArray))
-    updateCartQuantity()
+
+    // Step 4: Save and update
+    sessionStorage.setItem("cart", JSON.stringify(cartArray));
+    updateCartQuantity();
 }
 
 // this code here will be executed once any add button in the page is clicked, used for adding a prodiuct direct in the page without the need for viewing the product
@@ -152,8 +164,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let btn = document.getElementById("single-page-product-button");
 
     if (document.getElementById("single-product-page")) {
-        console.log('This Pageue')
-        btn.addEventListener('click', addProductToCart)
+        let productExistsInTheCart = cartArray.find((item) => item.productId == product.productId)
+        btn.addEventListener('click', () => {
+            if (productExistsInTheCart) {
+                productExistsInTheCart.productQuantity++
+                console.log("Exis:", productExistsInTheCart)
+                console.log("Quant:", productExistsInTheCart.productQuantity)
+            } else { cartArray.push(product) }
+            sessionStorage.setItem("cart", JSON.stringify(cartArray));
+            updateCartQuantity()
+        })
     }
     else {
         console.log('Wrong Page')
