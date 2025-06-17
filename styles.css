@@ -11,6 +11,39 @@ html{
     font-family: "Spartan", sans-serif;
 }
 
+#image-loader{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: red;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+}
+
+.spinner{
+    width: 100px;
+    height: 100px;
+    margin-top: 1rem;
+    border-radius: 50%;
+    border-width: 10px;
+    border-style: solid;
+    border-color: blue transparent transparent transparent;
+    animation: spinner 1s infinite ease-in-out;
+}
+
+@keyframes spinner {
+    0%{
+        rotate: 0deg;
+    }
+
+    100%{
+        rotate: 360deg;
+    }
+}
+
 h1{
     font-size: 50px;
     line-height: 64px;
