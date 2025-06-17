@@ -23,16 +23,16 @@ This is a simple e-commerce website currently under development. The project aim
 The project is currently under development. The following features are in progress:
 
 - **Product Listings:** Basic product listings are shown but still need improvements for better product descriptions and layout.
-- **Shopping Cart:** The shopping cart is functional but lacks advanced features like quantity management and persistent cart storage.
+- **Shopping Cart:** The shopping cart is functional but lacks advanced features like quantity management and persistent cart storage. ✅✅
 - **Checkout Page:** A basic checkout page is in place, but payment processing is not yet implemented.
 
 ### To-Do List
 - **Finish Product Details:** Add more detailed information for each product.
-- **Implement Cart Features:** Allow users to update item quantities and add/remove items more easily.
+- **Implement Cart Features:** Allow users to update item quantities and add/remove items more easily. ✅✅
 - **Integrate Payment Gateway:** Implement integration with Stripe/PayPal for real transactions.
 - **User Authentication:** Set up a system for user registration, login, and order tracking. *(Not Sure)*
 - **Backend Development:** Set up a backend server (Node.js/Express) to handle product data, user data, and checkout operations. *(Not Sure)*
-- **Improve Design:** Work on UI/UX to make the website more user-friendly.
+- **Improve Design:** Work on UI/UX to make the website more user-friendly. ✅
 
 ### Contribution
 Since the project is still under development, contributions are welcome! If you'd like to help speed up the development process, feel free to:
