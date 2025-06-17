@@ -47,6 +47,22 @@ function updateCartQuantity() {
      cartIcon.setAttribute("data-count", cartQuantity);
 }
 
+function displayEmptyCartAlert() {
+     cartTableBody.innerHTML = ""; // Clear old rows
+     const emptyRow = document.createElement("tr");
+     const emptyCell = document.createElement("td");
+     emptyCell.colSpan = 6;
+     emptyCell.innerHTML = `
+      <div style="padding: 20px; text-align: center; color: red; height: 40vh; display: flex; justify-content: center; align-items: center; flex-direction: column">
+           🥲 Your cart is empty! <br><br>
+          <a href="./shop.html" style="color: green;">Please Shop 🛍️</a>
+      </div>
+  `;
+     emptyRow.appendChild(emptyCell);
+     cartTableBody.appendChild(emptyRow);
+     updatePricesInLocaleString();
+}
+
 function updateCartPage() {
      if (cartArray.length > 0 || cartArray == []) {
 
@@ -97,6 +113,7 @@ function updateCartPage() {
                     quantityInput.setAttribute('min', '1');
                     quantityInput.setAttribute('max', '99');
                     quantityInput.value = Number(elem.productQuantity);
+                    let pr
 
                     quantityInput.addEventListener('input', (e) => {
                          let newQuantity = Number(e.target.value);
@@ -110,29 +127,36 @@ function updateCartPage() {
                          }
 
                          function updateCartRowPrice(elem, row) {
-                              const priceCell = row.querySelector('#cartTotalProductPrice span');
+                              //const priceCell = row.querySelector('#cartTotalProductPrice span');
+                              //console.log("price-cell", priceCell)
                               const newTotal = elem.productPrice * elem.productQuantity;
                               priceCell.textContent = newTotal.toLocaleString('en-KE', {
                                    style: 'currency',
                                    currency: "KES"
                               });
                          }
+                         //let priv = elem.productName + " > " + (elem.productPrice * elem.productQuantity)
+                         pr = (elem.productPrice * elem.productQuantity)
+                         console.log(pr)
 
                          // Update the cart array
                          sessionStorage.setItem("cart", JSON.stringify(cartArray))
                          // Recalculate totals and update UI
                          updateCartQuantity()
-                         updatePrices(quantity);
+                         updatePrices();
                          //addProductToCart()
-                         mainCart()
                          updatePricesInLocaleString(); // Your function to recalculate totals
                          updateCartRowPrice(elem, row); // Optional: update just this row’s total
                     });
 
                     productQuantityCell.appendChild(quantityInput);
                     row.appendChild(productQuantityCell);
+
+
                     const productSubtotalCell = document.createElement("td");
-                    const productSubtotal = document.createTextNode(convertToLocaleCurrencyString(totalSingleItemPrice))
+                    //const productSubtotal = document.createTextNode(convertToLocaleCurrencyString(pr))
+                    console.log("pr2:", pr)
+                    const productSubtotal = document.createTextNode(convertToLocaleCurrencyString(updateCartRowPrice(elem, row)))
                     productSubtotalCell.appendChild(productSubtotal);
                     row.appendChild(productSubtotalCell);
                     fragment.appendChild(row);
@@ -144,20 +168,8 @@ function updateCartPage() {
           displayCart()
 
      } else {
+          displayEmptyCartAlert()
           cartVoucherAndSubtotal.style.display = 'none'
-          cartTableBody.innerHTML = ""; // Clear old rows
-          const emptyRow = document.createElement("tr");
-          const emptyCell = document.createElement("td");
-          emptyCell.colSpan = 6;
-          emptyCell.innerHTML = `
-                <div style="padding: 20px; text-align: center; color: red; height: 40vh; display: flex; justify-content: center; align-items: center; flex-direction: column">
-                     🥲 Your cart is empty! <br><br>
-                    <a href="./shop.html" style="color: green;">Please Shop 🛍️</a>
-                </div>
-            `;
-          emptyRow.appendChild(emptyCell);
-          cartTableBody.appendChild(emptyRow);
-          updatePricesInLocaleString();
      }
 }
 
