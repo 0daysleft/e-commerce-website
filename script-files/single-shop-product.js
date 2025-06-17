@@ -31,16 +31,6 @@ productArray.forEach(
 
 
 function addProductToCart(pro) {
-    // Step 1: Decide which product to work with
-    const productToAdd = pro || product; // If pro is passed, use it. Else, use global `product`.
-
-    // Step 2: Sanity check
-    if (!productToAdd || !productToAdd.productId) {
-        console.error("No valid product to add to cart.");
-        return;
-    }
-
-    // Step 3: Check if product already exists in the cart
     const existing = cartArray.find(item => item.productId === productToAdd.productId);
 
     if (existing) {
