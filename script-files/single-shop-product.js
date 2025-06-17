@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let btn = document.getElementById("single-page-product-button");
 
     if (document.getElementById("single-product-page")) {
-        let productExistsInTheCart = cartArray.find((item) => item.productId == product.productId)
+        let productExistsInTheCart = cartArray.find((item) => item.productId === product.productId)
         btn.addEventListener('click', () => {
             if (productExistsInTheCart) {
                 productExistsInTheCart.productQuantity++
