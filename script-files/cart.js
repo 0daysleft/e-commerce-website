@@ -138,17 +138,21 @@ function updateCartPage() {
                          updatePrices();
                          //addProductToCart()
                          updatePricesInLocaleString(); // Your function to recalculate totals
+                         updateSingleProductTotal()
                          updateCartRowPrice(); // Optional: update just this row’s total
                     });
 
                     productQuantityCell.appendChild(quantityInput);
                     row.appendChild(productQuantityCell);
 
-                    const productSubtotalCell = document.createElement("td");
-                    const productSubtotal = document.createTextNode(updateCartRowPrice())
-                    productSubtotalCell.appendChild(productSubtotal);
-                    row.appendChild(productSubtotalCell);
+                    function updateSingleProductTotal() {
+                         const productSubtotalCell = document.createElement("td");
+                         const productSubtotal = document.createTextNode(updateCartRowPrice())
+                         productSubtotalCell.appendChild(productSubtotal);
+                         row.appendChild(productSubtotalCell);
+                    }
 
+                    updateSingleProductTotal()
                     fragment.appendChild(row);
                });
                cartTableBody.appendChild(fragment);
