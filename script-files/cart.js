@@ -131,6 +131,13 @@ function updateCartPage() {
                               alert('max value is 99')
                               return
                          }
+                         else if (newQuantity < 1) {
+                              e.target.value = 1;
+                              elem.productQuantity = 1;
+                              sessionStorage.setItem("cart", JSON.stringify(cartArray))
+                              alert('Min value is 1')
+                              return
+                         }
 
                          sessionStorage.setItem("cart", JSON.stringify(cartArray))
                          // Recalculate totals and update UI
