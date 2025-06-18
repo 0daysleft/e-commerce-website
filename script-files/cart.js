@@ -140,7 +140,7 @@ function updateCartPage() {
                          updatePricesInLocaleString(); // Your function to recalculate totals
                          updateCartRowPrice(); // Optional: update just this row’s total
                     });
-                    console.log(typeof updateCartRowPrice, updateCartRowPrice);
+                    //console.log(typeof updateCartRowPrice, updateCartRowPrice);
 
                     //console.log("Row Price: ", updateCartRowPrice())
 
