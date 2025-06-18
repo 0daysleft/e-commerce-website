@@ -65,7 +65,6 @@ function displayEmptyCartAlert() {
 
 function updateCartPage() {
      if (cartArray.length > 0 || cartArray == []) {
-
           displayCart = () => {
                cartTableBody.innerHTML = ""; // Reset the table body
                const fragment = document.createDocumentFragment();
@@ -113,10 +112,10 @@ function updateCartPage() {
                     quantityInput.setAttribute('min', '1');
                     quantityInput.setAttribute('max', '99');
                     quantityInput.value = Number(elem.productQuantity);
-                    let pr
-
+                    let newQuantity;
+                    var updateCartRowPrice;
                     quantityInput.addEventListener('input', (e) => {
-                         let newQuantity = Number(e.target.value);
+                         newQuantity = Number(e.target.value);
                          elem.productQuantity = newQuantity;
                          if (newQuantity > 99) {
                               e.target.value = 99;
@@ -126,19 +125,17 @@ function updateCartPage() {
                               return
                          }
 
-                         function updateCartRowPrice(elem, row) {
+                         updateCartRowPrice = () => {
                               //const priceCell = row.querySelector('#cartTotalProductPrice span');
                               //console.log("price-cell", priceCell)
-                              const newTotal = elem.productPrice * elem.productQuantity;
-                              priceCell.textContent = newTotal.toLocaleString('en-KE', {
+                              const newTotal = (elem.productPrice * elem.productQuantity).toLocaleString('en-KE', {
                                    style: 'currency',
                                    currency: "KES"
                               });
+                              return newTotal;
                          }
                          //let priv = elem.productName + " > " + (elem.productPrice * elem.productQuantity)
-                         pr = (elem.productPrice * elem.productQuantity)
-                         console.log(pr)
-
+                         //updateSubtotalPrice()
                          // Update the cart array
                          sessionStorage.setItem("cart", JSON.stringify(cartArray))
                          // Recalculate totals and update UI
@@ -146,19 +143,19 @@ function updateCartPage() {
                          updatePrices();
                          //addProductToCart()
                          updatePricesInLocaleString(); // Your function to recalculate totals
-                         updateCartRowPrice(elem, row); // Optional: update just this row’s total
+                         updateCartRowPrice(); // Optional: update just this row’s total
+                         console.log("Row Price: ", updateCartRowPrice())
                     });
 
                     productQuantityCell.appendChild(quantityInput);
                     row.appendChild(productQuantityCell);
 
-
                     const productSubtotalCell = document.createElement("td");
                     //const productSubtotal = document.createTextNode(convertToLocaleCurrencyString(pr))
-                    console.log("pr2:", pr)
-                    const productSubtotal = document.createTextNode(convertToLocaleCurrencyString(updateCartRowPrice(elem, row)))
+                    const productSubtotal = document.createTextNode("updateCartRowPrice()")
                     productSubtotalCell.appendChild(productSubtotal);
                     row.appendChild(productSubtotalCell);
+
                     fragment.appendChild(row);
                });
                cartTableBody.appendChild(fragment);
