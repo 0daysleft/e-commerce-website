@@ -91,7 +91,6 @@ function updateCartPage() {
                     removeCell.addEventListener('click', (e) => {
                          e.preventDefault();
                          deleteProduct(index)
-
                     })
 
                     const imgCell = document.createElement("td");
