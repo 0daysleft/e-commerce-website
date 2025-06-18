@@ -140,15 +140,11 @@ function updateCartPage() {
                          updatePricesInLocaleString(); // Your function to recalculate totals
                          updateCartRowPrice(); // Optional: update just this row’s total
                     });
-                    //console.log(typeof updateCartRowPrice, updateCartRowPrice);
-
-                    //console.log("Row Price: ", updateCartRowPrice())
 
                     productQuantityCell.appendChild(quantityInput);
                     row.appendChild(productQuantityCell);
 
                     const productSubtotalCell = document.createElement("td");
-                    //const productSubtotal = document.createTextNode(convertToLocaleCurrencyString(pr))
                     const productSubtotal = document.createTextNode(updateCartRowPrice())
                     productSubtotalCell.appendChild(productSubtotal);
                     row.appendChild(productSubtotalCell);
