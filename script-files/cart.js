@@ -75,6 +75,14 @@ function updateCartPage() {
                          totalSingleItemPrice = (elem.productPrice * totalQuantity)
                     }
 
+                    let updateCartRowPrice = () => {
+                         const newTotal = (elem.productPrice * elem.productQuantity).toLocaleString('en-KE', {
+                              style: 'currency',
+                              currency: "KES"
+                         });
+                         return newTotal;
+                    }
+
                     updatePrices(elem.productQuantity);
                     const removeCell = document.createElement("td");
                     removeCell.innerHTML = `<a href="#"><i class="fa-solid fa-times-circle"></i></a>`;
@@ -124,14 +132,6 @@ function updateCartPage() {
                               return
                          }
 
-                         const updateCartRowPrice = () => {
-                              const newTotal = (elem.productPrice * elem.productQuantity).toLocaleString('en-KE', {
-                                   style: 'currency',
-                                   currency: "KES"
-                              });
-                              return newTotal;
-                         }
-
                          sessionStorage.setItem("cart", JSON.stringify(cartArray))
                          // Recalculate totals and update UI
                          updateCartQuantity()
@@ -142,14 +142,14 @@ function updateCartPage() {
                     });
                     console.log(typeof updateCartRowPrice, updateCartRowPrice);
 
-                    console.log("Row Price: ", updateCartRowPrice())
+                    //console.log("Row Price: ", updateCartRowPrice())
 
                     productQuantityCell.appendChild(quantityInput);
                     row.appendChild(productQuantityCell);
 
                     const productSubtotalCell = document.createElement("td");
                     //const productSubtotal = document.createTextNode(convertToLocaleCurrencyString(pr))
-                    const productSubtotal = document.createTextNode('updateCartRowPrice()')
+                    const productSubtotal = document.createTextNode(updateCartRowPrice())
                     productSubtotalCell.appendChild(productSubtotal);
                     row.appendChild(productSubtotalCell);
 
