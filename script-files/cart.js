@@ -113,7 +113,6 @@ function updateCartPage() {
                     quantityInput.setAttribute('max', '99');
                     quantityInput.value = Number(elem.productQuantity);
                     let newQuantity;
-                    var updateCartRowPrice;
                     quantityInput.addEventListener('input', (e) => {
                          newQuantity = Number(e.target.value);
                          elem.productQuantity = newQuantity;
@@ -125,18 +124,14 @@ function updateCartPage() {
                               return
                          }
 
-                         updateCartRowPrice = () => {
-                              //const priceCell = row.querySelector('#cartTotalProductPrice span');
-                              //console.log("price-cell", priceCell)
+                         const updateCartRowPrice = () => {
                               const newTotal = (elem.productPrice * elem.productQuantity).toLocaleString('en-KE', {
                                    style: 'currency',
                                    currency: "KES"
                               });
                               return newTotal;
                          }
-                         //let priv = elem.productName + " > " + (elem.productPrice * elem.productQuantity)
-                         //updateSubtotalPrice()
-                         // Update the cart array
+
                          sessionStorage.setItem("cart", JSON.stringify(cartArray))
                          // Recalculate totals and update UI
                          updateCartQuantity()
@@ -144,15 +139,17 @@ function updateCartPage() {
                          //addProductToCart()
                          updatePricesInLocaleString(); // Your function to recalculate totals
                          updateCartRowPrice(); // Optional: update just this row’s total
-                         console.log("Row Price: ", updateCartRowPrice())
                     });
+                    console.log(typeof updateCartRowPrice, updateCartRowPrice);
+
+                    console.log("Row Price: ", updateCartRowPrice())
 
                     productQuantityCell.appendChild(quantityInput);
                     row.appendChild(productQuantityCell);
 
                     const productSubtotalCell = document.createElement("td");
                     //const productSubtotal = document.createTextNode(convertToLocaleCurrencyString(pr))
-                    const productSubtotal = document.createTextNode("updateCartRowPrice()")
+                    const productSubtotal = document.createTextNode('updateCartRowPrice()')
                     productSubtotalCell.appendChild(productSubtotal);
                     row.appendChild(productSubtotalCell);
 
