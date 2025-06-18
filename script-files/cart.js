@@ -142,6 +142,7 @@ function updateCartPage() {
                          // Recalculate totals and update UI
                          updateCartQuantity()
                          updatePrices();
+                         updateCartPage()
                          //addProductToCart()
                          updatePricesInLocaleString(); // Your function to recalculate totals
                          updateCartRowPrice(); // Optional: update just this row’s total
