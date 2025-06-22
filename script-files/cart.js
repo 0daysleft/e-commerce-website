@@ -52,13 +52,19 @@ function displayEmptyCartAlert() {
      document.querySelector('.blog-header p').innerHTML = 'Visit the <a href="../html-files/shop.html">shop page</a> to shop and then checkout here, see you here again!!'
      // Clear any previous rows in the cart body
      const cartTable = document.getElementById("cart")
-
+     cartTable.innerHTML = ""
      // Only append the empty row if it's not already present
      const emptyRow = document.createElement("tr");
      const emptyCell = document.createElement("td");
      emptyCell.colSpan = 6;
      emptyCell.innerHTML = `
-     <div style="padding: 20px; text-align: center; color: red; height: 40vh; display: flex; justify-content: center; align-items: center; flex-direction: column">
+     <div style="   padding: 20px;
+                    text-align: center;
+                    color: red; height: 40vh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column">
           🥲 Your cart is empty! <br><br>
          <a href="./shop.html" style="color: green;">Please Shop 🛍️</a>
      </div>
