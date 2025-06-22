@@ -48,7 +48,7 @@ function updateCartQuantity() {
 }
 
 function displayEmptyCartAlert() {
-     document.querySelector('.blog-header').textContent = 'Ooops 🥲. Seems you landed on the wrong page!!'
+     document.querySelector('.blog-header h2').textContent = 'Ooops 🥲. Seems you landed on the wrong page!!'
      document.querySelector('.blog-header p').textContent = 'Visit the <a href="../html-files/shop.html">shop page</a> to shop and checkout, see you here again!!'
      cartTableBody.innerHTML = ""; // Clear old rows
      const emptyRow = document.createElement("tr");
@@ -68,6 +68,7 @@ function displayEmptyCartAlert() {
 function updateCartPage() {
      if (cartArray.length > 0 || cartArray == []) {
           displayCart = () => {
+
                cartTableBody.innerHTML = ""; // Reset the table body
                const fragment = document.createDocumentFragment();
                cartArray.forEach((elem, index) => {
