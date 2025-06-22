@@ -51,6 +51,7 @@ function displayEmptyCartAlert() {
      document.querySelector('.blog-header h2').textContent = 'Ooops 🥲. Seems you landed on the wrong page!!'
      document.querySelector('.blog-header p').innerHTML = 'Visit the <a href="../html-files/shop.html">shop page</a> to shop and then checkout here, see you here again!!'
      // Clear any previous rows in the cart body
+     const cartTable = document.getElementById("cart")
      while (cartTableBody.firstChild) {
           cartTableBody.removeChild(cartTableBody.firstChild);
      }
@@ -66,7 +67,7 @@ function displayEmptyCartAlert() {
      </div>
    `;
      emptyRow.appendChild(emptyCell);
-     cartTableBody.appendChild(emptyRow);
+     cartTable.appendChild(emptyRow);
 
      // Optionally call this if it formats totals
      updatePricesInLocaleString();
