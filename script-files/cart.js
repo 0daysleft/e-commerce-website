@@ -49,7 +49,7 @@ function updateCartQuantity() {
 
 function displayEmptyCartAlert() {
      document.querySelector('.blog-header h2').textContent = 'Ooops 🥲. Seems you landed on the wrong page!!'
-     document.querySelector('.blog-header p').textContent = 'Visit the <a href="../html-files/shop.html">shop page</a> to shop and checkout, see you here again!!'
+     document.querySelector('.blog-header p').innerHTML = 'Visit the <a href="../html-files/shop.html">shop page</a> to shop and checkout, see you here again!!'
      cartTableBody.innerHTML = ""; // Clear old rows
      const emptyRow = document.createElement("tr");
      const emptyCell = document.createElement("td");
