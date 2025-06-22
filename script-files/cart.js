@@ -56,7 +56,6 @@ function displayEmptyCartAlert() {
      // Only append the empty row if it's not already present
      const emptyRow = document.createElement("tr");
      const emptyCell = document.createElement("td");
-     emptyCell.colSpan = 6;
      emptyCell.innerHTML = `
      <div style="   padding: 20px;
                     text-align: center;
