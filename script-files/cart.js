@@ -52,9 +52,6 @@ function displayEmptyCartAlert() {
      document.querySelector('.blog-header p').innerHTML = 'Visit the <a href="../html-files/shop.html">shop page</a> to shop and then checkout here, see you here again!!'
      // Clear any previous rows in the cart body
      const cartTable = document.getElementById("cart")
-     while (cartTableBody.firstChild) {
-          cartTableBody.removeChild(cartTableBody.firstChild);
-     }
 
      // Only append the empty row if it's not already present
      const emptyRow = document.createElement("tr");
