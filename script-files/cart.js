@@ -1,4 +1,17 @@
-let cartArray = JSON.parse(sessionStorage.getItem('cart'))
+//let cartArray = JSON.parse(sessionStorage.getItem('cart'))
+
+let cartArray = [];
+
+try {
+     const rawCart = sessionStorage.getItem("cart");
+     cartArray = rawCart ? JSON.parse(rawCart) : [];
+} catch (e) {
+     console.warn("Invalid cart data in sessionStorage, resetting to []");
+     cartArray = [];
+}
+
+
+
 let totalSingleItemPrice;
 const cartIcon = document.getElementById("lg-bag");
 const cartTableBody = document.getElementById("cartDetails")
@@ -41,15 +54,10 @@ function deleteProduct(cartNo) {
 }
 
 function updateCartQuantity() {
-     try {
-          if (cartArray.length < 1) { cartIcon.style.display = 'none'; return }
-          cartIcon.style.display = 'block'
-          let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total) || []
-          cartIcon.setAttribute("data-count", cartQuantity);
-     }
-     catch (err) {
-          console.log('Error:', err)
-     }
+     if (cartArray.length < 1) { cartIcon.style.display = 'none'; return }
+     cartIcon.style.display = 'block'
+     let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total) || []
+     cartIcon.setAttribute("data-count", cartQuantity);
 }
 
 function displayEmptyCartAlert() {
@@ -81,8 +89,7 @@ function displayEmptyCartAlert() {
 }
 
 function updateCartPage() {
-     try {
-          //if (cartArray.length > 0 || cartArray == []) {
+     if (cartArray.length > 0 || cartArray == []) {
 
           displayCart = () => {
 
@@ -184,20 +191,11 @@ function updateCartPage() {
 
           displayCart()
 
-          //}
-     } catch (error) {
-          //else {
+     } else {
           displayEmptyCartAlert()
           cartVoucherAndSubtotal.style.display = 'none'
-          console.log(error)
-          //}
      }
 }
 
-try {
-     updateCartQuantity()
-     updateCartPage()
-}
-catch (error) {
-     console.log(error)
-}
+updateCartQuantity()
+updateCartPage()
