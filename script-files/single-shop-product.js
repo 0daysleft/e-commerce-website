@@ -1,6 +1,18 @@
 import products from "./products.js";
 import script from "./script.js";
-let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
+//let cartArray = JSON.parse(sessionStorage.getItem("cart")) || [];
+
+let cartArray = [];
+
+try {
+    const rawCart = sessionStorage.getItem("cart");
+    cartArray = rawCart ? JSON.parse(rawCart) : [];
+} catch (e) {
+    console.warn("Invalid cart data in sessionStorage, resetting to []");
+    cartArray = [];
+}
+
+
 let selectedProductId = sessionStorage.getItem("elementId");
 const product = products.find((prod) => prod.productId === selectedProductId);
 let productDetailsDivElement = document.querySelector("#product-details");
