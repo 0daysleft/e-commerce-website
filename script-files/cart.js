@@ -61,7 +61,13 @@ function updateCartQuantity() {
 }
 
 function displayEmptyCartAlert() {
-     document.querySelector('.blog-header img').style.opacity = '0.2'
+     const div = document.querySelector('.blog-header')
+     const style = window.getComputedStyle(div);
+     const bgImage = style.backgroundImage;
+     bgImage.style.opacity = '0.2'
+
+     console.log(bgImage);  // Output: url("http://yourdomain.com/images/bg.jpg")
+
      document.querySelector('.blog-header h2').textContent = 'Ooops 🥲. Seems you landed on the wrong page!!'
      document.querySelector('.blog-header p').innerHTML = '<h3>Visit the <a href="../html-files/shop.html" style="text-decoration: none; color: yellow; background-color: green">shop page</a> to shop and then checkout here, see you here again!!</h3>'
      // Clear any previous rows in the cart body
