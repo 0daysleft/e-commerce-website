@@ -37,5 +37,11 @@ function loadSpinner() {
      });
 };
 
-loadSpinner()
+
+document.fonts.load('1em "Font Awesome 6 Free"').then(() => {
+     console.log('Font Awesome has loaded');
+     loadSpinner()
+     document.body.style.visibility = 'visible'; // or trigger your UI now
+});
+
 
