@@ -41,10 +41,15 @@ function deleteProduct(cartNo) {
 }
 
 function updateCartQuantity() {
-     if (cartArray.length < 1) { cartIcon.style.display = 'none'; return }
-     cartIcon.style.display = 'block'
-     let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total) || []
-     cartIcon.setAttribute("data-count", cartQuantity);
+     try {
+          if (cartArray.length < 1) { cartIcon.style.display = 'none'; return }
+          cartIcon.style.display = 'block'
+          let cartQuantity = cartArray.map((item) => item.productQuantity).reduce((item, total = 0) => item + total) || []
+          cartIcon.setAttribute("data-count", cartQuantity);
+     }
+     catch (err) {
+          console.log('Error:', err)
+     }
 }
 
 function displayEmptyCartAlert() {
@@ -54,8 +59,8 @@ function displayEmptyCartAlert() {
      const cartTable = document.getElementById("cart")
      cartTable.innerHTML = ""
      // Only append the empty row if it's not already present
-     const emptyRow = document.createElement("tr");
-     const emptyCell = document.createElement("td");
+     const emptyRow = document.createElement("div");
+     const emptyCell = document.createElement("h1");
      emptyCell.innerHTML = `
      <div style="   padding: 20px;
                     text-align: center;
@@ -76,7 +81,9 @@ function displayEmptyCartAlert() {
 }
 
 function updateCartPage() {
-     if (cartArray.length > 0 || cartArray == []) {
+     try {
+          //if (cartArray.length > 0 || cartArray == []) {
+
           displayCart = () => {
 
                cartTableBody.innerHTML = ""; // Reset the table body
@@ -177,11 +184,20 @@ function updateCartPage() {
 
           displayCart()
 
-     } else {
+          //}
+     } catch (error) {
+          //else {
           displayEmptyCartAlert()
           cartVoucherAndSubtotal.style.display = 'none'
+          console.log(error)
+          //}
      }
 }
 
-updateCartQuantity()
-updateCartPage()
+try {
+     updateCartQuantity()
+     updateCartPage()
+}
+catch (error) {
+     console.log(error)
+}
