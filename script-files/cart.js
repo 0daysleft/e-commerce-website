@@ -61,14 +61,15 @@ function updateCartQuantity() {
 }
 
 function displayEmptyCartAlert() {
+     document.querySelector('.blog-header img').style.opacity = '0.2'
      document.querySelector('.blog-header h2').textContent = 'Ooops 🥲. Seems you landed on the wrong page!!'
-     document.querySelector('.blog-header p').innerHTML = 'Visit the <a href="../html-files/shop.html">shop page</a> to shop and then checkout here, see you here again!!'
+     document.querySelector('.blog-header p').innerHTML = '<h3>Visit the <a href="../html-files/shop.html" style="text-decoration: none; color: yellow; background-color: green">shop page</a> to shop and then checkout here, see you here again!!</h3>'
      // Clear any previous rows in the cart body
      const cartTable = document.getElementById("cart")
      cartTable.innerHTML = ""
      // Only append the empty row if it's not already present
      const emptyRow = document.createElement("div");
-     const emptyCell = document.createElement("h1");
+     const emptyCell = document.createElement("h4");
      emptyCell.innerHTML = `
      <div style="   padding: 20px;
                     text-align: center;
